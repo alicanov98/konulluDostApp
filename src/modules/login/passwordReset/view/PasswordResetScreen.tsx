@@ -8,17 +8,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../types/RoutStackParamList';
+import {RootStackParamList} from '../../../../navigation/KonulluDostNavigator.tsx';
 import GlobalStyles from '../../../../assets/globalStyles/styles.ts';
-type SignUpScreenNavigationProp = StackNavigationProp<
-  RootStackParamList,
-  'otp'
->;
-export const PasswordResetScreen = ({
-  navigation,
-}: {
-  navigation: SignUpScreenNavigationProp;
-}) => {
+import {useNavigation} from '@react-navigation/native';
+
+export const PasswordResetScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   return (
     <SafeAreaView style={{backgroundColor: '#fff', height: '100%'}}>
       <View
@@ -51,7 +47,7 @@ export const PasswordResetScreen = ({
           </View>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate('otp')}
+            onPress={() => navigation.navigate('OtpScreen')}
             style={styles.button}>
             <Text style={styles.buttunText}>Kodu göndər</Text>
           </TouchableOpacity>

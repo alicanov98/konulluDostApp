@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   SafeAreaView,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -71,8 +70,9 @@ const VoluntaryRegistrationScreen = () => {
   };
   console.log(formData);
 
+  // @ts-ignore
   return (
-    <ScrollView style={{backgroundColor: '#fff', height: '100%'}}>
+    <SafeAreaView style={{backgroundColor: '#fff', flex: 1}}>
       <View
         style={{
           paddingTop: 60,
@@ -165,6 +165,7 @@ const VoluntaryRegistrationScreen = () => {
                   search={false}
                   boxStyles={styles.input}
                   dropdownStyles={styles.dropDownBoxCenter}
+                  dropdownTextStyles={{color: GlobalStyles.colors.PureBlack}}
                 />
               )}
               name="center"
@@ -203,7 +204,7 @@ const VoluntaryRegistrationScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 

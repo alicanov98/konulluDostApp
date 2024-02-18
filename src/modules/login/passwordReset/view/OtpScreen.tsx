@@ -8,17 +8,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../types/RoutStackParamList';
-import GlobalStyles from "../../../../assets/globalStyles/styles.ts";
-type SignUpScreenNavigationProp = StackNavigationProp<
-  RootStackParamList,
-  'newPassword'
->;
-export const OtpScreen = ({
-  navigation,
-}: {
-  navigation: SignUpScreenNavigationProp;
-}) => {
+import {RootStackParamList} from '../../../../navigation/KonulluDostNavigator.tsx';
+import GlobalStyles from '../../../../assets/globalStyles/styles.ts';
+import {useNavigation} from '@react-navigation/native';
+
+export const OtpScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   const [number, onChangeNumber] = React.useState('');
   return (
     <SafeAreaView
@@ -64,7 +60,7 @@ export const OtpScreen = ({
             />
           </View>
 
-          <TouchableOpacity onPress={() => navigation.navigate('newPassword')}>
+          <TouchableOpacity onPress={() => navigation.navigate('NewPasswordScreen')}>
             <Text style={styles.pageText}>Helelik kecid</Text>
           </TouchableOpacity>
         </View>

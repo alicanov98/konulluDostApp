@@ -11,14 +11,10 @@ import {
 import * as yup from 'yup';
 import {Controller, useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-
+import {RootStackParamList} from '../../../../navigation/KonulluDostNavigator.tsx';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../types/RoutStackParamList';
-import GlobalStyles from "../../../../assets/globalStyles/styles.ts";
-type SignUpScreenNavigationProp = StackNavigationProp<
-  RootStackParamList,
-  'passwordReset'
->;
+import GlobalStyles from '../../../../assets/globalStyles/styles.ts';
+import {useNavigation} from '@react-navigation/native';
 
 const schema = yup.object().shape({
   email: yup.string().required('E-poçt tələb olunur').email('Səhv e-poçt'),
@@ -28,11 +24,9 @@ const schema = yup.object().shape({
     .min(8, 'Parol ən azı 8 simvoldan ibarət olmalıdır'),
 });
 
-export const LoginScreen = ({
-  navigation,
-}: {
-  navigation: SignUpScreenNavigationProp;
-}) => {
+export const LoginScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   const {
     control,
     handleSubmit,
@@ -117,8 +111,9 @@ export const LoginScreen = ({
         </View>
         <View>
           <TouchableOpacity
-            onPress={() => navigation.navigate('passwordReset')}>
-            <Text>Şifrəni unutmusan?</Text>
+            style={{width: 200}}
+            onPress={() => navigation.navigate('PasswordResetScreen')}>
+            <Text style={styles.inputText}>Şifrəni unutmusan?</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -148,5 +143,9 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   buttunText: {fontSize: 16, color: '#fff'},
-  inputText: {color: '#000', marginBottom: 5, fontSize: 14},
+  inputText: {
+    color: GlobalStyles.colors.PureBlack,
+    marginBottom: 5,
+    fontSize: 14,
+  },
 });

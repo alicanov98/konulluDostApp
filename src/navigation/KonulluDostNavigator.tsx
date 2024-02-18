@@ -31,6 +31,7 @@ export type RootStackParamList = {
 };
 
 const HomeNavigator = () => {
+
   useTabBarVisibility();
   return (
     <Stack.Navigator
