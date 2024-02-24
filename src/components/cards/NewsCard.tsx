@@ -1,7 +1,7 @@
 import {Image, Text, View} from 'react-native';
 
 const NewsCard = () => {
-  // const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   return (
     <View style={{borderRadius: 30, width: 182, height: 176}}>
       <View>
