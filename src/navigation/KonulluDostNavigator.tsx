@@ -12,11 +12,11 @@ import {OtpScreen} from '../modules/login/passwordReset/view/OtpScreen.tsx';
 import {NewPasswordScreen} from '../modules/login/passwordReset/view/NewPasswordScreen.tsx';
 
 const Stack = createNativeStackNavigator();
-
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
 
 export type RootStackParamList = {
   HomeNavigator: undefined;
+  HomeScreen: undefined;
   IntroductionNavigator: undefined;
   IntroductionScreen: undefined;
   SiginUpScreen: undefined;
@@ -74,7 +74,7 @@ const BottomTabNavigator = () => {
   return (
     <KonulluDostBottomTabNavigator.Navigator
       screenOptions={{
-        tabBarHideOnKeyboard: true,
+        tabBarHideOnKeyboard: false,
         headerShown: false,
       }}>
       <KonulluDostBottomTabNavigator.Screen

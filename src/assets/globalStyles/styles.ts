@@ -11,7 +11,7 @@ const colors = {
 const textStyles = StyleSheet.create({
   MediumText: {},
   RegularText: {},
-  SemiBold: {},
+  SemiBold: {fontSize: 16},
   BoldText: {},
 });
 
