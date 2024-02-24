@@ -115,6 +115,12 @@ export const LoginScreen = () => {
             onPress={() => navigation.navigate('PasswordResetScreen')}>
             <Text style={styles.inputText}>Şifrəni unutmusan?</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('BottomTabNavigator');
+            }}>
+            <Text style={styles.inputText}>Kecid Helelik</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
