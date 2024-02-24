@@ -140,7 +140,7 @@ const VoluntaryRegistrationScreen = () => {
                   style={styles.input}
                   value={value}
                   onChangeText={onChange}
-                  placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                  placeholderTextColor={GlobalStyles.colors.PlaceHolder}
                   placeholder="minimum 8 simvol daxil et"
                   keyboardType="numeric"
                   secureTextEntry={true}
@@ -164,6 +164,7 @@ const VoluntaryRegistrationScreen = () => {
                   setSelected={(value: string) => onChange(value)}
                   search={false}
                   boxStyles={styles.input}
+                  inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
                   dropdownStyles={styles.dropDownBoxCenter}
                   dropdownTextStyles={{color: GlobalStyles.colors.PureBlack}}
                 />
@@ -186,6 +187,7 @@ const VoluntaryRegistrationScreen = () => {
                   setSelected={(value: string) => onChange(value)}
                   search={false}
                   boxStyles={styles.dropDowninput}
+                  inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
                   dropdownStyles={styles.dropDownBoxDk}
                   dropdownTextStyles={{color: GlobalStyles.colors.PureBlack}}
                 />
@@ -232,13 +234,13 @@ const styles = StyleSheet.create({
   },
   dropDownBoxDk: {
     width: 150,
-    height: 150,
+    height: 450,
     borderColor: '#D8DADC',
     position: 'absolute',
     zIndex: 5,
     backgroundColor: '#fff',
     right: 70,
-    top: -10,
+    bottom: 0,
   },
   dropDownBoxCenter: {
     width: 353,

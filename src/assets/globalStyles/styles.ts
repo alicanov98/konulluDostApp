@@ -5,6 +5,7 @@ const colors = {
   PureWhite: '#ffffff',
   CobaltBlue: '#2858EE',
   TransparentBlack: '#00000050',
+  PlaceHolder: 'rgba(0, 0, 0, 0.5)',
 };
 
 const textStyles = StyleSheet.create({
