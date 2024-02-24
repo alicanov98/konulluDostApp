@@ -10,6 +10,18 @@ import {LoginScreen} from '../modules/login/login/view/LoginScreen.tsx';
 import {PasswordResetScreen} from '../modules/login/passwordReset/view/PasswordResetScreen.tsx';
 import {OtpScreen} from '../modules/login/passwordReset/view/OtpScreen.tsx';
 import {NewPasswordScreen} from '../modules/login/passwordReset/view/NewPasswordScreen.tsx';
+import GlobalStyles from '../assets/globalStyles/styles.ts';
+// @ts-ignore
+import HomeIcon from '../assets/images/icons/pentagramIcon.svg';
+// @ts-ignore
+import TodoIcon from '../assets/images/icons/todoIcon.svg';
+// @ts-ignore
+import PenIcon from '../assets/images/icons/penIcon.svg';
+import AboutScreen from '../modules/about/view/AboutScreen.tsx';
+// @ts-ignore
+import UserIcon from '../assets/images/icons/UserIcon.svg';
+import StatisticScreen from '../modules/statistic/view/StatisticScreen.tsx';
+import ClubsScreen from '../modules/clubs/view/ClubsScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -17,6 +29,7 @@ const KonulluDostBottomTabNavigator = createBottomTabNavigator();
 export type RootStackParamList = {
   HomeNavigator: undefined;
   HomeScreen: undefined;
+  AboutScreen: undefined;
   IntroductionNavigator: undefined;
   IntroductionScreen: undefined;
   SiginUpScreen: undefined;
@@ -43,7 +56,7 @@ const HomeNavigator = () => {
 };
 
 const IntroductionNavigator = () => {
-  useTabBarVisibility();
+  // useTabBarVisibility();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -80,6 +93,44 @@ const BottomTabNavigator = () => {
       <KonulluDostBottomTabNavigator.Screen
         name={'HomeNavigator'}
         component={HomeNavigator}
+        options={{
+          title: 'Əsas səhifə',
+          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
+          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'StatisticScreen'}
+        component={StatisticScreen}
+        options={{
+          title: 'Statistika',
+          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
+          // eslint-disable-next-line react/no-unstable-nested-components
+          tabBarIcon: ({focused}) =>
+            focused ? (
+              <TodoIcon />
+            ) : (
+              <TodoIcon fill={GlobalStyles.colors.PureWhite} />
+            ),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'ClubsScreen'}
+        component={ClubsScreen}
+        options={{
+          title: 'Klublar',
+          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
+          tabBarIcon: ({focused}) => (focused ? <PenIcon /> : <PenIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'AboutScreen'}
+        component={AboutScreen}
+        options={{
+          title: 'Haqqimizda',
+          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+        }}
       />
     </KonulluDostBottomTabNavigator.Navigator>
   );

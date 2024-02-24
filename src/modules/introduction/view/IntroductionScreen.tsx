@@ -11,6 +11,7 @@ import {useNavigation} from '@react-navigation/native';
 import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
 import {StackNavigationProp} from '@react-navigation/stack';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
+// @ts-ignore
 import LeftArrowIcon from '../../../assets/images/icons/rightArrowIcon.svg';
 
 const IntroductionScreen = () => {

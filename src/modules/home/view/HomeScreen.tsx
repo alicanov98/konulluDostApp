@@ -3,11 +3,15 @@ import {Image, SafeAreaView, StatusBar, Text, View} from 'react-native';
 // import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
 // import {StackNavigationProp} from '@react-navigation/stack';
 import React from 'react';
+import Carousel from 'react-native-snap-carousel';
+import NewsCard from '../../../components/cards/NewsCard.tsx';
 // import Carousel from 'react-native-snap-carousel';
 // import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 
 const HomeScreen = () => {
   // const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+  // @ts-ignore
+  // @ts-ignore
   return (
     <SafeAreaView
       style={{
@@ -29,6 +33,19 @@ const HomeScreen = () => {
         }}>
         Salam, Əhmədov Ceyhun!
       </Text>
+      <View
+        style={{
+          marginTop: 36,
+          paddingTop: 8,
+          paddingBottom: 8,
+          flexDirection: 'row',
+          gap: 20,
+          justifyContent: 'center',
+        }}>
+        <NewsCard />
+        <NewsCard />
+        <NewsCard />
+      </View>
     </SafeAreaView>
   );
 };
