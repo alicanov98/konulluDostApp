@@ -12,9 +12,9 @@ import {
 // @ts-ignore
 import BellIcon from '../../../assets/images/icons/bell-icon.svg';
 import ClubCard from '../../../components/cards/ClubCard.tsx';
-import NewsCard from '../../../components/cards/NewsCard.tsx';
 import VolunteerActivityCard from '../../../components/cards/ VolunteerActivityCard.tsx';
 import Notification from '../../../components/notification/Notification.tsx';
+import {MyCarousel} from '../../../components/swiper/Carousel.tsx';
 
 const data = [
   {
@@ -144,9 +144,7 @@ const HomeScreen = () => {
           gap: 20,
           justifyContent: 'center',
         }}>
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
+        <MyCarousel />
       </View>
       <Text
         style={{

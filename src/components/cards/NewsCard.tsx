@@ -1,9 +1,15 @@
 import {Image, Text, View} from 'react-native';
 
 const NewsCard = () => {
-
   return (
-    <View style={{borderRadius: 30, width: 182, height: 176}}>
+    <View
+      style={{
+        borderRadius: 30,
+        width: 182,
+        height: 176,
+        marginLeft: 30,
+        marginRight: 30,
+      }}>
       <View>
         <Image
           style={{
