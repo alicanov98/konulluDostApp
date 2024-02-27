@@ -3,6 +3,7 @@ import {
   Image,
   Modal,
   SafeAreaView,
+  ScrollView,
   StatusBar,
   Text,
   TouchableOpacity,
@@ -13,6 +14,7 @@ import BellIcon from '../../../assets/images/icons/bell-icon.svg';
 import ClubCard from '../../../components/cards/ClubCard.tsx';
 import NewsCard from '../../../components/cards/NewsCard.tsx';
 import VolunteerActivityCard from '../../../components/cards/ VolunteerActivityCard.tsx';
+import Notification from '../../../components/notification/Notification.tsx';
 
 const data = [
   {
@@ -84,7 +86,7 @@ const HomeScreen = () => {
           />
           <BellIcon />
         </TouchableOpacity>
-        <Modal visible={isActive} animationType="slide">
+        <Modal visible={isActive} transparent={true} animationType="fade">
           <View
             style={{
               width: 420,
@@ -96,56 +98,30 @@ const HomeScreen = () => {
             }}>
             <View
               style={{
-                width: 380,
+                width: 300,
                 height: 70,
-                justifyContent: 'space-between',
+                justifyContent: 'flex-end',
                 alignItems: 'center',
                 flexDirection: 'row',
               }}>
-              <Image
-                source={require('../../../assets/images/icons/logo.png')}
-              />
               <TouchableOpacity onPress={() => setIsActive(!isActive)}>
                 <Text style={{color: '#fff'}}>Close</Text>
               </TouchableOpacity>
             </View>
-            <View
-              style={{
-                width: 340,
-                height: 140,
-                borderRadius: 15,
-                backgroundColor: 'rgba(252, 252, 252, 1)',
-                position: 'absolute',
-                zIndex: 11,
-                top: 80,
-                padding: 10,
-              }}>
-              <View
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    gap: 10,
-                    alignItems: 'center',
-                    marginBottom: 20,
-                  }}>
-                  <Image
-                    source={require('../../../assets/images/image/SmallIcon.png')}
-                  />
-                  <Text style={{color: '#2858EE'}}>Könüllü Dost</Text>
-                  <Text style={{color: '#595959'}}>indicə</Text>
-                </View>
-                <Image
-                  source={require('../../../assets/images/image/Down.png')}
-                />
-              </View>
-              <Text style={{color: '#000', fontSize: 15}}>
-                Salam, Əhmədova C.
-              </Text>
-              <Text style={{color: '#595959', fontSize: 13}}>
-                Bu həftə aktivliyin zəif görünür.
-              </Text>
-            </View>
+            <ScrollView>
+              <Notification />
+              <Notification />
+              <Notification />
+              <Notification />
+              <Notification />
+              <Notification />
+              <Notification />
+              <Notification />
+              <Notification />
+              <Notification />
+              <Notification />
+              <Notification />
+            </ScrollView>
           </View>
         </Modal>
       </View>
@@ -160,7 +136,6 @@ const HomeScreen = () => {
       </Text>
       <View
         style={{
-          // backgroundColor: '#000',
           height: 220,
           marginTop: 36,
           paddingTop: 8,
