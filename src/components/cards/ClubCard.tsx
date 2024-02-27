@@ -2,7 +2,13 @@ import React from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native';
 
 interface ClubCardProps {
-  data: {color: string; colors: string; image: string; text: string}[];
+  data: {
+    color: string;
+    colors: string;
+    image: string;
+    text: string;
+    margin: number;
+  }[];
 }
 
 const ClubCard: React.FC<ClubCardProps> = ({data}) => {
@@ -23,23 +29,27 @@ const ClubCard: React.FC<ClubCardProps> = ({data}) => {
               styles.container,
               {backgroundColor: item.color, position: 'relative'},
             ]}>
+            <Text
+              style={[
+                styles.text,
+                {transform: [{rotate: '-90deg'}], left: 57},
+              ]}>
+              {item.text}
+            </Text>
             <View
               style={{
-                width: 97,
-                paddingLeft: 9,
-                justifyContent: 'flex-start',
+                width: 75,
+                paddingRight: 12,
               }}>
               <Image
                 style={{
-                  marginTop: 9,
+                  margin: item.margin,
                 }}
                 source={item.image}
               />
             </View>
-            <View style={styles.innerContainer}>
-              <Text style={styles.text}>{item.text}</Text>
-            </View>
           </View>
+
           <View
             style={[
               styles.container,
@@ -47,8 +57,8 @@ const ClubCard: React.FC<ClubCardProps> = ({data}) => {
                 backgroundColor: item.colors,
                 position: 'absolute',
                 top: 40,
-                width: 82,
-                height: 83,
+                width: 83,
+                height: 82,
                 zIndex: -1,
               },
             ]}>
@@ -65,28 +75,29 @@ const ClubCard: React.FC<ClubCardProps> = ({data}) => {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 5,
-    width: 82,
-    height: 97,
-    padding: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: 75,
+    height: 101,
   },
   innerContainer: {
-    height: 82,
+    height: 85,
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
   plus: {
     fontSize: 24,
     fontWeight: '300',
-    textAlign: 'center',
     lineHeight: 24,
   },
   text: {
+    width: 83,
+    height: 82,
     fontSize: 10,
-    fontWeight: '300',
-    textAlign: 'center',
-    lineHeight: 24,
+    position: 'absolute',
+    top: 15,
+    zIndex: 0,
+    padding: 0,
+    margin: 0,
+    textAlign: 'left',
   },
 });
 

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Image,
+  Modal,
   SafeAreaView,
   StatusBar,
   Text,
@@ -19,28 +20,33 @@ const data = [
     color: '#2858EE',
     colors: '#2858EE18',
     image: require('../../../assets/images/image/club/book.png'),
+    margin: 5,
   },
   {
     text: 'Xarici dil',
     color: '#00FF55',
     colors: '#00FF5518',
     image: require('../../../assets/images/image/club/lamp.png'),
+    margin: 0,
   },
   {
     text: 'Kitab',
     color: 'rgba(254, 80, 36, 1)',
     colors: 'rgba(254, 80, 36, 0.18)',
     image: require('../../../assets/images/image/club/vector.png'),
+    margin: 5,
   },
   {
     text: 'Şeir',
     color: '#E64646',
     colors: '#E6464618',
     image: require('../../../assets/images/image/club/messageRigh.png'),
+    margin: 5,
   },
 ];
 
 const HomeScreen = () => {
+  const [isActive, setIsActive] = useState(false);
   return (
     <SafeAreaView
       style={{
@@ -61,6 +67,7 @@ const HomeScreen = () => {
         <Image source={require('../../../assets/images/icons/logo.png')} />
 
         <TouchableOpacity
+          onPress={() => setIsActive(!isActive)}
           style={{
             position: 'relative',
           }}>
@@ -77,6 +84,70 @@ const HomeScreen = () => {
           />
           <BellIcon />
         </TouchableOpacity>
+        <Modal visible={isActive} animationType="slide">
+          <View
+            style={{
+              width: 420,
+              height: 870,
+              backgroundColor: 'rgba(89, 89, 89, 0.5)',
+              position: 'absolute',
+              alignItems: 'center',
+              zIndex: 10,
+            }}>
+            <View
+              style={{
+                width: 380,
+                height: 70,
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexDirection: 'row',
+              }}>
+              <Image
+                source={require('../../../assets/images/icons/logo.png')}
+              />
+              <TouchableOpacity onPress={() => setIsActive(!isActive)}>
+                <Text style={{color: '#fff'}}>Close</Text>
+              </TouchableOpacity>
+            </View>
+            <View
+              style={{
+                width: 340,
+                height: 140,
+                borderRadius: 15,
+                backgroundColor: 'rgba(252, 252, 252, 1)',
+                position: 'absolute',
+                zIndex: 11,
+                top: 80,
+                padding: 10,
+              }}>
+              <View
+                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    gap: 10,
+                    alignItems: 'center',
+                    marginBottom: 20,
+                  }}>
+                  <Image
+                    source={require('../../../assets/images/image/SmallIcon.png')}
+                  />
+                  <Text style={{color: '#2858EE'}}>Könüllü Dost</Text>
+                  <Text style={{color: '#595959'}}>indicə</Text>
+                </View>
+                <Image
+                  source={require('../../../assets/images/image/Down.png')}
+                />
+              </View>
+              <Text style={{color: '#000', fontSize: 15}}>
+                Salam, Əhmədova C.
+              </Text>
+              <Text style={{color: '#595959', fontSize: 13}}>
+                Bu həftə aktivliyin zəif görünür.
+              </Text>
+            </View>
+          </View>
+        </Modal>
       </View>
       <Text
         style={{
