@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Image,
   SafeAreaView,
@@ -8,10 +8,13 @@ import {
   View,
 } from 'react-native';
 import {Calendar, LocaleConfig} from 'react-native-calendars';
+import ClubCards from '../../../components/cards/ClubCards.tsx';
 // @ts-ignore
 import DavamiyyetIcon from '../../../assets/images/icons/davamiyyet.svg';
 // @ts-ignore
 import QiymetlendirmeIcon from '../../../assets/images/icons/qiymetlendirme.svg';
+
+// Lokal ayarları yapılandır
 LocaleConfig.locales.az = {
   monthNames: [
     'Yanvar',
@@ -55,9 +58,66 @@ LocaleConfig.locales.az = {
 };
 LocaleConfig.defaultLocale = 'az';
 
+interface Reservation {
+  date: Date;
+  name: string;
+  datee: string;
+  bgColor: string;
+  color: string;
+  nameColor: string;
+  center: string;
+  topic: string;
+}
+
+const reservations: Reservation[] = [
+  {
+    date: new Date(2024, 2, 3),
+    name: 'Yaradıcılıq Klubu',
+    datee: 'Çərşənbə axşamı 3 mart, 2024, 12:00',
+    bgColor: '#DBF3FF',
+    color: '#5A5A5A',
+    nameColor: '#757575',
+    center: '4 saylı Bakı DOST Mərkəzi',
+    topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
+  },
+  {
+    date: new Date(2024, 2, 4),
+    name: 'Fərdi İnkişaf Klubu',
+    datee: 'Çərşənbə 4 mart, 2024, 15:00',
+    bgColor: '#9EFFBE',
+    color: '#000',
+    nameColor: '#757575',
+    center: '4 saylı Bakı DOST Mərkəzi',
+    topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
+  },
+  {
+    date: new Date(2024, 1, 5),
+    name: 'Xarici dil',
+    datee: 'Cümə axşamı 5 mart, 2024, 12:00',
+    bgColor: '#FC714E',
+    color: '#fff',
+    nameColor: '#fff',
+    center: '5 saylı Bakı DOST Mərkəzi',
+    topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
+  },
+];
+
 const StatisticScreen: React.FC = () => {
+  const [selected, setSelected] = useState<string>('');
   const [isActive, setIsActive] = useState(false);
-  const [selected, setSelected] = useState('');
+
+  const getReservationsForDate = (dateString: string): Reservation[] => {
+    const selectedDate = new Date(dateString);
+    const filteredReservations = reservations.filter(item => {
+      const reservationDate = new Date(item.date);
+      return (
+        reservationDate.getDate() === selectedDate.getDate() &&
+        reservationDate.getMonth() === selectedDate.getMonth() &&
+        reservationDate.getFullYear() === selectedDate.getFullYear()
+      );
+    });
+    return filteredReservations;
+  };
 
   return (
     <SafeAreaView
@@ -107,7 +167,13 @@ const StatisticScreen: React.FC = () => {
           },
         }}
       />
-      <View style={{flexDirection: 'row', gap: 17, marginTop: 42}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          gap: 17,
+          marginTop: 38,
+          justifyContent: 'center',
+        }}>
         <View
           style={{
             width: 175,
@@ -164,84 +230,22 @@ const StatisticScreen: React.FC = () => {
           <Text style={{fontSize: 9, color: '#000'}}>3/5</Text>
         </View>
       </View>
-      <View style={{flexDirection: 'row', gap: 35, marginTop: 38}}>
-        <View
-          style={{
-            width: 213,
-            height: 150,
-            backgroundColor: '#DBF3FF',
-            borderRadius: 5,
-            padding: 10,
-          }}>
-          <Text style={{color: '#757575', fontSize: 14, fontWeight: 'bold'}}>
-            Yaradıcılıq Klubu
-          </Text>
-          <Text
-            style={{
-              color: '#5A5A5A',
-              fontSize: 10,
-              fontWeight: 'normal',
-              marginTop: 6,
-            }}>
-            Çərşənbə axşamı 3 mart, 2024
-          </Text>
-          <View style={{flexDirection: 'row', marginTop: 13}}>
-            <Image
-              style={{zIndex: 1}}
-              source={require('../../../assets/images/image/person.png')}
-            />
-            <Image
-              style={{zIndex: 2, right: 10}}
-              source={require('../../../assets/images/image/person.png')}
-            />
-            <Image
-              style={{zIndex: 3, right: 20}}
-              source={require('../../../assets/images/image/person.png')}
-            />
-            <Image
-              style={{zIndex: 4, right: 30}}
-              source={require('../../../assets/images/image/person.png')}
-            />
-            <View
-              style={{
-                zIndex: 4,
-                right: 40,
-                backgroundColor: '#fff',
-                borderRadius: 999,
-                width: 35,
-                height: 35,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Text
-                style={{
-                  color: '#2858EE',
-                  fontSize: 12,
-                  fontWeight: 'bold',
-                }}>
-                +3
-              </Text>
-            </View>
-          </View>
-          <Text
-            style={{
-              color: '#5A5A5A',
-              fontSize: 8,
-              fontWeight: '300',
-              marginTop: 10,
-            }}>
-            Ləman Hacıyeva ilə "Collaborative Art Creation"
-          </Text>
-          <Text
-            style={{
-              color: '#5A5A5A',
-              fontSize: 8,
-              fontWeight: '300',
-              marginTop: 6,
-            }}>
-            4 saylı Bakı DOST Mərkəzi
-          </Text>
-        </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          gap: 35,
+          marginTop: 38,
+          justifyContent: 'center',
+        }}>
+        {getReservationsForDate(selected).map((item, index) => (
+          <ClubCards
+            key={index}
+            width={217}
+            height={150}
+            marginTop={0}
+            item={item}
+          />
+        ))}
         <View
           style={{
             width: 127,
