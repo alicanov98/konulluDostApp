@@ -15,6 +15,7 @@ import DavamiyyetIcon from '../../../assets/images/icons/davamiyyet.svg';
 import QiymetlendirmeIcon from '../../../assets/images/icons/qiymetlendirme.svg';
 import {Reservation} from '../types/StatisticTypes.ts';
 import dayjs from 'dayjs';
+import {AnimatedCircularProgress} from 'react-native-circular-progress';
 
 LocaleConfig.locales.az = {
   monthNames: [
@@ -68,6 +69,7 @@ const reservations: Reservation[] = [
     nameColor: '#757575',
     center: '4 saylı Bakı DOST Mərkəzi',
     topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
+    degre: 32,
   },
   {
     date: new Date(2024, 2, 4),
@@ -77,24 +79,57 @@ const reservations: Reservation[] = [
     nameColor: '#757575',
     center: '4 saylı Bakı DOST Mərkəzi',
     topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
+    degre: 42,
+  },
+  {
+    date: new Date(2024, 2, 5),
+    name: 'Xarici dil',
+    bgColor: '#FC714E',
+    color: '#fff',
+    nameColor: '#fff',
+    center: '5 saylı Bakı DOST Mərkəzi',
+    topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
+    degre: 52,
+  },
+  {
+    date: new Date(2024, 2, 6),
+    name: 'Yaradıcılıq Klubu',
+    bgColor: '#DBF3FF',
+    color: '#5A5A5A',
+    nameColor: '#757575',
+    center: '4 saylı Bakı DOST Mərkəzi',
+    topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
+    degre: 62,
   },
   {
     date: new Date(2024, 2, 7),
+    name: 'Fərdi İnkişaf Klubu',
+    bgColor: '#9EFFBE',
+    color: '#000',
+    nameColor: '#757575',
+    center: '4 saylı Bakı DOST Mərkəzi',
+    topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
+    degre: 72,
+  },
+  {
+    date: new Date(2024, 2, 8),
     name: 'Xarici dil',
     bgColor: '#FC714E',
     color: '#fff',
     nameColor: '#fff',
     center: '5 saylı Bakı DOST Mərkəzi',
     topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
+    degre: 82,
   },
   {
     date: new Date(2024, 2, 9),
-    name: 'Xarici dil',
-    bgColor: '#FC714E',
-    color: '#fff',
-    nameColor: '#fff',
-    center: '5 saylı Bakı DOST Mərkəzi',
-    topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
+    name: 'Yaradıcılıq Klubu',
+    bgColor: '#DBF3FF',
+    color: '#5A5A5A',
+    nameColor: '#757575',
+    center: '4 saylı Bakı DOST Mərkəzi',
+    topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
+    degre: 92,
   },
 ];
 
@@ -102,7 +137,6 @@ const StatisticScreen: React.FC = () => {
   const [selected, setSelected] = useState('');
   const [isActive, setIsActive] = useState(false);
   const [clubsData, setClubsData] = useState<Reservation[]>([]);
-
   useEffect(() => {
     const getReservationsForDate = (dateString: string) => {
       const selectedDate = new Date(dateString);
@@ -119,6 +153,7 @@ const StatisticScreen: React.FC = () => {
     getReservationsForDate(selected ? selected : dayjs().format('YYYY-MM-DD'));
   }, [selected]);
 
+  // @ts-ignore
   return (
     <SafeAreaView
       style={{
@@ -230,30 +265,78 @@ const StatisticScreen: React.FC = () => {
           <Text style={{fontSize: 9, color: '#000'}}>3/5</Text>
         </View>
       </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          gap: 35,
-          marginTop: 38,
-          justifyContent: 'center',
-        }}>
-        {clubsData.map((item, index) => (
+      {clubsData.map((item, index) => (
+        <View
+          style={{
+            flexDirection: 'row',
+            gap: 35,
+            marginTop: 38,
+            justifyContent: 'center',
+          }}>
           <ClubCards
             key={index}
             item={item}
             style={{width: 217, height: 150, marginTop: 0}}
           />
-        ))}
-        <View
-          style={{
-            width: 127,
-            height: 150,
-            backgroundColor: '#F0EFEF',
-            borderRadius: 10,
-            padding: 8,
-          }}
-        />
-      </View>
+          <View
+            style={{
+              width: 127,
+              height: 150,
+              backgroundColor: '#F0EFEF',
+              borderRadius: 10,
+              padding: 8,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <View
+              style={{
+                transform: 'rotate(90deg)',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <AnimatedCircularProgress
+                size={75}
+                width={5}
+                fill={item.degre}
+                tintColor="#2858EE"
+                onAnimationComplete={() => {}}
+                backgroundColor="#fff"
+              />
+            </View>
+            <View
+              style={{
+                position: 'absolute',
+                top: 35,
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}>
+              <Text
+                style={{
+                  color: '#000',
+                  fontSize: 10,
+                }}>
+                Aktivlik
+              </Text>
+              <Text
+                style={{
+                  color: '#000',
+                  fontSize: 10,
+                }}>
+                {item.degre}%
+              </Text>
+            </View>
+            <Text
+              style={{
+                color: '#000',
+                fontSize: 8,
+                paddingTop: 12,
+                textAlign: 'center',
+              }}>
+              Bu ay aktivliyin biraz zəifdir. Ancaq ruhdan düşmək lazım deyil!
+            </Text>
+          </View>
+        </View>
+      ))}
     </SafeAreaView>
   );
 };

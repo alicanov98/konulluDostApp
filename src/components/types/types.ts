@@ -8,11 +8,12 @@ export interface IClubCardsProps {
 }
 
 export interface IClubCardItem {
+  date: Date;
   name: string;
   bgColor: string;
   center: string;
   topic: string;
   color: string;
   nameColor: string;
-  date: string;
+  degre: number;
 }

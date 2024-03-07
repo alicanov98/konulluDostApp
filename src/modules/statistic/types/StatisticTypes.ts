@@ -6,4 +6,5 @@ export interface Reservation {
   nameColor: string;
   center: string;
   topic: string;
+  degre: number;
 }
