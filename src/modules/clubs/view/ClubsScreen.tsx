@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {
-  View,
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-  StatusBar,
-  Image,
-  ScrollView,
+  View,
 } from 'react-native';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 import ClubCards from '../../../components/cards/ClubCards.tsx';
@@ -75,13 +75,12 @@ const WeeklyCalendar: React.FC = () => {
   };
 
   const getReservationsForDate = (date: Date): Reservation[] => {
-    const filteredReservations = reservations.filter(
+    return reservations.filter(
       reservation =>
         reservation.date.getDate() === date.getDate() &&
         reservation.date.getMonth() === date.getMonth() &&
         reservation.date.getFullYear() === date.getFullYear(),
     );
-    return filteredReservations;
   };
 
   return (
@@ -139,9 +138,7 @@ const WeeklyCalendar: React.FC = () => {
           {getReservationsForDate(selectedDate).map((item, index) => (
             <ClubCards
               key={index}
-              height={250}
-              width={329}
-              marginTop={12}
+              style={{width: 329, height: 250, marginTop: 12}}
               item={item}
             />
           ))}

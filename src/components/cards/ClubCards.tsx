@@ -1,53 +1,40 @@
 import React from 'react';
 import {Image, Text, View} from 'react-native';
+import {IClubCardsProps} from '../types/types.ts';
+import {formatDate} from '../../utils/utils.ts';
 
-interface ClubCardsProps {
-  width: number;
-  height: number;
-  marginTop: number;
-  item: {
-    name: string;
-    datee: string;
-    bgColor: string;
-    center: string;
-    topic: string;
-    color: string;
-    nameColor: string;
-  };
-}
-
-const ClubCards: React.FC<ClubCardsProps> = ({
-  width,
-  height,
-  marginTop,
-  item,
-}) => {
+const ClubCards: React.FC<IClubCardsProps> = props => {
   return (
-    <View style={{flexDirection: 'row', gap: 35, marginTop: marginTop}}>
+    <View
+      style={[
+        {flexDirection: 'row', gap: 35, marginTop: props.marginTop},
+        props.containerStyle,
+      ]}>
       <View
-        style={{
-          width: width,
-          height: height,
-          backgroundColor: `${item.bgColor}`,
-          borderRadius: 5,
-          padding: 10,
-        }}>
+        style={[
+          {
+            backgroundColor: `${props.item.bgColor}`,
+            borderRadius: 5,
+            padding: 10,
+          },
+          props.style,
+        ]}>
         <Text
           style={{
-            color: `${item.nameColor}`,
+            color: `${props.item.nameColor}`,
             fontSize: 14,
             fontWeight: 'bold',
           }}>
-          {item.name}
+          {props.item.name}
         </Text>
         <Text
           style={{
-            color: `${item.color}`,
+            color: `${props.item.color}`,
             fontSize: 10,
             fontWeight: 'normal',
             marginTop: 6,
           }}>
-          {item.datee}
+          {formatDate(props.item.date, false)}
         </Text>
         <View style={{flexDirection: 'row', marginTop: 13}}>
           <Image
@@ -89,21 +76,21 @@ const ClubCards: React.FC<ClubCardsProps> = ({
         </View>
         <Text
           style={{
-            color: `${item.color}`,
+            color: `${props.item.color}`,
             fontSize: 8,
             fontWeight: '300',
             marginTop: 10,
           }}>
-          {item.topic}
+          {props.item.topic}
         </Text>
         <Text
           style={{
-            color: `${item.color}`,
+            color: `${props.item.color}`,
             fontSize: 8,
             fontWeight: '300',
             marginTop: 6,
           }}>
-          {item.center}
+          {props.item.center}
         </Text>
       </View>
     </View>

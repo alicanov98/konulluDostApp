@@ -13,8 +13,9 @@ import ClubCards from '../../../components/cards/ClubCards.tsx';
 import DavamiyyetIcon from '../../../assets/images/icons/davamiyyet.svg';
 // @ts-ignore
 import QiymetlendirmeIcon from '../../../assets/images/icons/qiymetlendirme.svg';
+import {Reservation} from '../types/StatisticTypes.ts';
+import dayjs from 'dayjs';
 
-// Lokal ayarları yapılandır
 LocaleConfig.locales.az = {
   monthNames: [
     'Yanvar',
@@ -58,22 +59,10 @@ LocaleConfig.locales.az = {
 };
 LocaleConfig.defaultLocale = 'az';
 
-interface Reservation {
-  date: Date;
-  name: string;
-  datee: string;
-  bgColor: string;
-  color: string;
-  nameColor: string;
-  center: string;
-  topic: string;
-}
-
 const reservations: Reservation[] = [
   {
     date: new Date(2024, 2, 3),
     name: 'Yaradıcılıq Klubu',
-    datee: 'Çərşənbə axşamı 3 mart, 2024, 12:00',
     bgColor: '#DBF3FF',
     color: '#5A5A5A',
     nameColor: '#757575',
@@ -83,7 +72,6 @@ const reservations: Reservation[] = [
   {
     date: new Date(2024, 2, 4),
     name: 'Fərdi İnkişaf Klubu',
-    datee: 'Çərşənbə 4 mart, 2024, 15:00',
     bgColor: '#9EFFBE',
     color: '#000',
     nameColor: '#757575',
@@ -91,9 +79,17 @@ const reservations: Reservation[] = [
     topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
   },
   {
-    date: new Date(2024, 1, 5),
+    date: new Date(2024, 2, 7),
     name: 'Xarici dil',
-    datee: 'Cümə axşamı 5 mart, 2024, 12:00',
+    bgColor: '#FC714E',
+    color: '#fff',
+    nameColor: '#fff',
+    center: '5 saylı Bakı DOST Mərkəzi',
+    topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
+  },
+  {
+    date: new Date(2024, 2, 9),
+    name: 'Xarici dil',
     bgColor: '#FC714E',
     color: '#fff',
     nameColor: '#fff',
@@ -103,21 +99,25 @@ const reservations: Reservation[] = [
 ];
 
 const StatisticScreen: React.FC = () => {
-  const [selected, setSelected] = useState<string>('');
+  const [selected, setSelected] = useState('');
   const [isActive, setIsActive] = useState(false);
+  const [clubsData, setClubsData] = useState<Reservation[]>([]);
 
-  const getReservationsForDate = (dateString: string): Reservation[] => {
-    const selectedDate = new Date(dateString);
-    const filteredReservations = reservations.filter(item => {
-      const reservationDate = new Date(item.date);
-      return (
-        reservationDate.getDate() === selectedDate.getDate() &&
-        reservationDate.getMonth() === selectedDate.getMonth() &&
-        reservationDate.getFullYear() === selectedDate.getFullYear()
-      );
-    });
-    return filteredReservations;
-  };
+  useEffect(() => {
+    const getReservationsForDate = (dateString: string) => {
+      const selectedDate = new Date(dateString);
+      const filteredReservations = reservations.filter(item => {
+        const reservationDate = new Date(item.date);
+        return (
+          reservationDate.getDate() === selectedDate.getDate() &&
+          reservationDate.getMonth() === selectedDate.getMonth() &&
+          reservationDate.getFullYear() === selectedDate.getFullYear()
+        );
+      });
+      setClubsData(filteredReservations);
+    };
+    getReservationsForDate(selected ? selected : dayjs().format('YYYY-MM-DD'));
+  }, [selected]);
 
   return (
     <SafeAreaView
@@ -237,13 +237,11 @@ const StatisticScreen: React.FC = () => {
           marginTop: 38,
           justifyContent: 'center',
         }}>
-        {getReservationsForDate(selected).map((item, index) => (
+        {clubsData.map((item, index) => (
           <ClubCards
             key={index}
-            width={217}
-            height={150}
-            marginTop={0}
             item={item}
+            style={{width: 217, height: 150, marginTop: 0}}
           />
         ))}
         <View
