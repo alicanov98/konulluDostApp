@@ -22,6 +22,11 @@ import AboutScreen from '../modules/about/view/AboutScreen.tsx';
 import UserIcon from '../assets/images/icons/UserIcon.svg';
 import StatisticScreen from '../modules/statistic/view/StatisticScreen.tsx';
 import ClubsScreen from '../modules/clubs/view/ClubsScreen.tsx';
+import DeviceScreen from '../modules/device/view/DeviceScreen.tsx';
+import ProfileScreen from '../modules/profile/view/ProfileScreen.tsx';
+import {RefreshPasswordScreen} from '../modules/refreshPassword/view/RefreshPasswordScreen.tsx';
+import AboutVolunteerScreen from '../modules/aboutVolunteer/view/AboutVolunteerScreen.tsx';
+import AboutAppScreen from '../modules/aboutApp/view/AboutAppScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -30,6 +35,11 @@ export type RootStackParamList = {
   HomeNavigator: undefined;
   HomeScreen: undefined;
   AboutScreen: undefined;
+  ProfileScreen: undefined;
+  DeviceScreen: undefined;
+  RefreshPasswordScreen: undefined;
+  AboutVolunteerScreen: undefined;
+  AboutAppScreen: undefined;
   IntroductionNavigator: undefined;
   IntroductionScreen: undefined;
   SiginUpScreen: undefined;
@@ -51,6 +61,17 @@ const HomeNavigator = () => {
         headerShown: false,
       }}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+      <Stack.Screen name="DeviceScreen" component={DeviceScreen} />
+      <Stack.Screen
+        name="RefreshPasswordScreen"
+        component={RefreshPasswordScreen}
+      />
+      <Stack.Screen
+        name="AboutVolunteerScreen"
+        component={AboutVolunteerScreen}
+      />
+      <Stack.Screen name="AboutAppScreen" component={AboutAppScreen} />
     </Stack.Navigator>
   );
 };

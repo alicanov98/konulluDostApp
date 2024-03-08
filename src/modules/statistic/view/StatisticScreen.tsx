@@ -62,6 +62,7 @@ LocaleConfig.defaultLocale = 'az';
 
 const reservations: Reservation[] = [
   {
+    id: 0,
     date: new Date(2024, 2, 3),
     name: 'Yaradıcılıq Klubu',
     bgColor: '#DBF3FF',
@@ -72,6 +73,7 @@ const reservations: Reservation[] = [
     degre: 32,
   },
   {
+    id: 1,
     date: new Date(2024, 2, 4),
     name: 'Fərdi İnkişaf Klubu',
     bgColor: '#9EFFBE',
@@ -82,6 +84,7 @@ const reservations: Reservation[] = [
     degre: 42,
   },
   {
+    id: 2,
     date: new Date(2024, 2, 5),
     name: 'Xarici dil',
     bgColor: '#FC714E',
@@ -92,6 +95,7 @@ const reservations: Reservation[] = [
     degre: 52,
   },
   {
+    id: 3,
     date: new Date(2024, 2, 6),
     name: 'Yaradıcılıq Klubu',
     bgColor: '#DBF3FF',
@@ -102,6 +106,7 @@ const reservations: Reservation[] = [
     degre: 62,
   },
   {
+    id: 4,
     date: new Date(2024, 2, 7),
     name: 'Fərdi İnkişaf Klubu',
     bgColor: '#9EFFBE',
@@ -112,6 +117,7 @@ const reservations: Reservation[] = [
     degre: 72,
   },
   {
+    id: 5,
     date: new Date(2024, 2, 8),
     name: 'Xarici dil',
     bgColor: '#FC714E',
@@ -122,6 +128,7 @@ const reservations: Reservation[] = [
     degre: 82,
   },
   {
+    id: 6,
     date: new Date(2024, 2, 9),
     name: 'Yaradıcılıq Klubu',
     bgColor: '#DBF3FF',
@@ -265,7 +272,7 @@ const StatisticScreen: React.FC = () => {
           <Text style={{fontSize: 9, color: '#000'}}>3/5</Text>
         </View>
       </View>
-      {clubsData.map((item, index) => (
+      {clubsData.map(item => (
         <View
           style={{
             flexDirection: 'row',
@@ -274,7 +281,7 @@ const StatisticScreen: React.FC = () => {
             justifyContent: 'center',
           }}>
           <ClubCards
-            key={index}
+            key={item.id}
             item={item}
             style={{width: 217, height: 150, marginTop: 0}}
           />
@@ -325,15 +332,28 @@ const StatisticScreen: React.FC = () => {
                 {item.degre}%
               </Text>
             </View>
-            <Text
-              style={{
-                color: '#000',
-                fontSize: 8,
-                paddingTop: 12,
-                textAlign: 'center',
-              }}>
-              Bu ay aktivliyin biraz zəifdir. Ancaq ruhdan düşmək lazım deyil!
-            </Text>
+            {item.degre < 50 ? (
+              <Text
+                style={{
+                  color: '#000',
+                  fontSize: 8,
+                  paddingTop: 12,
+                  textAlign: 'center',
+                }}>
+                Bu gün aktivliyin biraz zəifdir. Ancaq ruhdan düşmək lazım
+                deyil!
+              </Text>
+            ) : (
+              <Text
+                style={{
+                  color: '#000',
+                  fontSize: 8,
+                  paddingTop: 12,
+                  textAlign: 'center',
+                }}>
+                Bu gün aktivliyin yaxşıdır.Dahada aktiv ola bilərsən!
+              </Text>
+            )}
           </View>
         </View>
       ))}
