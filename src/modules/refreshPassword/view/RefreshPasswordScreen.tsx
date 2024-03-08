@@ -7,9 +7,9 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import GlobalStyles from '../../../../assets/globalStyles/styles.ts';
+import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 
-export const NewPasswordScreen = () => {
+export const RefreshPasswordScreen = () => {
   return (
     <SafeAreaView style={{backgroundColor: '#fff', height: '100%'}}>
       <View
@@ -27,30 +27,30 @@ export const NewPasswordScreen = () => {
             paddingBottom: 12,
             marginTop: 50,
           }}>
-          şifrəni sıfırla
+          şifrəni yenilə
         </Text>
         <View>
           <Text style={styles.pageText}>
-            Zəhmət olmasa xatırlayacağın bir şifrə qoy
+            Zəhmət olmasa xatırlayacağın bir şifrə seçin!
           </Text>
           <View style={{marginBottom: 30}}>
-            <Text style={styles.inputText}>New password</Text>
+            <Text style={styles.inputText}>Köhnə Şifrə</Text>
             <TextInput
               style={styles.input}
               placeholderTextColor="rgba(0, 0, 0, 0.5)"
-              placeholder="ən az 8 karakter qoy"
+              placeholder="şifrənizi daxil edin"
             />
           </View>
           <View style={{marginBottom: 30}}>
-            <Text style={styles.inputText}>Confirm new password</Text>
+            <Text style={styles.inputText}>Yeni Şifrə</Text>
             <TextInput
               style={styles.input}
               placeholderTextColor="rgba(0, 0, 0, 0.5)"
-              placeholder="şifrəni təkrarla"
+              placeholder="ən az 8 simvol olmalıdır"
             />
           </View>
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttunText}>Şifrəni sıfılra</Text>
+            <Text style={styles.buttunText}>Şifrəni yenilə</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -132,7 +132,7 @@ const HomeScreen = () => {
           fontWeight: 'bold',
           marginTop: 14,
         }}>
-        Salam, Əhmədov Ceyhun!
+        Salam, Əlicanov Məlik!
       </Text>
       <View
         style={{

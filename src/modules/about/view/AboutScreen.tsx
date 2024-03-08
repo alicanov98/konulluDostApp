@@ -1,9 +1,14 @@
-import {Image, SafeAreaView, StatusBar, Text, View} from 'react-native';
+import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 
 import React from 'react';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
 
 const AboutScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   return (
     <SafeAreaView
       style={{
@@ -57,7 +62,8 @@ const AboutScreen = () => {
           marginTop: 38,
           gap: 30,
         }}>
-        <View
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ProfileScreen')}
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -92,8 +98,9 @@ const AboutScreen = () => {
           <Image
             source={require('../../../assets/images/icons/leftIcon.png')}
           />
-        </View>
-        <View
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('DeviceScreen')}
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -128,8 +135,9 @@ const AboutScreen = () => {
           <Image
             source={require('../../../assets/images/icons/leftIcon.png')}
           />
-        </View>
-        <View
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('RefreshPasswordScreen')}
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -164,8 +172,9 @@ const AboutScreen = () => {
           <Image
             source={require('../../../assets/images/icons/leftIcon.png')}
           />
-        </View>
-        <View
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('AboutVolunteerScreen')}
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -200,8 +209,9 @@ const AboutScreen = () => {
           <Image
             source={require('../../../assets/images/icons/leftIcon.png')}
           />
-        </View>
-        <View
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('AboutAppScreen')}
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -236,7 +246,7 @@ const AboutScreen = () => {
           <Image
             source={require('../../../assets/images/icons/leftIcon.png')}
           />
-        </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
