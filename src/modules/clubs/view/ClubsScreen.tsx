@@ -16,6 +16,9 @@ const WeeklyCalendar: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   interface Reservation {
+    id: number;
+    image: string;
+    progresColor: string;
     date: Date;
     name: string;
     datee: string;
@@ -24,40 +27,54 @@ const WeeklyCalendar: React.FC = () => {
     nameColor: string;
     center: string;
     topic: string;
+    text: string;
   }
 
   const reservations: Reservation[] = [
     {
+      id: 1,
+      image: require('../../../assets/images/image/club/yaradiciliqGitar.jpeg'),
       date: new Date(2024, 2, 3),
       name: 'Yaradıcılıq Klubu',
-      datee: 'Çərşənbə axşamı 3 mart, 2024, 12:00',
+      datee: 'Ç, 3 mart, 2024, 12:00',
       bgColor: '#DBF3FF',
+      progresColor: '#C2E3E8',
       color: '#5A5A5A',
       nameColor: '#757575',
       center: '4 saylı Bakı DOST Mərkəzi',
-      topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
+      topic:
+        ' "Yaradıcılıq" klubunda "Gitaraya Akkordla Başlayaq" adlı master-klass keçiriləcək.',
+      text: '"Yaradıcılıq" klubunda "Gitaraya Akkordla Başlayaq" adlı master-klass keçiriləcək. Gitara aləti ilə ilk dəfə tanış olacaq gəncləri maraqlandıracaq bu təlimdə gitara alətinin tarixi və ilkin anlayışlar barədə danışılacaq.',
     },
     {
+      id: 2,
+      image: require('../../../assets/images/image/club/ferdiInksaf.jpeg'),
       date: new Date(2024, 2, 4),
       name: 'Fərdi İnkişaf Klubu',
-      datee: 'Çərşənbə 4 mart, 2024, 15:00',
+      datee: 'Ç, 4 mart, 2024, 15:00',
       bgColor: '#9EFFBE',
+      progresColor: '#00FF55',
       color: '#000',
       nameColor: '#757575',
       center: '4 saylı Bakı DOST Mərkəzi',
       topic:
         'Vüsalə Mustafayeva və  Nabat Hüseynzadə ilə "Təhsil turu: Universitet illərini dəyərləndirən yol axtarışı"',
+      text: '"Fərdi İnkişaf" klubunda "ROOF Academic Training" şirkətinin Xaricdə təhsil şöbəsinin rəhbəri Vüsalə Mustafayeva və Əməliyyatlar üzrə rəhbəri Nabat Hüseynzadə ilə "Təhsil turu: Universitet illərini dəyərləndirən yol axtarışı" adlı təlimdə görüşəcəyik.Təlim zamanı xaricdə təhsil və gənclərin universitet illərini necə səmərəli keçirmələri ilə bağlı bir çox mövzulara toxunulacaq.🤓',
     },
     {
+      id: 3,
+      image: require('../../../assets/images/image/club/xariciDil.jpeg'),
       date: new Date(2024, 2, 7),
       name: 'Xarici dil',
-      datee: 'Cümə axşamı 5 mart, 2024, 12:00',
+      datee: 'C, 5 mart, 2024, 12:00',
       bgColor: '#FC714E',
+      progresColor: '#D25600',
       color: '#fff',
       nameColor: '#fff',
       center: '5 saylı Bakı DOST Mərkəzi',
       topic:
         '"Dream Language School" İnglis dili kursunun rəhbəri Gülnar Baxşəliyeva "Easiest ways to learn English" adlı təlim keçəcək.',
+      text: 'Xarici Dil klubunda "Dream Language School" İnglis dili kursunun rəhbəri Gülnar Baxşəliyeva "Easiest ways to learn English" adlı təlim keçəcək.✌️',
     },
   ];
 
@@ -83,6 +100,7 @@ const WeeklyCalendar: React.FC = () => {
     );
   };
 
+  // @ts-ignore
   return (
     <SafeAreaView
       style={{
