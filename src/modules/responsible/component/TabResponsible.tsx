@@ -6,11 +6,11 @@ interface TabProps {
   setIsActive: (isActive: boolean) => void;
 }
 
-export const Tab: React.FC<TabProps> = ({setIsActive}) => {
-  const [activeTab, setActiveTab] = useState<string>('voluntary');
+export const TabResponsible: React.FC<TabProps> = ({setIsActive}) => {
+  const [activeTab, setActiveTab] = useState<string>('current');
 
   useEffect(() => {
-    if (activeTab !== 'voluntary') {
+    if (activeTab !== 'current') {
       setIsActive(false);
     } else {
       setIsActive(true);
@@ -24,22 +24,22 @@ export const Tab: React.FC<TabProps> = ({setIsActive}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        style={[styles.tab, activeTab === 'voluntary' && styles.activeTab]}
-        onPress={() => handleTabPress('voluntary')}>
+        style={[styles.tab, activeTab === 'current' && styles.activeTab]}
+        onPress={() => handleTabPress('current')}>
         <Text
-          style={[
-            styles.tabText,
-            activeTab === 'voluntary' && styles.activeTab,
-          ]}>
-          Könüllü
+          style={[styles.tabText, activeTab === 'current' && styles.activeTab]}>
+          Cari
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={[styles.tab, activeTab === 'offical' && styles.activeTab]}
-        onPress={() => handleTabPress('offical')}>
+        style={[styles.tab, activeTab === 'graduate' && styles.activeTab]}
+        onPress={() => handleTabPress('graduate')}>
         <Text
-          style={[styles.tabText, activeTab === 'offical' && styles.activeTab]}>
-          Məsul şəxs
+          style={[
+            styles.tabText,
+            activeTab === 'graduate' && styles.activeTab,
+          ]}>
+          Məzun
         </Text>
       </TouchableOpacity>
     </View>
@@ -48,29 +48,30 @@ export const Tab: React.FC<TabProps> = ({setIsActive}) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 353,
-    height: 36,
+    marginTop: 35,
+    width: 286,
+    height: 29,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    gap: 15,
     alignItems: 'center',
-    backgroundColor: '#CBDFFC',
-    borderRadius: 10,
-    padding: 3,
   },
   tab: {
-    width: '50%',
+    width: 122,
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: '#2858EE',
   },
   activeTab: {
     backgroundColor: GlobalStyles.colors.CobaltBlue,
-    borderRadius: 10,
+    borderRadius: 5,
     color: '#fff',
   },
   tabText: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
-    color: '#333333',
+    color: '#5A5A5A',
   },
 });
