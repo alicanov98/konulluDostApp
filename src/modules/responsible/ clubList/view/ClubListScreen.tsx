@@ -1,31 +1,57 @@
-import {SafeAreaView, Text, View} from 'react-native';
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 
 import React from 'react';
 import GlobalStyles from '../../../../assets/globalStyles/styles.ts';
+import {TabResponsible} from '../../component/TabResponsible.tsx';
 
 const ClubListScreen = () => {
   return (
     <SafeAreaView
       style={{
         flex: 1,
-        paddingLeft: 23,
-        paddingRight: 23,
+        backgroundColor: '#fff',
+        paddingLeft: 17,
+        paddingRight: 17,
         paddingTop: 64,
         paddingBottom: 43,
-        backgroundColor: GlobalStyles.colors.PureWhite,
       }}>
-      <View
-        style={{
-          width: '100%',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Text style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}>
-          ClubListScreen
-        </Text>
+      <View>
+        <Image source={require('../../../../assets/images/icons/logo.png')} />
+        <View style={{position: 'relative', marginTop: 24}}>
+          <TextInput
+            style={styles.input}
+            placeholderTextColor="rgba(0, 0, 0, 0.5)"
+            placeholder="ad,soyad"
+          />
+          <Image
+            style={{position: 'absolute', top: 12.5, left: 12}}
+            source={require('../../../../assets/images/icons/search.png')}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
 };
+const styles = StyleSheet.create({
+  input: {
+    width: 380,
+    height: 42,
+    fontSize: 16,
+    borderWidth: 1,
+    padding: 10,
+    paddingLeft: 41,
+    borderRadius: 5,
+    borderColor: '#F6F6F6',
+    backgroundColor: '#F6F6F6',
+    alignItems: 'center',
+  },
+});
 
 export default ClubListScreen;
