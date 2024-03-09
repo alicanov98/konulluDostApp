@@ -3,6 +3,7 @@ import {View, StyleSheet, Text, Image} from 'react-native';
 
 interface ClubCardProps {
   data: {
+    id: number;
     color: string;
     colors: string;
     image: string;
@@ -20,9 +21,9 @@ const ClubCard: React.FC<ClubCardProps> = ({data}) => {
         gap: 16,
         justifyContent: 'center',
       }}>
-      {data.map((item, index) => (
+      {data.map(item => (
         <View
-          key={index}
+          key={item.id}
           style={{justifyContent: 'center', alignItems: 'center'}}>
           <View
             style={[

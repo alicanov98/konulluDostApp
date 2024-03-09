@@ -27,6 +27,14 @@ import ProfileScreen from '../modules/profile/view/ProfileScreen.tsx';
 import {RefreshPasswordScreen} from '../modules/refreshPassword/view/RefreshPasswordScreen.tsx';
 import AboutVolunteerScreen from '../modules/aboutVolunteer/view/AboutVolunteerScreen.tsx';
 import AboutAppScreen from '../modules/aboutApp/view/AboutAppScreen.tsx';
+import ClubDetailsScreen from '../modules/ClubDetail/view/ClubDetailsScreen.tsx';
+import {Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import ResponsibleHomeScreen from '../modules/responsible/home/view/ResponsibleHomeScreen.tsx';
+import ClubListScreen from '../modules/responsible/ clubList/view/ClubListScreen.tsx';
+import AttendanceScreen from '../modules/responsible/attendance/view/AttendanceScreen.tsx';
+import RateScreen from '../modules/responsible/rate/view/RateScreen.tsx';
+import VoluntaryListScreen from '../modules/responsible/voluntaryList/view/VoluntaryListScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -40,6 +48,7 @@ export type RootStackParamList = {
   RefreshPasswordScreen: undefined;
   AboutVolunteerScreen: undefined;
   AboutAppScreen: undefined;
+  ClubDetailsScreen: undefined;
   IntroductionNavigator: undefined;
   IntroductionScreen: undefined;
   SiginUpScreen: undefined;
@@ -50,34 +59,113 @@ export type RootStackParamList = {
   OtpScreen: undefined;
   NewPasswordScreen: undefined;
   BottomTabNavigator: undefined;
+  ResponsibleBottomTabNavigator: undefined;
   KonulluDostNavigation: undefined;
+  ResponsibleHomeScreen: undefined;
+  ClubListScreen: undefined;
+  AttendanceScreen: undefined;
+  RateScreen: undefined;
+  VoluntaryListScreen: undefined;
 };
 
 const HomeNavigator = () => {
   useTabBarVisibility();
+  const navigation = useNavigation();
+  // @ts-ignore
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
-      <Stack.Screen name="DeviceScreen" component={DeviceScreen} />
+      <Stack.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{marginLeft: 10, marginTop: 20}}
+              onPress={() => navigation.navigate('AboutScreen')}>
+              <Image source={require('../assets/images/icons/Back.png')} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="DeviceScreen"
+        component={DeviceScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{marginLeft: 10, marginTop: 20}}
+              onPress={() => navigation.navigate('AboutScreen')}>
+              <Image source={require('../assets/images/icons/Back.png')} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
       <Stack.Screen
         name="RefreshPasswordScreen"
         component={RefreshPasswordScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{marginLeft: 10, marginTop: 20}}
+              onPress={() => navigation.navigate('AboutScreen')}>
+              <Image source={require('../assets/images/icons/Back.png')} />
+            </TouchableOpacity>
+          ),
+        }}
       />
       <Stack.Screen
         name="AboutVolunteerScreen"
         component={AboutVolunteerScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{marginLeft: 10, marginTop: 20}}
+              onPress={() => navigation.navigate('AboutScreen')}>
+              <Image source={require('../assets/images/icons/Back.png')} />
+            </TouchableOpacity>
+          ),
+        }}
       />
-      <Stack.Screen name="AboutAppScreen" component={AboutAppScreen} />
+      <Stack.Screen
+        name="AboutAppScreen"
+        component={AboutAppScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{marginLeft: 10, marginTop: 20}}
+              onPress={() => navigation.navigate('AboutScreen')}>
+              <Image source={require('../assets/images/icons/Back.png')} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen name="ClubDetailsScreen" component={ClubDetailsScreen} />
     </Stack.Navigator>
   );
 };
 
 const IntroductionNavigator = () => {
   // useTabBarVisibility();
+
   return (
     <Stack.Navigator
       screenOptions={{
@@ -156,6 +244,61 @@ const BottomTabNavigator = () => {
     </KonulluDostBottomTabNavigator.Navigator>
   );
 };
+const ResponsibleBottomTabNavigator = () => {
+  return (
+    <KonulluDostBottomTabNavigator.Navigator
+      screenOptions={{
+        tabBarHideOnKeyboard: false,
+        headerShown: false,
+      }}>
+      <KonulluDostBottomTabNavigator.Screen
+        name={'ResponsibleHomeScreen'}
+        component={ResponsibleHomeScreen}
+        options={{
+          title: 'Əsas səhifə',
+          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
+          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'VoluntaryListScreen'}
+        component={VoluntaryListScreen}
+        options={{
+          title: 'Könüllü List',
+          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'AttendanceScreen'}
+        component={AttendanceScreen}
+        options={{
+          title: 'Davamiyyət',
+          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'RateScreen'}
+        component={RateScreen}
+        options={{
+          title: 'Qiymətləndir',
+          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'ClubListScreen'}
+        component={ClubListScreen}
+        options={{
+          title: 'Klub List',
+          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+        }}
+      />
+    </KonulluDostBottomTabNavigator.Navigator>
+  );
+};
 
 const KonulluDostNavigation = () => {
   return (
@@ -171,6 +314,10 @@ const KonulluDostNavigation = () => {
       <Stack.Screen
         name={'BottomTabNavigator'}
         component={BottomTabNavigator}
+      />
+      <Stack.Screen
+        name={'ResponsibleBottomTabNavigator'}
+        component={ResponsibleBottomTabNavigator}
       />
     </Stack.Navigator>
   );

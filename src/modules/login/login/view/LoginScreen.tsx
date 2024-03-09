@@ -119,7 +119,13 @@ export const LoginScreen = () => {
             onPress={() => {
               navigation.navigate('BottomTabNavigator');
             }}>
-            <Text style={styles.inputText}>Kecid Helelik</Text>
+            <Text style={styles.inputText}>Kecid Helelik Konullu</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('ResponsibleBottomTabNavigator');
+            }}>
+            <Text style={styles.inputText}>Kecid Helelik Mehsul Sexs</Text>
           </TouchableOpacity>
         </View>
       </View>

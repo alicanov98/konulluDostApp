@@ -8,6 +8,7 @@ export interface IClubCardsProps {
 }
 
 export interface IClubCardItem {
+  progresColor: string;
   date: Date;
   name: string;
   bgColor: string;
@@ -15,5 +16,4 @@ export interface IClubCardItem {
   topic: string;
   color: string;
   nameColor: string;
-  degre: number;
 }

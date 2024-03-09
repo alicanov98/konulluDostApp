@@ -18,6 +18,7 @@ import {MyCarousel} from '../../../components/swiper/Carousel.tsx';
 
 const data = [
   {
+    id: 1,
     text: 'Yaradıcılıq',
     color: '#2858EE',
     colors: '#2858EE18',
@@ -25,6 +26,7 @@ const data = [
     margin: 5,
   },
   {
+    id: 2,
     text: 'Xarici dil',
     color: '#00FF55',
     colors: '#00FF5518',
@@ -32,6 +34,7 @@ const data = [
     margin: 0,
   },
   {
+    id: 3,
     text: 'Kitab',
     color: 'rgba(254, 80, 36, 1)',
     colors: 'rgba(254, 80, 36, 0.18)',
@@ -39,6 +42,7 @@ const data = [
     margin: 5,
   },
   {
+    id: 4,
     text: 'Şeir',
     color: '#E64646',
     colors: '#E6464618',

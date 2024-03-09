@@ -17,7 +17,7 @@ const DeviceScreen = () => {
         flex: 1,
         paddingLeft: 17,
         paddingRight: 17,
-        paddingTop: 70,
+        paddingTop: 89,
         backgroundColor: GlobalStyles.colors.PureWhite,
       }}>
       <View
