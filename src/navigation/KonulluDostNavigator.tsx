@@ -3,13 +3,13 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import useTabBarVisibility from '../hooks/useTabBarVisibility.tsx';
 import HomeScreen from '../modules/home/view/HomeScreen.tsx';
 import IntroductionScreen from '../modules/introduction/view/IntroductionScreen.tsx';
-import SiginUpScreen from '../modules/siginup/view/SiginUpScreen.tsx';
-import VoluntaryRegistrationScreen from '../modules/registr/voluntaryPerson/view/VoluntaryRegistrationScreen.tsx';
-import LegalPersonRegistrationScreen from '../modules/registr/officialPerson/view/LegalPersonRegistrationScreen.tsx';
+import SiginUpScreen from '../modules/login/login/view/SiginUpScreen.tsx';
+import VoluntaryRegistrationScreen from '../modules/login/login/view/VoluntaryRegistrationScreen.tsx';
+import LegalPersonRegistrationScreen from '../modules/login/login/view/LegalPersonRegistrationScreen.tsx';
 import {LoginScreen} from '../modules/login/login/view/LoginScreen.tsx';
-import {PasswordResetScreen} from '../modules/login/passwordReset/view/PasswordResetScreen.tsx';
-import {OtpScreen} from '../modules/login/passwordReset/view/OtpScreen.tsx';
-import {NewPasswordScreen} from '../modules/login/passwordReset/view/NewPasswordScreen.tsx';
+import {PasswordResetScreen} from '../modules/login/login/view/PasswordResetScreen.tsx';
+import {OtpScreen} from '../modules/login/login/view/OtpScreen.tsx';
+import {NewPasswordScreen} from '../modules/login/login/view/NewPasswordScreen.tsx';
 import GlobalStyles from '../assets/globalStyles/styles.ts';
 // @ts-ignore
 import HomeIcon from '../assets/images/icons/pentagramIcon.svg';
@@ -22,12 +22,12 @@ import AboutScreen from '../modules/about/view/AboutScreen.tsx';
 import UserIcon from '../assets/images/icons/UserIcon.svg';
 import StatisticScreen from '../modules/statistic/view/StatisticScreen.tsx';
 import ClubsScreen from '../modules/clubs/view/ClubsScreen.tsx';
-import DeviceScreen from '../modules/device/view/DeviceScreen.tsx';
+import DeviceScreen from '../modules/about/view/DeviceScreen.tsx';
 import ProfileScreen from '../modules/profile/view/ProfileScreen.tsx';
-import {RefreshPasswordScreen} from '../modules/refreshPassword/view/RefreshPasswordScreen.tsx';
-import AboutVolunteerScreen from '../modules/aboutVolunteer/view/AboutVolunteerScreen.tsx';
-import AboutAppScreen from '../modules/aboutApp/view/AboutAppScreen.tsx';
-import ClubDetailsScreen from '../modules/ClubDetail/view/ClubDetailsScreen.tsx';
+import {RefreshPasswordScreen} from '../modules/about/view/RefreshPasswordScreen.tsx';
+import AboutVolunteerScreen from '../modules/about/view/AboutVolunteerScreen.tsx';
+import AboutAppScreen from '../modules/about/view/AboutAppScreen.tsx';
+import ClubDetailsScreen from '../modules/clubs/view/ClubDetailsScreen.tsx';
 import {Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import ResponsibleHomeScreen from '../modules/responsible/home/view/ResponsibleHomeScreen.tsx';
@@ -48,7 +48,9 @@ export type RootStackParamList = {
   RefreshPasswordScreen: undefined;
   AboutVolunteerScreen: undefined;
   AboutAppScreen: undefined;
-  ClubDetailsScreen: undefined;
+  ClubDetailsScreen: {
+    id: string;
+  };
   IntroductionNavigator: undefined;
   IntroductionScreen: undefined;
   SiginUpScreen: undefined;
@@ -70,6 +72,19 @@ export type RootStackParamList = {
 
 const HomeNavigator = () => {
   useTabBarVisibility();
+
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const AboutNavigator = () => {
+  useTabBarVisibility();
   const navigation = useNavigation();
   // @ts-ignore
   return (
@@ -77,7 +92,22 @@ const HomeNavigator = () => {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen
+        name="AboutScreen"
+        component={AboutScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{marginLeft: 10, marginTop: 20}}
+              onPress={() => navigation.goBack()}>
+              <Image source={require('../assets/images/icons/Back.png')} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
       <Stack.Screen
         name="ProfileScreen"
         component={ProfileScreen}
@@ -88,7 +118,7 @@ const HomeNavigator = () => {
           headerLeft: () => (
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.navigate('AboutScreen')}>
+              onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
           ),
@@ -104,7 +134,7 @@ const HomeNavigator = () => {
           headerLeft: () => (
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.navigate('AboutScreen')}>
+              onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
           ),
@@ -120,7 +150,7 @@ const HomeNavigator = () => {
           headerLeft: () => (
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.navigate('AboutScreen')}>
+              onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
           ),
@@ -136,7 +166,7 @@ const HomeNavigator = () => {
           headerLeft: () => (
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.navigate('AboutScreen')}>
+              onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
           ),
@@ -152,20 +182,62 @@ const HomeNavigator = () => {
           headerLeft: () => (
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.navigate('AboutScreen')}>
+              onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
           ),
         }}
       />
-      <Stack.Screen name="ClubDetailsScreen" component={ClubDetailsScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const ClubsNavigator = () => {
+  useTabBarVisibility();
+  const navigation = useNavigation();
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen
+        name="ClubsScreen"
+        component={ClubsScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{marginLeft: 10, marginTop: 20}}
+              onPress={() => navigation.goBack()}>
+              <Image source={require('../assets/images/icons/Back.png')} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="ClubDetailsScreen"
+        component={ClubDetailsScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{marginLeft: 10, marginTop: 20}}
+              onPress={() => navigation.goBack()}>
+              <Image source={require('../assets/images/icons/Back.png')} />
+            </TouchableOpacity>
+          ),
+        }}
+      />
     </Stack.Navigator>
   );
 };
 
 const IntroductionNavigator = () => {
   // useTabBarVisibility();
-
   return (
     <Stack.Navigator
       screenOptions={{
@@ -214,7 +286,7 @@ const BottomTabNavigator = () => {
         options={{
           title: 'Statistika',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          // eslint-disable-next-line react/no-unstable-nested-components
+
           tabBarIcon: ({focused}) =>
             focused ? (
               <TodoIcon />
@@ -224,8 +296,8 @@ const BottomTabNavigator = () => {
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
-        name={'ClubsScreen'}
-        component={ClubsScreen}
+        name={'ClubsNavigator'}
+        component={ClubsNavigator}
         options={{
           title: 'Klublar',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
@@ -233,8 +305,8 @@ const BottomTabNavigator = () => {
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
-        name={'AboutScreen'}
-        component={AboutScreen}
+        name={'AboutNavigator'}
+        component={AboutNavigator}
         options={{
           title: 'Haqqimizda',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,

@@ -7,25 +7,21 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../navigation/KonulluDostNavigator';
 const ClubCards: React.FC<IClubCardsProps> = props => {
-  const navigate = useRoute();
+  const params = useRoute();
   const [pageName, setPageName] = useState<boolean>(false);
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   useEffect(() => {
-    if (navigate.name === 'ClubsScreen') {
+    if (params.name === 'ClubsScreen') {
       setPageName(true);
     } else {
       setPageName(false);
     }
-  }, [navigate.name]);
-
-  const goToClubDetailsScreen = () => {
-    // @ts-ignore
-    navigation.navigate('ClubDetailsScreen', {clubData: props.item});
-  };
+  }, [params.name]);
 
   return (
     <View
+      key={props.item.id}
       style={[
         {flexDirection: 'row', gap: 35, marginTop: props.marginTop},
         props.containerStyle,
@@ -103,7 +99,11 @@ const ClubCards: React.FC<IClubCardsProps> = props => {
             />
             <View style={{alignItems: 'flex-end'}}>
               <TouchableOpacity
-                onPress={goToClubDetailsScreen}
+                onPress={() =>
+                  navigation.navigate('ClubDetailsScreen', {
+                    id: String(props.item.id),
+                  })
+                }
                 style={{
                   marginTop: 18,
                   width: 134,

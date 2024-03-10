@@ -144,6 +144,7 @@ const StatisticScreen: React.FC = () => {
   const [selected, setSelected] = useState('');
   const [isActive, setIsActive] = useState(false);
   const [clubsData, setClubsData] = useState<Reservation[]>([]);
+
   useEffect(() => {
     const getReservationsForDate = (dateString: string) => {
       const selectedDate = new Date(dateString);

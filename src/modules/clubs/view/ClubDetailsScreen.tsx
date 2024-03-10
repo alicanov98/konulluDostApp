@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Image,
   SafeAreaView,
@@ -8,15 +8,45 @@ import {
   View,
 } from 'react-native';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
+import {useRoute} from '@react-navigation/native';
+import {Reservation} from '../../statistic/types/StatisticTypes.ts';
+import {db} from '../../../fakeDb/db.ts';
 
-const ClubDetailsScreen = ({route}: any) => {
-  const {clubData} = route.params;
+const ClubDetailsScreen = () => {
+  const params: any = useRoute();
+  const [loading, setLoading] = useState(false);
+  const [clubData, setClubData] = useState<Reservation>({
+    id: '',
+    image: '',
+    progresColor: '',
+    date: '',
+    name: '',
+    datee: '',
+    bgColor: '',
+    color: '',
+    nameColor: '',
+    center: '',
+    topic: '',
+    text: '',
+  });
+  console.log(loading);
+  useEffect(() => {
+    const getDetails = async () => {
+      setLoading(true);
+      const data = db.clubs.find(item => item.id === params?.params?.id);
+      if (data) {
+        setClubData(data);
+      }
+      setLoading(false);
+    };
+    getDetails();
+  }, [params?.params?.id]);
   return (
     <SafeAreaView
-      key={clubData.id}
+      key={params.id}
       style={{flex: 1, backgroundColor: GlobalStyles.colors.PureWhite}}>
       <Image
-        source={clubData.image}
+        source={clubData?.image}
         style={{
           width: '100%',
           height: 278,
@@ -36,7 +66,7 @@ const ClubDetailsScreen = ({route}: any) => {
             fontWeight: 'bold',
             marginTop: 21,
           }}>
-          {clubData.name}
+          {clubData?.name}
         </Text>
         <Text
           style={{
@@ -46,14 +76,14 @@ const ClubDetailsScreen = ({route}: any) => {
             marginTop: 17,
             marginBottom: 17,
           }}>
-          {clubData.text}
+          {clubData?.text}
         </Text>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <Text style={{color: '#2858EE', fontSize: 12, fontWeight: '500'}}>
-            {clubData.datee}
+            {clubData?.datee}
           </Text>
           <Text style={{color: '#2858EE', fontSize: 12, fontWeight: '500'}}>
-            {clubData.center}
+            {clubData?.center}
           </Text>
         </View>
         <View style={{marginTop: 35}}>
@@ -66,14 +96,7 @@ const ClubDetailsScreen = ({route}: any) => {
         </View>
         <ScrollView horizontal={true}>
           <View style={{gap: 28, flexDirection: 'row', flex: 1, marginTop: 23}}>
-            <Image style={{width: 49, height: 49}} source={clubData.image} />
-            <Image style={{width: 49, height: 49}} source={clubData.image} />
-            <Image style={{width: 49, height: 49}} source={clubData.image} />
-            <Image style={{width: 49, height: 49}} source={clubData.image} />
-            <Image style={{width: 49, height: 49}} source={clubData.image} />
-            <Image style={{width: 49, height: 49}} source={clubData.image} />
-            <Image style={{width: 49, height: 49}} source={clubData.image} />
-            <Image style={{width: 49, height: 49}} source={clubData.image} />
+            {/* Render your image components here */}
           </View>
         </ScrollView>
         <TouchableOpacity

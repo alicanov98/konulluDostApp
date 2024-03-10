@@ -17,6 +17,7 @@ const tabHiddenRoutes = [
   'PasswordResetScreen',
   'OtpScreen',
   'NewPasswordScreen',
+  'ClubDetailsScreen',
 ];
 
 const useTabBarVisibility = () => {

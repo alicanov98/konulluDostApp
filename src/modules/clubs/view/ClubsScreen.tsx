@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Image,
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -11,72 +10,25 @@ import {
 } from 'react-native';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 import ClubCards from '../../../components/cards/ClubCards.tsx';
+import {Reservation} from '../../statistic/types/StatisticTypes.ts';
+import {db} from '../../../fakeDb/db.ts';
 
 const WeeklyCalendar: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [loading, setLoading] = useState(false);
+  const [reservations, setReservations] = useState<Reservation[]>([]);
 
-  interface Reservation {
-    id: number;
-    image: string;
-    progresColor: string;
-    date: Date;
-    name: string;
-    datee: string;
-    bgColor: string;
-    color: string;
-    nameColor: string;
-    center: string;
-    topic: string;
-    text: string;
-  }
-
-  const reservations: Reservation[] = [
-    {
-      id: 1,
-      image: require('../../../assets/images/image/club/yaradiciliqGitar.jpeg'),
-      date: new Date(2024, 2, 3),
-      name: 'Yaradıcılıq Klubu',
-      datee: 'Ç, 3 mart, 2024, 12:00',
-      bgColor: '#DBF3FF',
-      progresColor: '#C2E3E8',
-      color: '#5A5A5A',
-      nameColor: '#757575',
-      center: '4 saylı Bakı DOST Mərkəzi',
-      topic:
-        ' "Yaradıcılıq" klubunda "Gitaraya Akkordla Başlayaq" adlı master-klass keçiriləcək.',
-      text: '"Yaradıcılıq" klubunda "Gitaraya Akkordla Başlayaq" adlı master-klass keçiriləcək. Gitara aləti ilə ilk dəfə tanış olacaq gəncləri maraqlandıracaq bu təlimdə gitara alətinin tarixi və ilkin anlayışlar barədə danışılacaq.',
-    },
-    {
-      id: 2,
-      image: require('../../../assets/images/image/club/ferdiInksaf.jpeg'),
-      date: new Date(2024, 2, 4),
-      name: 'Fərdi İnkişaf Klubu',
-      datee: 'Ç, 4 mart, 2024, 15:00',
-      bgColor: '#9EFFBE',
-      progresColor: '#00FF55',
-      color: '#000',
-      nameColor: '#757575',
-      center: '4 saylı Bakı DOST Mərkəzi',
-      topic:
-        'Vüsalə Mustafayeva və  Nabat Hüseynzadə ilə "Təhsil turu: Universitet illərini dəyərləndirən yol axtarışı"',
-      text: '"Fərdi İnkişaf" klubunda "ROOF Academic Training" şirkətinin Xaricdə təhsil şöbəsinin rəhbəri Vüsalə Mustafayeva və Əməliyyatlar üzrə rəhbəri Nabat Hüseynzadə ilə "Təhsil turu: Universitet illərini dəyərləndirən yol axtarışı" adlı təlimdə görüşəcəyik.Təlim zamanı xaricdə təhsil və gənclərin universitet illərini necə səmərəli keçirmələri ilə bağlı bir çox mövzulara toxunulacaq.🤓',
-    },
-    {
-      id: 3,
-      image: require('../../../assets/images/image/club/xariciDil.jpeg'),
-      date: new Date(2024, 2, 7),
-      name: 'Xarici dil',
-      datee: 'C, 5 mart, 2024, 12:00',
-      bgColor: '#FC714E',
-      progresColor: '#D25600',
-      color: '#fff',
-      nameColor: '#fff',
-      center: '5 saylı Bakı DOST Mərkəzi',
-      topic:
-        '"Dream Language School" İnglis dili kursunun rəhbəri Gülnar Baxşəliyeva "Easiest ways to learn English" adlı təlim keçəcək.',
-      text: 'Xarici Dil klubunda "Dream Language School" İnglis dili kursunun rəhbəri Gülnar Baxşəliyeva "Easiest ways to learn English" adlı təlim keçəcək.✌️',
-    },
-  ];
+  useEffect(() => {
+    const getClubs = async () => {
+      setLoading(true);
+      try {
+        setReservations(db.clubs);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getClubs();
+  }, []);
 
   const daysOfWeek: string[] = ['B', 'B.e', 'Ç.a', 'Ç', 'C.a', 'C', 'Ş'];
 
@@ -94,74 +46,78 @@ const WeeklyCalendar: React.FC = () => {
   const getReservationsForDate = (date: Date): Reservation[] => {
     return reservations.filter(
       reservation =>
-        reservation.date.getDate() === date.getDate() &&
-        reservation.date.getMonth() === date.getMonth() &&
-        reservation.date.getFullYear() === date.getFullYear(),
+        new Date(reservation.date).getDate() === date.getDate() &&
+        new Date(reservation.date).getMonth() === date.getMonth() &&
+        new Date(reservation.date).getFullYear() === date.getFullYear(),
     );
   };
 
-  // @ts-ignore
   return (
     <SafeAreaView
       style={{
+        flex: 1,
         backgroundColor: '#fff',
         paddingHorizontal: 17,
         paddingTop: 64,
         paddingBottom: 43,
       }}>
-      <StatusBar />
       <View
         style={{
+          width: '100%',
           flexDirection: 'column',
           gap: 20,
           marginBottom: 20,
         }}>
-        <Image source={require('../../../assets/images/icons/logo.png')} />
-        <ScrollView horizontal={true}>
-          <View style={styles.container}>
-            {daysOfWeek.map((day, index) => {
-              const currentDate = new Date(startOfWeek);
-              currentDate.setDate(startOfWeek.getDate() + index);
-              const formattedDate = formatDate(currentDate);
-              const isSelected =
-                currentDate.getDate() === selectedDate.getDate();
-              return (
-                <TouchableOpacity
-                  key={index}
-                  style={[styles.dayButton, isSelected && styles.selectedDay]}
-                  onPress={() => handleDayPress(currentDate)}>
-                  <Text
-                    style={[
-                      styles.dateText,
-                      isSelected && styles.selectedText,
-                    ]}>
-                    {formattedDate}
-                  </Text>
-                  <Text
-                    style={[
-                      styles.dayText,
-                      isSelected && styles.selectedDayText,
-                    ]}>
-                    {day}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-        </ScrollView>
+        <View style={{alignItems: 'flex-end'}}>
+          <Image source={require('../../../assets/images/icons/logo.png')} />
+        </View>
+        <View style={{}}>
+          <ScrollView horizontal={true}>
+            <View style={styles.container}>
+              {daysOfWeek.map((day, index) => {
+                const currentDate = new Date(startOfWeek);
+                currentDate.setDate(startOfWeek.getDate() + index);
+                const formattedDate = formatDate(currentDate);
+                const isSelected =
+                  currentDate.getDate() === selectedDate.getDate();
+                return (
+                  <TouchableOpacity
+                    key={index}
+                    style={[styles.dayButton, isSelected && styles.selectedDay]}
+                    onPress={() => handleDayPress(currentDate)}>
+                    <Text
+                      style={[
+                        styles.dateText,
+                        isSelected && styles.selectedText,
+                      ]}>
+                      {formattedDate}
+                    </Text>
+                    <Text
+                      style={[
+                        styles.dayText,
+                        isSelected && styles.selectedDayText,
+                      ]}>
+                      {day}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          </ScrollView>
+        </View>
       </View>
 
-      <View style={{alignItems: 'center'}}>
-        <ScrollView style={{height: 626}}>
-          {getReservationsForDate(selectedDate).map((item, index) => (
-            <ClubCards
-              key={index}
-              style={{width: 329, height: 250, marginTop: 12}}
-              item={item}
-            />
-          ))}
-        </ScrollView>
-      </View>
+      <ScrollView
+        style={{backgroundColor: 'transparent', width: '100%'}}
+        contentContainerStyle={{alignItems: 'center'}}>
+        {getReservationsForDate(selectedDate).map((item, index) => (
+          <ClubCards
+            key={index}
+            style={{width: 329, height: 250, marginTop: 12}}
+            item={item}
+          />
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 };
