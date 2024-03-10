@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
-import GlobalStyles from '../../../assets/globalStyles/styles.ts';
+import GlobalStyles from '../../../../assets/globalStyles/styles.ts';
 
 interface TabProps {
   setIsActive: (isActive: boolean) => void;

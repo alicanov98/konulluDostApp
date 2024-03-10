@@ -7,12 +7,12 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {Tab} from '../component/Tab';
+import {Tab} from '../component/Tab.tsx';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import GlobalStyles from '../../../assets/globalStyles/styles.ts';
+import GlobalStyles from '../../../../assets/globalStyles/styles.ts';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
+import {RootStackParamList} from '../../../../navigation/KonulluDostNavigator.tsx';
 
 const SiginUpScreen = () => {
   const insets = useSafeAreaInsets();

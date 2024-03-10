@@ -2,8 +2,7 @@ let $api: {(message: string, params?: {[key: string]: any}): string};
 
 $api = (service: string, params?: {[key: string]: any}): string => {
   const services: {[service: string]: any} = {
-    //   Apis endpoints
-    login: '',
+    //   CLUBS endpoints
   };
 
   if (typeof services[service] === 'string') {

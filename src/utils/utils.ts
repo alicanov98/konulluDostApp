@@ -25,7 +25,7 @@ const dayNames: string[] = [
   'Şənbə',
 ];
 
-export const formatDate = (date: Date, withHours?: boolean) => {
+export const formatDate = (date: string, withHours?: boolean) => {
   const month = dayjs(date).get('month');
   const day = dayjs(date).get('date');
   const year = dayjs(date).get('year');

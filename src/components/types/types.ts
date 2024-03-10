@@ -1,10 +1,11 @@
 import {ViewStyle} from 'react-native';
+import {Reservation} from '../../modules/statistic/types/StatisticTypes.ts';
 
 export interface IClubCardsProps {
   marginTop?: number;
   style?: ViewStyle;
   containerStyle?: ViewStyle;
-  item: IClubCardItem;
+  item: Reservation;
 }
 
 export interface IClubCardItem {
@@ -16,4 +17,5 @@ export interface IClubCardItem {
   topic: string;
   color: string;
   nameColor: string;
+  degre: string;
 }
