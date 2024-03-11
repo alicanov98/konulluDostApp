@@ -148,6 +148,7 @@ const StatisticScreen: React.FC = () => {
   useEffect(() => {
     const getReservationsForDate = (dateString: string) => {
       const selectedDate = new Date(dateString);
+      console.log(selectedDate);
       const filteredReservations = reservations.filter(item => {
         const reservationDate = new Date(item.date);
         return (

@@ -1,15 +1,97 @@
 import {
   Image,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
-  Text,
   TextInput,
   View,
 } from 'react-native';
 
 import React from 'react';
-import GlobalStyles from '../../../../assets/globalStyles/styles.ts';
-import {TabResponsible} from '../../component/TabResponsible.tsx';
+import AttendanceVoluntaryCard from '../../component/voluntaryCards/AttendanceVoluntaryCard.tsx';
+import ClubVoluntaryCard from '../../component/voluntaryCards/ClubVoluntaryCard.tsx';
+const data = [
+  {
+    id: 1,
+    name: 'Məlik',
+    surname: 'Əlicanov',
+    centerNumber: 4,
+    dkNumber: 32,
+    image: require('../../../../assets/images/image/person2.png'),
+  },
+  {
+    id: 2,
+    name: 'Ərəbov',
+    surname: 'Mirsadiq',
+    centerNumber: 3,
+    dkNumber: 32,
+    image: require('../../../../assets/images/image/person2.png'),
+  },
+  {
+    id: 3,
+    name: 'Röya',
+    surname: 'Abzərova ',
+    centerNumber: 6,
+    dkNumber: 30,
+    image: require('../../../../assets/images/image/person2.png'),
+  },
+  {
+    id: 4,
+    name: 'Əli',
+    surname: 'Vahabzadə ',
+    centerNumber: 6,
+    dkNumber: 28,
+    image: require('../../../../assets/images/image/person2.png'),
+  },
+  {
+    id: 5,
+    name: 'Səriyyə',
+    surname: 'Vəliyeva',
+    centerNumber: 4,
+    dkNumber: 34,
+    image: require('../../../../assets/images/image/person2.png'),
+  },
+  {
+    id: 6,
+    name: 'Gülgəz',
+    surname: 'Əliyeva ',
+    centerNumber: 4,
+    dkNumber: 34,
+    image: require('../../../../assets/images/image/person2.png'),
+  },
+  {
+    id: 7,
+    name: 'Hikmət',
+    surname: 'Məmmədov',
+    centerNumber: 4,
+    dkNumber: 33,
+    image: require('../../../../assets/images/image/person2.png'),
+  },
+  {
+    id: 8,
+    name: 'Nicat ',
+    surname: 'Melikov ',
+    centerNumber: 6,
+    dkNumber: 28,
+    image: require('../../../../assets/images/image/person2.png'),
+  },
+  {
+    id: 9,
+    name: 'Günay',
+    surname: 'Abasova',
+    centerNumber: 5,
+    dkNumber: 7,
+    image: require('../../../../assets/images/image/person2.png'),
+  },
+  {
+    id: 10,
+    name: 'Qurban',
+    surname: 'Rəcəbov',
+    centerNumber: 1,
+    dkNumber: 57,
+    image: require('../../../../assets/images/image/person2.png'),
+  },
+];
 
 const ClubListScreen = () => {
   return (
@@ -36,6 +118,11 @@ const ClubListScreen = () => {
           />
         </View>
       </View>
+      <ScrollView style={styles.scrollView}>
+        {data.map(item => (
+          <ClubVoluntaryCard key={item.id} data={item} />
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -51,6 +138,9 @@ const styles = StyleSheet.create({
     borderColor: '#F6F6F6',
     backgroundColor: '#F6F6F6',
     alignItems: 'center',
+  },
+  scrollView: {
+    paddingTop: 25,
   },
 });
 
