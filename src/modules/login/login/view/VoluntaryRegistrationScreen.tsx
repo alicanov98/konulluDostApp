@@ -88,7 +88,7 @@ const VoluntaryRegistrationScreen = () => {
           }}>
           qeydiyyat
         </Text>
-        <View>
+                <View>
           <View style={{marginBottom: 30}}>
             <Text style={styles.inputText}>Elektron poçt ünvanı</Text>
             <Controller

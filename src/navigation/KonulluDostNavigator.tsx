@@ -31,7 +31,6 @@ import ClubDetailsScreen from '../modules/clubs/view/ClubDetailsScreen.tsx';
 import {Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import ResponsibleHomeScreen from '../modules/responsible/home/view/ResponsibleHomeScreen.tsx';
-import ClubListScreen from '../modules/responsible/ clubList/view/ClubListScreen.tsx';
 import AttendanceScreen from '../modules/responsible/attendance/view/AttendanceScreen.tsx';
 import RateScreen from '../modules/responsible/rate/view/RateScreen.tsx';
 import VoluntaryListScreen from '../modules/responsible/voluntaryList/view/VoluntaryListScreen.tsx';
@@ -355,15 +354,6 @@ const ResponsibleBottomTabNavigator = () => {
         component={RateScreen}
         options={{
           title: 'Qiymətləndir',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
-        }}
-      />
-      <KonulluDostBottomTabNavigator.Screen
-        name={'ClubListScreen'}
-        component={ClubListScreen}
-        options={{
-          title: 'Klub List',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
           tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
         }}

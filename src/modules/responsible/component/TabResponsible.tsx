@@ -49,6 +49,7 @@ export const TabResponsible: React.FC<TabProps> = ({setIsActive}) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 35,
+    marginBottom: 20,
     width: 286,
     height: 29,
     flexDirection: 'row',
