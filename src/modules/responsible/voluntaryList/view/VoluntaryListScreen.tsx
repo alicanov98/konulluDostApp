@@ -10,7 +10,7 @@ import {
 import React from 'react';
 import {TabResponsible} from '../../component/TabResponsible';
 import GraduateVoluntaryCard from '../../component/voluntaryCards/GraduateVoluntaryCard';
-import CurrentVoluntaryCard from "../../component/voluntaryCards/CurrentVoluntaryCard.tsx";
+import CurrentVoluntaryCard from '../../component/voluntaryCards/CurrentVoluntaryCard.tsx';
 
 const data = [
   {
