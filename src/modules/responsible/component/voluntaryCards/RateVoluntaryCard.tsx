@@ -27,7 +27,8 @@ const RateVoluntaryCard: React.FC<RateVoluntaryProps> = ({data}) => {
         </View>
       </View>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Profilə bax</Text>
+        <Text style={styles.buttonText}>Qiymətləndir</Text>
+        <Image source={require('../../../../assets/images/icons/up.png')} />
       </TouchableOpacity>
     </View>
   );
@@ -58,15 +59,18 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
   },
   buttonText: {
-    fontSize: 14,
-    color: '#000',
-    fontWeight: '500',
+    fontSize: 12,
+    color: '#2858EE',
+    fontWeight: '400',
   },
   button: {
-    paddingVertical: 10,
-    paddingHorizontal: 15,
+    paddingVertical: 8.65,
+    paddingHorizontal: 10,
     borderRadius: 4,
-    backgroundColor: '#EDEEF0',
+    backgroundColor: '#F6F5F5',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 14,
   },
 });
 

@@ -1,5 +1,5 @@
+import React, {useState, useEffect} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
 
 interface CurrentVoluntaryProps {
   data: {
@@ -13,16 +13,23 @@ interface CurrentVoluntaryProps {
 }
 
 const AttendanceVoluntaryCard: React.FC<CurrentVoluntaryProps> = ({data}) => {
+  const [bgColor, setBgColor] = useState('#F6F5F5');
+  const [color, setColor] = useState('#CCCCCC');
+  useEffect(() => {
+    if (data.centerNumber > 4) {
+      setBgColor('#FF0000');
+    } else if (data.centerNumber === 4) {
+      setBgColor('#C8C117');
+    } else {
+      setColor('#2858EE');
+      setBgColor('#F6F5F5');
+    }
+  }, [data.centerNumber]);
+
   return (
     <View style={styles.buttonContainer}>
-      <View
-        style={{
-          flexDirection: 'row',
-          gap: 21,
-          alignItems: 'center',
-        }}>
+      <View style={{flexDirection: 'row', gap: 21, alignItems: 'center'}}>
         <Image style={styles.imageCardPerson} source={data.image} />
-
         <View style={{flex: 1, gap: 15}}>
           <View style={{gap: 3}}>
             <Text style={styles.name}>
@@ -32,7 +39,6 @@ const AttendanceVoluntaryCard: React.FC<CurrentVoluntaryProps> = ({data}) => {
               {data.centerNumber}DK-{data.dkNumber}
             </Text>
           </View>
-
           <View
             style={{
               flexDirection: 'row',
@@ -40,14 +46,20 @@ const AttendanceVoluntaryCard: React.FC<CurrentVoluntaryProps> = ({data}) => {
               alignItems: 'center',
               justifyContent: 'flex-end',
             }}>
-            <TouchableOpacity style={styles.buttonRate}>
-              <Image
-                source={require('../../../../assets/images/icons/star.png')}
-              />
-              <Text style={styles.buttonRateText}>Qiymətləndir</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Profilə bax</Text>
+            <TouchableOpacity
+              style={[styles.button, {backgroundColor: bgColor}]}>
+              <Text style={(styles.buttonText, {color: color})}>
+                Davamiyyət
+              </Text>
+              {data.centerNumber < 4 ? (
+                <Image
+                  source={require('../../../../assets/images/icons/up.png')}
+                />
+              ) : (
+                <Image
+                  source={require('../../../../assets/images/icons/up_ff.png')}
+                />
+              )}
             </TouchableOpacity>
           </View>
         </View>
@@ -82,34 +94,16 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
   },
   buttonText: {
-    fontSize: 8,
-    color: '#fff',
-    fontWeight: '500',
+    fontSize: 12,
+    fontWeight: '400',
   },
   button: {
-    width: 75,
-    height: 28,
+    paddingVertical: 8.65,
+    paddingHorizontal: 10,
     borderRadius: 4,
-    backgroundColor: '#2858EE',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonRate: {
-    width: 81,
-    height: 28,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#2858EE',
-    backgroundColor: '#fff',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    gap: 5,
-  },
-  buttonRateText: {
-    fontSize: 8,
-    color: '#5A5A5A',
-    fontWeight: '500',
+    gap: 14,
   },
 });
 

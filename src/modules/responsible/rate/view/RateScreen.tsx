@@ -102,9 +102,8 @@ const RateScreen = () => {
         paddingLeft: 17,
         paddingRight: 17,
         paddingTop: 64,
-        paddingBottom: 43,
       }}>
-      <View>
+      <View style={{marginBottom: 15}}>
         <Image source={require('../../../../assets/images/icons/logo.png')} />
         <View style={{position: 'relative', marginTop: 24}}>
           <TextInput
