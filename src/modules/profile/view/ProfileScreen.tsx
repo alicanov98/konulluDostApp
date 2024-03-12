@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {
   Image,
   SafeAreaView,
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -78,7 +79,7 @@ const ProfileScreen = () => {
   };
   console.log(formData);
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
       <StatusBar
         barStyle={'light-content'}
         backgroundColor={GlobalStyles.colors.TransparentBlack}
@@ -102,7 +103,7 @@ const ProfileScreen = () => {
             height: 626,
             borderRadius: 9999,
             left: -97,
-            bottom: 10,
+            bottom: 60,
             alignItems: 'center',
           }}>
           <View
@@ -120,15 +121,15 @@ const ProfileScreen = () => {
                 justifyContent: 'center',
               }}>
               <Image
-                style={{marginTop: 18}}
+                style={{marginTop: 36}}
                 source={require('../../../assets/images/image/personNewImg.png')}
               />
               <Text
                 style={{
                   color: '#424954',
-                  fontWeight: 'bold',
-                  fontSize: 16,
-                  marginTop: 8,
+                  fontWeight: '500',
+                  fontSize: 18,
+                  marginTop: 10,
                 }}>
                 Əlicanov Məlik
               </Text>
@@ -137,15 +138,15 @@ const ProfileScreen = () => {
                   color: '#424954',
                   fontWeight: '500',
                   fontSize: 16,
-                  marginTop: 7,
+                  marginTop: 10,
                 }}>
                 4DK 32
               </Text>
             </View>
-            <View style={{marginTop: 10, marginBottom: 40}}>
+            <ScrollView style={{marginBottom: 130}}>
               <View>
                 <View style={{marginBottom: 30}}>
-                  <Text style={styles.inputText}>Elektron poçt ünvanı</Text>
+                  <Text style={styles.inputText}>Ad</Text>
                   <Controller
                     control={control}
                     render={({field: {onChange, value}}) => (
@@ -153,19 +154,16 @@ const ProfileScreen = () => {
                         style={styles.input}
                         value={value}
                         placeholderTextColor="rgba(0, 0, 0, 0.5)"
-                        placeholder="example@gmail.com"
+                        placeholder="ad"
                         onChangeText={onChange}
                       />
                     )}
                     name="email"
                     defaultValue=""
                   />
-                  {errors.email && (
-                    <Text style={styles.error}>{errors.email.message}</Text>
-                  )}
                 </View>
                 <View style={{marginBottom: 30}}>
-                  <Text style={styles.inputText}>Şifrəni təyin et</Text>
+                  <Text style={styles.inputText}>Soyad</Text>
                   <Controller
                     control={control}
                     render={({field: {onChange, value}}) => (
@@ -174,7 +172,7 @@ const ProfileScreen = () => {
                         value={value}
                         onChangeText={onChange}
                         placeholderTextColor="rgba(0, 0, 0, 0.5)"
-                        placeholder="minimum 8 simvol daxil et"
+                        placeholder="Soyad"
                         keyboardType="numeric"
                         secureTextEntry={true}
                       />
@@ -187,29 +185,23 @@ const ProfileScreen = () => {
                   )}
                 </View>
                 <View style={{marginBottom: 25}}>
-                  <Text style={styles.inputText}>Şifrəni dəqiqləşdir</Text>
+                  <Text style={styles.inputText}>E-poçt</Text>
                   <Controller
                     control={control}
                     render={({field: {onChange, value}}) => (
                       <TextInput
                         style={styles.input}
                         value={value}
+                        placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                        placeholder="E-poçt"
                         onChangeText={onChange}
-                        placeholderTextColor={GlobalStyles.colors.PlaceHolder}
-                        placeholder="minimum 8 simvol daxil et"
-                        keyboardType="numeric"
-                        secureTextEntry={true}
                       />
                     )}
-                    name="confirmPassword"
+                    name="email"
                     defaultValue=""
                   />
-                  {errors.confirmPassword && (
-                    <Text style={styles.error}>
-                      {errors.confirmPassword.message}
-                    </Text>
-                  )}
                 </View>
+                {/*---------*/}
                 <View style={{marginBottom: 30}}>
                   <Text style={styles.inputText}>
                     Fəaliyyət göstərdiyiniz mərkəz
@@ -233,10 +225,8 @@ const ProfileScreen = () => {
                     name="center"
                     defaultValue=""
                   />
-                  {errors.center && (
-                    <Text style={styles.error}>{errors.center.message}</Text>
-                  )}
                 </View>
+                {/*----------*/}
                 <View style={{marginBottom: 30}}>
                   <Text style={styles.inputText}>DK nömrəsi</Text>
                   <Controller
@@ -258,41 +248,30 @@ const ProfileScreen = () => {
                     name="dkNumber"
                     defaultValue=""
                   />
-                  {errors.dkNumber && (
-                    <Text style={styles.error}>{errors.dkNumber.message}</Text>
-                  )}
+                  {/*--------------*/}
                 </View>
                 <TouchableOpacity
                   style={styles.button}
                   onPress={handleSubmit(onSubmit)}>
-                  <Text style={styles.buttonText}>Qeydiyyatı Tamamla</Text>
+                  <Text style={styles.buttonText}>
+                    Dəyişiklikləri yadda saxla
+                  </Text>
                 </TouchableOpacity>
               </View>
-            </View>
+              <View
+                style={{
+                  width: 340,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  marginBottom: 30,
+                }}
+              />
+            </ScrollView>
           </View>
         </View>
       </View>
-      <View
-        style={{
-          width: 340,
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginBottom: insets.bottom,
-        }}>
-        <Text
-          style={{
-            color: '#5F6772',
-            textAlign: 'center',
-            fontSize: 16,
-            fontWeight: '600',
-          }}>
-          Daxil olmaqla və ya qeydiyyatdan keçməklə{' '}
-          <Text style={{color: 'black', fontSize: 16, fontWeight: '600'}}>
-            Şərt və Siyasətimizlə
-          </Text>{' '}
-          razılaşırsınız
-        </Text>
-      </View>
+
+      {/*  ---------------------*/}
     </SafeAreaView>
   );
 };
@@ -341,14 +320,19 @@ const styles = StyleSheet.create({
   button: {
     width: 355,
     height: 56,
-    backgroundColor: '#252C36',
+    backgroundColor: '#2858EE',
     alignItems: 'center',
     justifyContent: 'center',
-    // marginBottom: 15,
+    marginBottom: 15,
     borderRadius: 15,
   },
   buttonText: {fontSize: 16, color: '#fff'},
-  inputText: {color: '#000', marginBottom: 5, fontSize: 14},
+  inputText: {
+    color: '#252C36',
+    fontWeight: '500',
+    marginBottom: 5,
+    fontSize: 14,
+  },
   error: {color: 'red'},
 });
 
