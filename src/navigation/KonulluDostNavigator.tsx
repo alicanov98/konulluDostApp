@@ -118,7 +118,7 @@ const AboutNavigator = () => {
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
               onPress={() => navigation.goBack()}>
-              <Image source={require('../assets/images/icons/Back.png')} />
+              <Image source={require('../assets/images/icons/white.png')} />
             </TouchableOpacity>
           ),
         }}
