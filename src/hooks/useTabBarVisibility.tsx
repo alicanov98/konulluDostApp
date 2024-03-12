@@ -18,6 +18,11 @@ const tabHiddenRoutes = [
   'OtpScreen',
   'NewPasswordScreen',
   'ClubDetailsScreen',
+  'AboutAppScreen',
+  'AboutVolunteerScreen',
+  'DeviceScreen',
+  'RefreshScreen',
+  'ProfileScreen',
 ];
 
 const useTabBarVisibility = () => {
