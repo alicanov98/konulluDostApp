@@ -23,6 +23,8 @@ const tabHiddenRoutes = [
   'DeviceScreen',
   'RefreshScreen',
   'ProfileScreen',
+  'ParticipantsClubScreen',
+  'NewClubAddScreen',
 ];
 
 const useTabBarVisibility = () => {
