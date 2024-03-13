@@ -37,6 +37,7 @@ import VoluntaryListScreen from '../modules/responsible/voluntaryList/view/Volun
 import ClubEditScreen from '../modules/ResponsiblePersonofClubs/ClubEditScreen.tsx';
 import {NewClubAddScreen} from '../modules/ResponsiblePersonofClubs/NewClubAddScreen.tsx';
 import ParticipantsClubScreen from '../modules/ResponsiblePersonofClubs/ParticipantsClubScreen.tsx';
+import NewsEditScreen from "../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx";
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -430,8 +431,8 @@ const ResponsiblePersonofClubs = () => {
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
-        name={'RateScreen'}
-        component={RateScreen}
+        name={'NewsEditScreen'}
+        component={NewsEditScreen}
         options={{
           title: 'Qiymətləndir',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,

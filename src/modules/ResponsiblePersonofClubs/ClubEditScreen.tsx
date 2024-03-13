@@ -25,6 +25,7 @@ const ClubEditScreen: React.FC = () => {
   useEffect(() => {
     const getClubs = async () => {
       setLoading(true);
+      console.log(loading);
       try {
         setReservations(db.clubs);
       } catch (err) {
@@ -32,7 +33,7 @@ const ClubEditScreen: React.FC = () => {
       }
     };
     getClubs();
-  }, []);
+  }, [loading]);
 
   const daysOfWeek: string[] = ['B', 'B.e', 'Ç.a', 'Ç', 'C.a', 'C', 'Ş'];
 
