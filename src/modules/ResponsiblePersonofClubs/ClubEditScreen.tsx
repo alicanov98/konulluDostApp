@@ -8,15 +8,19 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import GlobalStyles from '../../../assets/globalStyles/styles.ts';
-import ClubCards from '../../../components/cards/ClubCards.tsx';
-import {Reservation} from '../../statistic/types/StatisticTypes.ts';
-import {db} from '../../../fakeDb/db.ts';
+import GlobalStyles from '../../assets/globalStyles/styles.ts';
+import ClubCards from '../../components/cards/ClubCards.tsx';
+import {Reservation} from '../statistic/types/StatisticTypes.ts';
+import {db} from '../../fakeDb/db.ts';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../navigation/KonulluDostNavigator.tsx';
 
-const WeeklyCalendar: React.FC = () => {
+const ClubEditScreen: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [loading, setLoading] = useState(false);
   const [reservations, setReservations] = useState<Reservation[]>([]);
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   useEffect(() => {
     const getClubs = async () => {
@@ -69,7 +73,7 @@ const WeeklyCalendar: React.FC = () => {
           marginBottom: 20,
         }}>
         <View style={{alignItems: 'flex-end'}}>
-          <Image source={require('../../../assets/images/icons/logo.png')} />
+          <Image source={require('../../assets/images/icons/logo.png')} />
         </View>
         <View>
           <ScrollView horizontal={true}>
@@ -118,6 +122,21 @@ const WeeklyCalendar: React.FC = () => {
           />
         ))}
       </ScrollView>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('NewClubAddScreen')}
+        style={{
+          backgroundColor: '#2858EE',
+          width: 380,
+          height: 56,
+          borderRadius: 12,
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginTop: 32,
+        }}>
+        <Text style={{color: '#fff', fontWeight: '500', fontSize: 16}}>
+          +Klub əlavə et
+        </Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -175,4 +194,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WeeklyCalendar;
+export default ClubEditScreen;

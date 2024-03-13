@@ -127,6 +127,12 @@ export const LoginScreen = () => {
             }}>
             <Text style={styles.inputText}>Kecid Helelik Mehsul Sexs</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('ResponsiblePersonofClubs');
+            }}>
+            <Text style={styles.inputText}>Kecid Helelik Klublar</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
