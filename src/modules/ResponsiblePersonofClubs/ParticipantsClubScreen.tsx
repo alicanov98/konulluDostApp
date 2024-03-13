@@ -4,7 +4,7 @@ import GlobalStyles from '../../assets/globalStyles/styles.ts';
 import {useRoute} from '@react-navigation/native';
 import {db} from '../../fakeDb/db.ts';
 import GraduateVoluntaryCard from '../responsible/component/voluntaryCards/GraduateVoluntaryCard.tsx';
-import {Reservation} from '../../modules/statistic/types/StatisticTypes.ts';
+import {Reservation} from '../statistic/types/StatisticTypes.ts';
 
 const ParticipantsClubScreen = () => {
   const params: any = useRoute();
@@ -110,6 +110,7 @@ const ParticipantsClubScreen = () => {
   useEffect(() => {
     const getDetails = async () => {
       setLoading(true);
+      // eslint-disable-next-line @typescript-eslint/no-shadow
       const data = db.clubs.find(item => item.id === params?.params?.id);
       if (data) {
         setClubData(data);

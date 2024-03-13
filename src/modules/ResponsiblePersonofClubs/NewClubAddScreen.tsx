@@ -14,31 +14,19 @@ import React, {useState} from 'react';
 import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import {SelectList} from 'react-native-dropdown-select-list';
+import {centers, clubs, hour} from '../../utils/utils.ts';
 
 const schema = yup.object().shape({
-  name: yup.string().required('E-poçt tələb olunur').email('Səhv e-poçt'),
-  password: yup
+  name: yup.string().required('Başlıq tələb olunur'),
+  quota: yup
     .string()
-    .required('Parol tələb olunur')
-    .min(8, 'Parol ən azı 8 simvoldan ibarət olmalıdır'),
-  about: yup.string().oneOf([yup.ref('about')], 'Şifrələr uyğun gəlmir'),
+    .required('Kvota tələb olunur')
+    .min(2, 'Kvota ən azı 10 olmalıdır'),
+  about: yup.string().required('Klub haqqında yazmağınız tələb olunur'),
   center: yup.string().required('Mərkəz seçimi tələb olunur'),
+  clubs: yup.string().required('Klub seçimi tələb olunur'),
+  hour: yup.string().required('Saat seçimi tələb olunur'),
 });
-const centers = [
-  {label: '1 saylı Bakı DOST Mərkəzi', value: '1 saylı Bakı DOST Mərkəzi'},
-  {label: '2 saylı Bakı DOST Mərkəzi', value: '2 saylı Bakı DOST Mərkəzi'},
-  {label: '3 saylı Bakı DOST Mərkəzi', value: '3 saylı Bakı DOST Mərkəzi'},
-  {label: '4 saylı Bakı DOST Mərkəzi', value: '4 saylı Bakı DOST Mərkəzi'},
-  {label: '5 saylı Bakı DOST Mərkəzi', value: '5 saylı Bakı DOST Mərkəzi'},
-  {
-    label: '6 saylı Abşeron DOST Mərkəzi',
-    value: '6 saylı Abşeron DOST Mərkəzi',
-  },
-  {
-    label: 'DOST İnkluziv İnkişaf və Yaradıcılıq Mərkəzi',
-    value: 'DOST İnkluziv İnkişaf və Yaradıcılıq Mərkəzi',
-  },
-];
 
 export const NewClubAddScreen = () => {
   const {
@@ -50,8 +38,11 @@ export const NewClubAddScreen = () => {
     resolver: yupResolver(schema),
     defaultValues: {
       name: '',
-      password: '',
+      quota: '',
       about: '',
+      center: '',
+      clubs: '',
+      hour: '',
     },
   });
 
@@ -100,7 +91,7 @@ export const NewClubAddScreen = () => {
               control={control}
               render={({field: {onChange}}) => (
                 <SelectList
-                  data={centers}
+                  data={clubs}
                   placeholder=" Klubu Seçin"
                   setSelected={(value: string) => onChange(value)}
                   search={false}
@@ -110,7 +101,7 @@ export const NewClubAddScreen = () => {
                   dropdownTextStyles={{color: GlobalStyles.colors.PureBlack}}
                 />
               )}
-              name="center"
+              name="clubs"
               defaultValue=""
             />
             {errors.center && (
@@ -144,7 +135,7 @@ export const NewClubAddScreen = () => {
               control={control}
               render={({field: {onChange}}) => (
                 <SelectList
-                  data={centers}
+                  data={hour}
                   placeholder="Tarixi Seçin"
                   setSelected={(value: string) => onChange(value)}
                   search={false}
@@ -154,11 +145,11 @@ export const NewClubAddScreen = () => {
                   dropdownTextStyles={{color: GlobalStyles.colors.PureBlack}}
                 />
               )}
-              name="center"
+              name="hour"
               defaultValue=""
             />
-            {errors.center && (
-              <Text style={styles.error}>{errors.center.message}</Text>
+            {errors.hour && (
+              <Text style={styles.error}>{errors.hour.message}</Text>
             )}
           </View>
           <View style={{marginBottom: 30}}>
@@ -174,11 +165,11 @@ export const NewClubAddScreen = () => {
                   onChangeText={onChange}
                 />
               )}
-              name="name"
-              defaultValue=""
+              name="quota"
+              defaultValue="0"
             />
-            {errors.name && (
-              <Text style={styles.error}>{errors.name.message}</Text>
+            {errors.quota && (
+              <Text style={styles.error}>{errors.quota.message}</Text>
             )}
           </View>
           <View style={{marginBottom: 30}}>
