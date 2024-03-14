@@ -37,7 +37,7 @@ import VoluntaryListScreen from '../modules/responsible/voluntaryList/view/Volun
 import ClubEditScreen from '../modules/ResponsiblePersonofClubs/ClubEditScreen.tsx';
 import {NewClubAddScreen} from '../modules/ResponsiblePersonofClubs/NewClubAddScreen.tsx';
 import ParticipantsClubScreen from '../modules/ResponsiblePersonofClubs/ParticipantsClubScreen.tsx';
-import NewsEditScreen from "../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx";
+import NewsEditScreen from '../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -78,6 +78,7 @@ export type RootStackParamList = {
   ClubEditScreen: undefined;
   NewClubAddScreen: undefined;
   ClubsAddNavigator: undefined;
+  NewsEditScreen: undefined;
 };
 
 const HomeNavigator = () => {
