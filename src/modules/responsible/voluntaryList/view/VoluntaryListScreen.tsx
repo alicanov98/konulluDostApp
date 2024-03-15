@@ -3,7 +3,9 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
+  Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from 'react-native';
 
@@ -11,6 +13,10 @@ import React from 'react';
 import {TabResponsible} from '../../component/TabResponsible';
 import GraduateVoluntaryCard from '../../component/voluntaryCards/GraduateVoluntaryCard';
 import CurrentVoluntaryCard from '../../component/voluntaryCards/CurrentVoluntaryCard.tsx';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../../../navigation/KonulluDostNavigator.tsx';
+import RateScreen from '../../rate/view/RateScreen.tsx';
 
 const data = [
   {
@@ -96,6 +102,8 @@ const data = [
 ];
 
 const VoluntaryListScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   const [isActive, setIsActive] = React.useState(true);
   console.log(isActive);
   return (
@@ -125,6 +133,26 @@ const VoluntaryListScreen = () => {
             />
           </View>
           <TabResponsible setIsActive={setIsActive} />
+          {isActive && (
+            <View style={{flexDirection: 'row', gap: 10}}>
+              <TouchableOpacity
+                style={styles.buttonRate}
+                onPress={() => navigation.navigate('RateScreen')}>
+                <Image
+                  source={require('../../../../assets/images/icons/star.png')}
+                />
+                <Text style={styles.buttonRateText}>Qiymətləndir</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.buttonRate}
+                onPress={() => navigation.navigate('AttendanceScreen')}>
+                <Image
+                  source={require('../../../../assets/images/icons/star.png')}
+                />
+                <Text style={styles.buttonRateText}>Davamiət</Text>
+              </TouchableOpacity>
+            </View>
+          )}
         </View>
       </View>
       <ScrollView style={styles.scrollView}>
@@ -152,6 +180,23 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     paddingTop: 25,
+  },
+  buttonRate: {
+    width: 81,
+    height: 28,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: '#2858EE',
+    backgroundColor: '#fff',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 5,
+  },
+  buttonRateText: {
+    fontSize: 8,
+    color: '#5A5A5A',
+    fontWeight: '500',
   },
 });
 

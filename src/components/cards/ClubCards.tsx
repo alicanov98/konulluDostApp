@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {IClubCardsProps} from '../types/types';
 import {formatDate} from '../../utils/utils';
 import * as Progress from 'react-native-progress';
@@ -60,6 +60,36 @@ const ClubCards: React.FC<IClubCardsProps> = props => {
         </Text>
         <View style={{flexDirection: 'row', marginTop: 13}}>
           {/* Images */}
+          <Image
+            source={require('../../assets/images/image/person.png')}
+            style={{right: 0}}
+          />
+          <Image
+            source={require('../../assets/images/image/person.png')}
+            style={{right: 12}}
+          />
+          <Image
+            source={require('../../assets/images/image/person.png')}
+            style={{right: 24}}
+          />
+          <Image
+            source={require('../../assets/images/image/person.png')}
+            style={{right: 36}}
+          />
+          <View
+            style={{
+              right: 48,
+              width: 35,
+              height: 35,
+              backgroundColor: '#fff',
+              borderRadius: 999,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Text style={{color: '#2858EE', fontSize: 13, fontWeight: '500'}}>
+              +3
+            </Text>
+          </View>
         </View>
         <Text
           style={{
@@ -90,11 +120,11 @@ const ClubCards: React.FC<IClubCardsProps> = props => {
                   fontWeight: 'bold',
                   color: '#5A5A5A',
                 }}>
-                2 nəfər +
+                3 nəfər +
               </Text>
             </View>
             <Progress.Bar
-              progress={0.5}
+              progress={0.8}
               width={300}
               height={10}
               borderRadius={72}
