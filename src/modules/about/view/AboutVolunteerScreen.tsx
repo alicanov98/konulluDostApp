@@ -2,6 +2,7 @@ import {SafeAreaView, Text, View} from 'react-native';
 
 import React from 'react';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
+import CarusellTwo from '../../../components/swiper/CarusellTwo.tsx';
 
 const AboutVolunteerScreen = () => {
   return (
@@ -23,6 +24,8 @@ const AboutVolunteerScreen = () => {
         <Text style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}>
           Könüllü Dost Haqqında!
         </Text>
+      </View>
+      <View style={{width: '100%', height: 300, backgroundColor: 'red'}}>
       </View>
     </SafeAreaView>
   );
