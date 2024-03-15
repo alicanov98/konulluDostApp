@@ -2,6 +2,7 @@ import {SafeAreaView, Text, View} from 'react-native';
 
 import React from 'react';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
+import CarusellTwo from '../../../components/swiper/CarusellTwo.tsx';
 
 const AboutAppScreen = () => {
   return (
