@@ -1,12 +1,4 @@
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-
+import {Image, SafeAreaView, Text, View} from 'react-native';
 import React from 'react';
 
 const NewsEditScreen = () => {
@@ -72,25 +64,25 @@ const NewsEditScreen = () => {
             </Text>
           </View>
         </View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Redaktə et</Text>
-        </TouchableOpacity>
+        {/*<TouchableOpacity style={styles.button}>*/}
+        {/*  <Text style={styles.buttonText}>Redaktə et</Text>*/}
+        {/*</TouchableOpacity>*/}
       </View>
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: '#2858EE',
-    width: 380,
-    height: 56,
-    borderRadius: 12,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 32,
-  },
-  buttonText: {color: '#fff', fontWeight: '500', fontSize: 16},
-});
+// const styles = StyleSheet.create({
+//   button: {
+//     backgroundColor: '#2858EE',
+//     width: 380,
+//     height: 56,
+//     borderRadius: 12,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     marginTop: 32,
+//   },
+//   buttonText: {color: '#fff', fontWeight: '500', fontSize: 16},
+// });
 
 export default NewsEditScreen;

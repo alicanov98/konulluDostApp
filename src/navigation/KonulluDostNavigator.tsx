@@ -90,6 +90,7 @@ const HomeNavigator = () => {
         headerShown: false,
       }}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="NewsEditScreen" component={NewsEditScreen} />
     </Stack.Navigator>
   );
 };
@@ -368,6 +369,7 @@ const BottomTabNavigator = () => {
     </KonulluDostBottomTabNavigator.Navigator>
   );
 };
+
 const ResponsibleBottomTabNavigator = () => {
   return (
     <KonulluDostBottomTabNavigator.Navigator
@@ -385,8 +387,8 @@ const ResponsibleBottomTabNavigator = () => {
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
-        name={'VoluntaryListScreen'}
-        component={VoluntaryListScreen}
+        name={'CurrentVoluntaryNavigator'}
+        component={CurrentVoluntaryNavigator}
         options={{
           title: 'Könüllü List',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
@@ -394,24 +396,31 @@ const ResponsibleBottomTabNavigator = () => {
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
-        name={'AttendanceScreen'}
-        component={AttendanceScreen}
+        name={'AboutNavigator'}
+        component={AboutNavigator}
         options={{
-          title: 'Davamiyyət',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
-        }}
-      />
-      <KonulluDostBottomTabNavigator.Screen
-        name={'RateScreen'}
-        component={RateScreen}
-        options={{
-          title: 'Qiymətləndir',
+          title: 'Haqqımızda',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
           tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
         }}
       />
     </KonulluDostBottomTabNavigator.Navigator>
+  );
+};
+
+const CurrentVoluntaryNavigator = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen
+        name="VoluntaryListScreen"
+        component={VoluntaryListScreen}
+      />
+      <Stack.Screen name="RateScreen" component={RateScreen} />
+      <Stack.Screen name="AttendanceScreen" component={AttendanceScreen} />
+    </Stack.Navigator>
   );
 };
 
@@ -435,7 +444,7 @@ const ResponsiblePersonofClubs = () => {
         name={'NewsEditScreen'}
         component={NewsEditScreen}
         options={{
-          title: 'Qiymətləndir',
+          title: 'Xəbərlər',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
           tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
         }}
@@ -444,7 +453,7 @@ const ResponsiblePersonofClubs = () => {
         name={'ClubsAddNavigator'}
         component={ClubsAddNavigator}
         options={{
-          title: 'Qiymətləndir',
+          title: 'Klublar',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
           tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
         }}
