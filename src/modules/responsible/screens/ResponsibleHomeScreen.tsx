@@ -10,11 +10,11 @@ import {
   View,
 } from 'react-native';
 // @ts-ignore
-import BellIcon from '../../../../assets/images/icons/bell-icon.svg';
-import ClubCard from '../../../../components/cards/ClubCard.tsx';
-import VolunteerActivityCard from '../../../../components/cards/ VolunteerActivityCard.tsx';
-import Notification from '../../../../components/notification/Notification.tsx';
-import {MyCarousel} from '../../../../components/swiper/Carousel.tsx';
+import BellIcon from '../../../assets/images/icons/bell-icon.svg';
+import ClubCard from '../../../components/cards/ClubCard.tsx';
+import VolunteerActivityCard from '../../../components/cards/ VolunteerActivityCard.tsx';
+import Notification from '../../../components/notification/Notification.tsx';
+import {MyCarousel} from '../../../components/swiper/Carousel.tsx';
 
 const data = [
   {
@@ -22,7 +22,7 @@ const data = [
     text: 'Yaradıcılıq',
     color: '#2858EE',
     colors: '#2858EE18',
-    image: require('../../../../assets/images/image/club/book.png'),
+    image: require('../../../assets/images/image/club/book.png'),
     margin: 5,
   },
   {
@@ -30,7 +30,7 @@ const data = [
     text: 'Xarici dil',
     color: '#00FF55',
     colors: '#00FF5518',
-    image: require('../../../../assets/images/image/club/lamp.png'),
+    image: require('../../../assets/images/image/club/lamp.png'),
     margin: 0,
   },
   {
@@ -38,7 +38,7 @@ const data = [
     text: 'Kitab',
     color: 'rgba(254, 80, 36, 1)',
     colors: 'rgba(254, 80, 36, 0.18)',
-    image: require('../../../../assets/images/image/club/vector.png'),
+    image: require('../../../assets/images/image/club/vector.png'),
     margin: 5,
   },
   {
@@ -46,7 +46,7 @@ const data = [
     text: 'Şeir',
     color: '#E64646',
     colors: '#E6464618',
-    image: require('../../../../assets/images/image/club/messageRigh.png'),
+    image: require('../../../assets/images/image/club/messageRigh.png'),
     margin: 5,
   },
 ];
@@ -70,7 +70,7 @@ const ResponsibleHomeScreen = () => {
           justifyContent: 'space-between',
           alignItems: 'center',
         }}>
-        <Image source={require('../../../../assets/images/icons/logo.png')} />
+        <Image source={require('../../../assets/images/icons/logo.png')} />
 
         <TouchableOpacity
           onPress={() => setIsActive(!isActive)}

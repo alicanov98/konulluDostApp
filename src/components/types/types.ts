@@ -7,15 +7,3 @@ export interface IClubCardsProps {
   containerStyle?: ViewStyle;
   item: Reservation;
 }
-
-export interface IClubCardItem {
-  progresColor: string;
-  date: Date;
-  name: string;
-  bgColor: string;
-  center: string;
-  topic: string;
-  color: string;
-  nameColor: string;
-  degre: string;
-}
