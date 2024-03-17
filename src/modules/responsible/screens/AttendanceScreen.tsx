@@ -8,7 +8,9 @@ import {
 } from 'react-native';
 
 import React from 'react';
-import RateVoluntaryCard from '../../component/voluntaryCards/RateVoluntaryCard.tsx';
+
+import RateVoluntaryCard from '../component/voluntaryCards/RateVoluntaryCard.tsx';
+import AttendanceVoluntaryCard from '../component/voluntaryCards/AttendanceVoluntaryCard.tsx';
 
 const data = [
   {
@@ -17,7 +19,7 @@ const data = [
     surname: 'Əlicanov',
     centerNumber: 4,
     dkNumber: 32,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 2,
@@ -25,7 +27,7 @@ const data = [
     surname: 'Mirsadiq',
     centerNumber: 3,
     dkNumber: 32,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 3,
@@ -33,7 +35,7 @@ const data = [
     surname: 'Abzərova ',
     centerNumber: 6,
     dkNumber: 30,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 4,
@@ -41,7 +43,7 @@ const data = [
     surname: 'Vahabzadə ',
     centerNumber: 6,
     dkNumber: 28,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 5,
@@ -49,7 +51,7 @@ const data = [
     surname: 'Vəliyeva',
     centerNumber: 4,
     dkNumber: 34,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 6,
@@ -57,7 +59,7 @@ const data = [
     surname: 'Əliyeva ',
     centerNumber: 4,
     dkNumber: 34,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 7,
@@ -65,7 +67,7 @@ const data = [
     surname: 'Məmmədov',
     centerNumber: 4,
     dkNumber: 33,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 8,
@@ -73,7 +75,7 @@ const data = [
     surname: 'Melikov ',
     centerNumber: 6,
     dkNumber: 28,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 9,
@@ -81,7 +83,7 @@ const data = [
     surname: 'Abasova',
     centerNumber: 5,
     dkNumber: 7,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 10,
@@ -89,11 +91,11 @@ const data = [
     surname: 'Rəcəbov',
     centerNumber: 1,
     dkNumber: 57,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
 ];
 
-const RateScreen = () => {
+const AttendanceScreen = () => {
   return (
     <SafeAreaView
       style={{
@@ -104,7 +106,7 @@ const RateScreen = () => {
         paddingTop: 64,
       }}>
       <View style={{marginBottom: 15}}>
-        <Image source={require('../../../../assets/images/icons/logo.png')} />
+        <Image source={require('../../../assets/images/icons/logo.png')} />
         <View style={{position: 'relative', marginTop: 24}}>
           <TextInput
             style={styles.input}
@@ -113,13 +115,13 @@ const RateScreen = () => {
           />
           <Image
             style={{position: 'absolute', top: 12.5, left: 12}}
-            source={require('../../../../assets/images/icons/search.png')}
+            source={require('../../../assets/images/icons/search.png')}
           />
         </View>
       </View>
       <ScrollView style={styles.scrollView}>
         {data.map(item => (
-          <RateVoluntaryCard key={item.id} data={item} />
+          <AttendanceVoluntaryCard key={item.id} data={item} />
         ))}
       </ScrollView>
     </SafeAreaView>
@@ -143,4 +145,5 @@ const styles = StyleSheet.create({
     paddingTop: 25,
   },
 });
-export default RateScreen;
+
+export default AttendanceScreen;

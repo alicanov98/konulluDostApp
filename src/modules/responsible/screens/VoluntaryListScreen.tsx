@@ -10,13 +10,13 @@ import {
 } from 'react-native';
 
 import React from 'react';
-import {TabResponsible} from '../../component/TabResponsible';
-import GraduateVoluntaryCard from '../../component/voluntaryCards/GraduateVoluntaryCard';
-import CurrentVoluntaryCard from '../../component/voluntaryCards/CurrentVoluntaryCard.tsx';
+import {TabResponsible} from './TabResponsible.tsx';
+import GraduateVoluntaryCard from '../component/voluntaryCards/GraduateVoluntaryCard.tsx';
+import CurrentVoluntaryCard from '../component/voluntaryCards/CurrentVoluntaryCard.tsx';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../../../../navigation/KonulluDostNavigator.tsx';
-import RateScreen from '../../rate/view/RateScreen.tsx';
+import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
+import RateScreen from './RateScreen.tsx';
 
 const data = [
   {
@@ -25,7 +25,7 @@ const data = [
     surname: 'Əlicanov',
     centerNumber: 4,
     dkNumber: 32,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const data = [
     surname: 'Mirsadiq',
     centerNumber: 3,
     dkNumber: 32,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const data = [
     surname: 'Abzərova ',
     centerNumber: 6,
     dkNumber: 30,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const data = [
     surname: 'Vahabzadə ',
     centerNumber: 6,
     dkNumber: 28,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const data = [
     surname: 'Vəliyeva',
     centerNumber: 4,
     dkNumber: 34,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 6,
@@ -65,7 +65,7 @@ const data = [
     surname: 'Əliyeva ',
     centerNumber: 4,
     dkNumber: 34,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ const data = [
     surname: 'Məmmədov',
     centerNumber: 4,
     dkNumber: 33,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 8,
@@ -81,7 +81,7 @@ const data = [
     surname: 'Melikov ',
     centerNumber: 6,
     dkNumber: 28,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 9,
@@ -89,7 +89,7 @@ const data = [
     surname: 'Abasova',
     centerNumber: 5,
     dkNumber: 7,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
   {
     id: 10,
@@ -97,7 +97,7 @@ const data = [
     surname: 'Rəcəbov',
     centerNumber: 1,
     dkNumber: 57,
-    image: require('../../../../assets/images/image/person2.png'),
+    image: require('../../../assets/images/image/person2.png'),
   },
 ];
 
@@ -120,7 +120,7 @@ const VoluntaryListScreen = () => {
           width: '100%',
         }}>
         <View>
-          <Image source={require('../../../../assets/images/icons/logo.png')} />
+          <Image source={require('../../../assets/images/icons/logo.png')} />
           <View style={{position: 'relative', marginTop: 24}}>
             <TextInput
               style={styles.input}
@@ -129,7 +129,7 @@ const VoluntaryListScreen = () => {
             />
             <Image
               style={{position: 'absolute', top: 12.5, left: 12}}
-              source={require('../../../../assets/images/icons/search.png')}
+              source={require('../../../assets/images/icons/search.png')}
             />
           </View>
           <TabResponsible setIsActive={setIsActive} />
@@ -139,7 +139,7 @@ const VoluntaryListScreen = () => {
                 style={styles.buttonRate}
                 onPress={() => navigation.navigate('RateScreen')}>
                 <Image
-                  source={require('../../../../assets/images/icons/star.png')}
+                  source={require('../../../assets/images/icons/star.png')}
                 />
                 <Text style={styles.buttonRateText}>Qiymətləndir</Text>
               </TouchableOpacity>
@@ -147,7 +147,7 @@ const VoluntaryListScreen = () => {
                 style={styles.buttonRate}
                 onPress={() => navigation.navigate('AttendanceScreen')}>
                 <Image
-                  source={require('../../../../assets/images/icons/star.png')}
+                  source={require('../../../assets/images/icons/star.png')}
                 />
                 <Text style={styles.buttonRateText}>Davamiət</Text>
               </TouchableOpacity>

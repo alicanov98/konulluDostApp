@@ -1,6 +1,6 @@
-import {showMessage, hideMessage} from 'react-native-flash-message';
+import {showMessage} from 'react-native-flash-message';
 import GlobalStyles from '../constants/styles';
-import {Platform, View} from 'react-native';
+import {Platform} from 'react-native';
 
 const showMessageHandler = (messageInfo, type, duration = 2000) => {
   showMessage({

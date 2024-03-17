@@ -30,14 +30,15 @@ import AboutAppScreen from '../modules/about/view/AboutAppScreen.tsx';
 import ClubDetailsScreen from '../modules/clubs/view/ClubDetailsScreen.tsx';
 import {Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import ResponsibleHomeScreen from '../modules/responsible/home/view/ResponsibleHomeScreen.tsx';
-import AttendanceScreen from '../modules/responsible/attendance/view/AttendanceScreen.tsx';
-import RateScreen from '../modules/responsible/rate/view/RateScreen.tsx';
-import VoluntaryListScreen from '../modules/responsible/voluntaryList/view/VoluntaryListScreen.tsx';
+import ResponsibleHomeScreen from '../modules/responsible/screens/ResponsibleHomeScreen.tsx';
+import AttendanceScreen from '../modules/responsible/screens/AttendanceScreen.tsx';
+import RateScreen from '../modules/responsible/screens/RateScreen.tsx';
+import VoluntaryListScreen from '../modules/responsible/screens/VoluntaryListScreen.tsx';
 import ClubEditScreen from '../modules/ResponsiblePersonofClubs/ClubEditScreen.tsx';
 import {NewClubAddScreen} from '../modules/ResponsiblePersonofClubs/NewClubAddScreen.tsx';
 import ParticipantsClubScreen from '../modules/ResponsiblePersonofClubs/ParticipantsClubScreen.tsx';
 import NewsEditScreen from '../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx';
+import NewsClubScreen from '../modules/ResponsiblePersonofClubs/NewsClubScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -79,6 +80,8 @@ export type RootStackParamList = {
   NewClubAddScreen: undefined;
   ClubsAddNavigator: undefined;
   NewsEditScreen: undefined;
+  NewsClubScreen: undefined;
+  NewsNavigator: undefined;
 };
 
 const HomeNavigator = () => {
@@ -441,8 +444,8 @@ const ResponsiblePersonofClubs = () => {
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
-        name={'NewsEditScreen'}
-        component={NewsEditScreen}
+        name={'NewsNavigation'}
+        component={NewsNavigation}
         options={{
           title: 'Xəbərlər',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
@@ -459,6 +462,19 @@ const ResponsiblePersonofClubs = () => {
         }}
       />
     </KonulluDostBottomTabNavigator.Navigator>
+  );
+};
+
+const NewsNavigation = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        navigationBarColor: 'transparent',
+      }}>
+      <Stack.Screen name={'NewsClubScreen'} component={NewsClubScreen} />
+      <Stack.Screen name={'NewsEditScreen'} component={NewsEditScreen} />
+    </Stack.Navigator>
   );
 };
 
