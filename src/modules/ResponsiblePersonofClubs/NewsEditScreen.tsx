@@ -1,14 +1,46 @@
 import {
   Image,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
+import GlobalStyles from '../../assets/globalStyles/styles.ts';
+import {Controller, useForm} from 'react-hook-form';
+import React, {useState} from 'react';
+import {yupResolver} from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
-const NewsEditScreen = () => {
+const schema = yup.object().shape({
+  name: yup.string().required('Başlıq tələb olunur'),
+  about: yup.string().required('Xəbər haqqında yazmağınız tələb olunur'),
+});
+
+export const NewsEditScreen = () => {
+  const {
+    control,
+    handleSubmit,
+    formState: {errors},
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      name: '',
+      about: '',
+    },
+  });
+
+  const [formData, setFormData] = useState<any[]>([]);
+
+  const onSubmit = (data: object) => {
+    setFormData(prevData => [...prevData, data]);
+    reset();
+  };
+  console.log(formData);
+
   return (
     <SafeAreaView
       style={{
@@ -18,78 +50,127 @@ const NewsEditScreen = () => {
         paddingRight: 17,
         paddingTop: 64,
       }}>
-      <View
-        style={{
-          width: '100%',
-        }}>
-        <View style={{marginBottom: 24}}>
-          <Image source={require('../../assets/images/icons/logo.png')} />
-        </View>
+      <View style={{marginBottom: 15, alignItems: 'flex-end'}}>
+        <Image source={require('../../assets/images/icons/logo.png')} />
       </View>
-      <View>
-        <View style={{width: '100%'}}>
-          <Image
+      <View style={{backgroundColor: '#fff', flex: 1}}>
+        <ScrollView>
+          <View
             style={{
-              width: '100%',
-              height: 192,
-              borderRadius: 5,
-              marginBottom: 35,
-            }}
-            source={require('../../assets/images/image/image1News.jpg')}
-          />
-          <View>
-            <Text
-              style={{
-                color: '#424954',
-                fontWeight: 'bold',
-                fontSize: 14,
-                marginBottom: 21,
-              }}>
-              “Könüllü Klubları” layihəsi çərçivəsində növbəti təlim
-            </Text>
-            <Text
-              style={{
-                color: '#5A5A5A',
-                fontWeight: '500',
-                fontSize: 12,
-                marginBottom: 21,
-              }}>
-              Klublar barədə yeniliklər
-            </Text>
-            <Text style={{color: '#000000', fontWeight: '500', fontSize: 14}}>
-              “Caspian Energy Club”ın baş icraçı direktoru Telman Əliyev 5 saylı
-              Bakı DOST Mərkəzində olub.Könüllülərlə iş şöbəsinin müdiri Solmaz
-              Həsənova qonağı "Könüllü DOST" proqramı ilə tanış edib. Daha sonra
-              Telman Əliyev Agentliyin “Könüllü DOST” proqramının üzvlərinə
-              "Gələcək biznes ideyasının formalaşdırılması" mövzusunda təlim
-              keçib. Təlim “Könüllü Klubları” layihəsinin “Fərdi İnkişaf” klubu
-              çərçivəsində baş tutub. Görüş qarşılıqlı diskussiya şəklində davam
-              edib. Sonda gəncləri maraqlandıran suallar cavablandırılıb. Qeyd
-              edək ki, “Könüllü Klubları” layihəsi 2022-ci ildən etibarən 12
-              müxtəlif istiqamət üzrə fəaliyyət göstərir. Layihənin əsas məqsədi
-              cəmiyyətin habelə asudə vaxtlarının daha səmərəli təşkilidir.
-            </Text>
+              marginBottom: 25,
+              backgroundColor: '#EAEAEA',
+              width: 380,
+              height: 193,
+              borderWidth: 1,
+              borderRadius: 10,
+              borderColor: '#D8DADC',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Image
+              style={{marginBottom: 5}}
+              source={require('../../assets/images/icons/plusImage.png')}
+            />
+            <Text style={styles.inputText}>Şəkil əlavə et</Text>
           </View>
-        </View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Redaktə et</Text>
-        </TouchableOpacity>
+          <View style={{marginBottom: 30}}>
+            <Controller
+              control={control}
+              render={({field: {onChange, value}}) => (
+                <TextInput
+                  style={styles.input}
+                  value={value}
+                  placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                  placeholder="Başlıq əlavə et"
+                  onChangeText={onChange}
+                />
+              )}
+              name="name"
+              defaultValue=""
+            />
+            {errors.name && (
+              <Text style={styles.error}>{errors.name.message}</Text>
+            )}
+          </View>
+          <View style={{marginBottom: 25}}>
+            <Controller
+              control={control}
+              render={({field: {onChange, value}}) => (
+                <TextInput
+                  style={styles.TextInput}
+                  value={value}
+                  onChangeText={onChange}
+                  placeholderTextColor={GlobalStyles.colors.PlaceHolder}
+                  placeholder="Xəbər haqqında"
+                  secureTextEntry={true}
+                />
+              )}
+              name="about"
+              defaultValue=""
+            />
+            {errors.about && (
+              <Text style={styles.error}>{errors.about.message}</Text>
+            )}
+          </View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={handleSubmit(onSubmit)}>
+            <Text style={styles.buttonText}>Prosesi tamamla</Text>
+          </TouchableOpacity>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: '#2858EE',
-    width: 380,
+  input: {
+    width: 377,
     height: 56,
-    borderRadius: 12,
+    fontSize: 16,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 10,
+    borderColor: '#D8DADC',
+    alignItems: 'center',
+    color: '#000',
+  },
+  TextInput: {
+    width: 377,
+    height: 153,
+    fontSize: 16,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 10,
+    borderColor: '#D8DADC',
+    color: '#000',
+  },
+  dropDownBoxCenter: {
+    width: 380,
+    height: 200,
+    borderColor: '#D8DADC',
+    position: 'absolute',
+    zIndex: 5,
+    top: 51,
+    backgroundColor: '#fff',
+  },
+  button: {
+    width: 355,
+    height: 56,
+    backgroundColor: '#2858EE',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 32,
+    borderRadius: 15,
+    marginBottom: 50,
   },
-  buttonText: {color: '#fff', fontWeight: '500', fontSize: 16},
+  buttonText: {fontSize: 16, color: '#fff'},
+  inputText: {
+    color: '#5A5A5A',
+    marginBottom: 5,
+    fontSize: 14,
+  },
+  error: {color: 'red'},
+  scrollView: {
+    paddingTop: 25,
+  },
 });
-
-export default NewsEditScreen;
