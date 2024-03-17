@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import NewsCard from '../cards/NewsCard.tsx';
+import NewsSwiperCard from '../cards/NewsSwiperCard.tsx';
 
 interface Entry {
   title: string;
@@ -29,7 +29,7 @@ export class MyCarousel extends Component<{}, State> {
   _renderItem = ({item, index}: {item: Entry; index: number}) => {
     return (
       <View style={styles.slide}>
-        <NewsCard />
+        <NewsSwiperCard />
       </View>
     );
   };

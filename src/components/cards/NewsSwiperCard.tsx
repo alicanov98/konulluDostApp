@@ -3,11 +3,11 @@ import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../navigation/KonulluDostNavigator.tsx';
 
-const NewsCard = () => {
+const NewsSwiperCard = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('NewsEditScreen')}>
+    <TouchableOpacity onPress={() => navigation.navigate('NewsScreen')}>
       <View
         style={{
           borderRadius: 30,
@@ -50,4 +50,4 @@ const NewsCard = () => {
   );
 };
 
-export default NewsCard;
+export default NewsSwiperCard;

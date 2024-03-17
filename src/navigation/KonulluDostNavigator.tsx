@@ -37,8 +37,9 @@ import VoluntaryListScreen from '../modules/responsible/screens/VoluntaryListScr
 import ClubEditScreen from '../modules/ResponsiblePersonofClubs/ClubEditScreen.tsx';
 import {NewClubAddScreen} from '../modules/ResponsiblePersonofClubs/NewClubAddScreen.tsx';
 import ParticipantsClubScreen from '../modules/ResponsiblePersonofClubs/ParticipantsClubScreen.tsx';
-import NewsEditScreen from '../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx';
 import NewsClubScreen from '../modules/ResponsiblePersonofClubs/NewsClubScreen.tsx';
+import NewsScreen from '../modules/ResponsiblePersonofClubs/NewsScreen.tsx';
+import {NewsEditScreen} from '../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -79,9 +80,10 @@ export type RootStackParamList = {
   ClubEditScreen: undefined;
   NewClubAddScreen: undefined;
   ClubsAddNavigator: undefined;
-  NewsEditScreen: undefined;
+  NewsScreen: undefined;
   NewsClubScreen: undefined;
   NewsNavigator: undefined;
+  NewsEditScreen: undefined;
 };
 
 const HomeNavigator = () => {
@@ -93,7 +95,7 @@ const HomeNavigator = () => {
         headerShown: false,
       }}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="NewsEditScreen" component={NewsEditScreen} />
+      <Stack.Screen name="NewsScreen" component={NewsScreen} />
     </Stack.Navigator>
   );
 };
@@ -473,6 +475,7 @@ const NewsNavigation = () => {
         navigationBarColor: 'transparent',
       }}>
       <Stack.Screen name={'NewsClubScreen'} component={NewsClubScreen} />
+      <Stack.Screen name={'NewsScreen'} component={NewsScreen} />
       <Stack.Screen name={'NewsEditScreen'} component={NewsEditScreen} />
     </Stack.Navigator>
   );
