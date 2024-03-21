@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Platform, Text, TouchableOpacity, View} from 'react-native';
 import Share from 'react-native-share';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -21,8 +21,12 @@ const NewsCard = () => {
     };
 
     try {
-      const shareResponse = await Share.open(shareOptions);
-      console.log(JSON.stringify(shareResponse));
+      if (Platform.OS === 'android') {
+        const shareResponse = await Share.open(shareOptions);
+        console.log(JSON.stringify(shareResponse));
+      }else{
+        console.log('PLATFORM IS IOS')
+      }
     } catch (error) {
       // @ts-ignore
       console.log('Paylaşım hatası:', error.message);

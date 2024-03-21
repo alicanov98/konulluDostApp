@@ -77,7 +77,7 @@ const SiginUpScreen = () => {
                 style={{
                   width: 355,
                   height: 56,
-                  backgroundColor: '#252C36',
+                  backgroundColor: '#861DBF',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 15,
@@ -90,7 +90,7 @@ const SiginUpScreen = () => {
                 style={{
                   width: 355,
                   height: 56,
-                  backgroundColor: '#424954',
+                  backgroundColor: '#861DBF',
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderRadius: 15,

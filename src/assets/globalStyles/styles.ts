@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 const colors = {
+  purple: '#861DBF',
   PureBlack: '#000000',
   PureWhite: '#ffffff',
   CobaltBlue: '#2858EE',

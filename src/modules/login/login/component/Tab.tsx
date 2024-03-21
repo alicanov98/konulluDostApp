@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   activeTab: {
-    backgroundColor: GlobalStyles.colors.CobaltBlue,
+    backgroundColor: GlobalStyles.colors.purple,
     borderRadius: 10,
     color: '#fff',
   },

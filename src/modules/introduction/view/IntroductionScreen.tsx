@@ -17,12 +17,13 @@ const IntroductionScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView
+      style={{flex: 1, backgroundColor: GlobalStyles.colors.purple}}>
       <StatusBar
         barStyle={'light-content'}
-        backgroundColor={GlobalStyles.colors.CobaltBlue}
+        backgroundColor={GlobalStyles.colors.purple}
       />
-      <View style={{flex: 1, backgroundColor: GlobalStyles.colors.CobaltBlue}}>
+      <View style={{flex: 1}}>
         <View
           style={{
             width: 300,
@@ -66,7 +67,10 @@ const IntroductionScreen = () => {
           <LeftArrowIcon />
         </TouchableOpacity>
         <View style={{flex: 1, justifyContent: 'flex-end'}}>
-          <Image source={require('../image/introductionImg.png')} />
+          <Image
+            style={{width: 300, height: 600}}
+            source={require('../image/introductionImg.png')}
+          />
         </View>
       </View>
     </SafeAreaView>
