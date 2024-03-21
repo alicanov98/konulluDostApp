@@ -11,7 +11,6 @@ import {useNavigation} from '@react-navigation/native';
 import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
 import {StackNavigationProp} from '@react-navigation/stack';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
-// @ts-ignore
 import LeftArrowIcon from '../../../assets/images/icons/rightArrowIcon.svg';
 
 const IntroductionScreen = () => {
@@ -61,21 +60,14 @@ const IntroductionScreen = () => {
             alignItems: 'center',
             justifyContent: 'center',
             borderRadius: 9999,
+            zIndex: 1,
           }}
           onPress={() => navigation.navigate('SiginUpScreen')}>
           <LeftArrowIcon />
         </TouchableOpacity>
-        <Image
-          source={require('../image/introductionImg.png')}
-          style={{
-            zIndex: -5,
-            width: '100%',
-            height: 550,
-            bottom: -110,
-            left: -20,
-            resizeMode: 'contain',
-          }}
-        />
+        <View style={{flex: 1, justifyContent: 'flex-end'}}>
+          <Image source={require('../image/introductionImg.png')} />
+        </View>
       </View>
     </SafeAreaView>
   );
