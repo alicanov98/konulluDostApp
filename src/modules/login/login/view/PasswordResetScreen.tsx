@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../../../navigation/KonulluDostNavigator.tsx';
@@ -17,40 +18,47 @@ export const PasswordResetScreen = () => {
 
   return (
     <SafeAreaView style={{backgroundColor: '#fff', height: '100%'}}>
-      <View
-        style={{
-          paddingTop: 60,
-          paddingBottom: 40,
-          paddingLeft: 20,
-          paddingRight: 20,
-        }}>
-        <Text
+      <View style={{flex: 1, alignItems: 'flex-end'}}>
+        <Image
           style={{
-            fontSize: 40,
-            fontWeight: 'bold',
-            color: GlobalStyles.colors.CobaltBlue,
-            paddingBottom: 75,
+            width: 400,
+            height: 400,
+            position: 'absolute',
+            zIndex: -1,
+            top: '50%',
+          }}
+          source={require('../../../../assets/images/image/ballonthree.png')}
+        />
+        <View
+          style={{
+            paddingTop: 60,
+            paddingBottom: 40,
+            paddingLeft: 20,
+            paddingRight: 20,
           }}>
-          şifrənin bərpası
-        </Text>
-        <View>
-          <Text style={styles.pageText}>
-            Narahat olma! Sadəcə bir kliklə onu yeniləyə bilərsən
+          <Text
+            style={GlobalStyles.textKind.introTitle}>
+            şifrənin bərpası
           </Text>
-          <View style={{marginBottom: 30}}>
-            <Text style={styles.inputText}>Email</Text>
-            <TextInput
-              style={styles.input}
-              placeholderTextColor="rgba(0, 0, 0, 0.5)"
-              placeholder="email adresi daxil et"
-            />
-          </View>
+          <View>
+            <Text style={styles.pageText}>
+              Narahat olma! Sadəcə bir kliklə onu yeniləyə bilərsən
+            </Text>
+            <View style={{marginBottom: 30}}>
+              <Text style={styles.inputText}>Email</Text>
+              <TextInput
+                style={styles.input}
+                placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                placeholder="email adresi daxil et"
+              />
+            </View>
 
-          <TouchableOpacity
-            onPress={() => navigation.navigate('OtpScreen')}
-            style={styles.button}>
-            <Text style={styles.buttunText}>Kodu göndər</Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('OtpScreen')}
+              style={GlobalStyles.button.buttonPurple}>
+              <Text style={styles.buttunText}>Kodu göndər</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </SafeAreaView>

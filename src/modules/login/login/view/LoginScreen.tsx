@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Image,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -44,95 +45,95 @@ export const LoginScreen = () => {
   };
   return (
     <SafeAreaView style={{backgroundColor: '#fff', height: '100%'}}>
-      <View
-        style={{
-          paddingTop: 60,
-          paddingBottom: 40,
-          paddingLeft: 20,
-          paddingRight: 20,
-        }}>
-        <Text
+      <View style={{flex: 1, alignItems: 'flex-end'}}>
+        <Image
+          style={{width: 400, height: 400, position: 'absolute', zIndex: -1}}
+          source={require('../../../../assets/images/image/ballonTwo.png')}
+        />
+        <View
           style={{
-            fontSize: 40,
-            fontWeight: 'bold',
-            color: GlobalStyles.colors.CobaltBlue,
-            paddingBottom: 50,
+            paddingTop: 60,
+            paddingBottom: 40,
+            paddingLeft: 20,
+            paddingRight: 20,
           }}>
-          giriş
-        </Text>
-        <View>
-          <View style={{marginBottom: 20}}>
-            <Text style={styles.inputText}>E-poçt</Text>
-            <Controller
-              control={control}
-              render={({field: {onChange, value}}) => (
-                <TextInput
-                  style={styles.input}
-                  value={value}
-                  placeholderTextColor="rgba(0, 0, 0, 0.5)"
-                  placeholder="example@gmail.com"
-                  onChangeText={onChange}
-                />
+          <Text
+            style={GlobalStyles.textKind.introTitle}>
+            giriş
+          </Text>
+          <View>
+            <View style={{marginBottom: 20}}>
+              <Text style={styles.inputText}>E-poçt</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                    placeholder="example@gmail.com"
+                    onChangeText={onChange}
+                  />
+                )}
+                name="email"
+                defaultValue=""
+              />
+              {errors.email && (
+                <Text style={styles.error}>{errors.email.message}</Text>
               )}
-              name="email"
-              defaultValue=""
-            />
-            {errors.email && (
-              <Text style={styles.error}>{errors.email.message}</Text>
-            )}
-          </View>
-          <View style={{marginBottom: 30}}>
-            <Text style={styles.inputText}>Şifrə</Text>
-            <Controller
-              control={control}
-              render={({field: {onChange, value}}) => (
-                <TextInput
-                  style={styles.input}
-                  value={value}
-                  onChangeText={onChange}
-                  placeholderTextColor="rgba(0, 0, 0, 0.5)"
-                  placeholder="minimum 8 sinvol daxil et"
-                  keyboardType="numeric"
-                  secureTextEntry={true}
-                />
+            </View>
+            <View style={{marginBottom: 30}}>
+              <Text style={styles.inputText}>Şifrə</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    onChangeText={onChange}
+                    placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                    placeholder="minimum 8 sinvol daxil et"
+                    secureTextEntry={true}
+                  />
+                )}
+                name="password"
+                defaultValue=""
+              />
+              {errors.password && (
+                <Text style={styles.error}>{errors.password.message}</Text>
               )}
-              name="password"
-              defaultValue=""
-            />
-            {errors.password && (
-              <Text style={styles.error}>{errors.password.message}</Text>
-            )}
+            </View>
+            <TouchableOpacity
+              style={GlobalStyles.button.buttonPurple}
+              onPress={handleSubmit(onSubmit)}>
+              <Text style={styles.buttunText}>Daxil ol</Text>
+            </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={handleSubmit(onSubmit)}>
-            <Text style={styles.buttunText}>Daxil ol</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <TouchableOpacity
-            style={{width: 200}}
-            onPress={() => navigation.navigate('PasswordResetScreen')}>
-            <Text style={styles.inputText}>Şifrəni unutmusan?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('BottomTabNavigator');
-            }}>
-            <Text style={styles.inputText}>Kecid Helelik Konullu</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('ResponsibleBottomTabNavigator');
-            }}>
-            <Text style={styles.inputText}>Kecid Helelik Mehsul Sexs</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('ResponsiblePersonofClubs');
-            }}>
-            <Text style={styles.inputText}>Kecid Helelik Klublar</Text>
-          </TouchableOpacity>
+          <View>
+            <TouchableOpacity
+              style={{width: 200}}
+              onPress={() => navigation.navigate('PasswordResetScreen')}>
+              <Text style={styles.inputText}>Şifrəni unutmusan?</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('BottomTabNavigator');
+              }}>
+              <Text style={styles.inputText}>Kecid Helelik Konullu</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('ResponsibleBottomTabNavigator');
+              }}>
+              <Text style={styles.inputText}>Kecid Helelik Mehsul Sexs</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('ResponsiblePersonofClubs');
+              }}>
+              <Text style={styles.inputText}>Kecid Helelik Klublar</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </SafeAreaView>

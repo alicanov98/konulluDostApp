@@ -27,27 +27,38 @@ const SiginUpScreen = () => {
         barStyle={'light-content'}
         backgroundColor={GlobalStyles.colors.TransparentBlack}
       />
-      <View>
+      <View style={{position: 'relative'}}>
         <Image
-          source={require('../images/SignupPhoto.png')}
+          style={{
+            position: 'absolute',
+            width: 326,
+            height: 104,
+            zIndex: -4,
+            top: '15%',
+            left: '10%',
+          }}
+          source={require('../../../../assets/images/icons/logointo.png')}
+        />
+        <Image
+          source={require('../../../../assets/images/image/image17.png')}
           style={{
             zIndex: -5,
             width: '100%',
             height: '100%',
             resizeMode: 'contain',
-            top: -200,
+            top: -220,
           }}
         />
+      </View>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <View
           style={{
-            position: 'absolute',
-            backgroundColor: '#fff',
+            top: -240,
+            left: 7,
+            backgroundColor: GlobalStyles.colors.PureWhite,
             width: 626,
             height: 626,
             borderRadius: 9999,
-            left: -97,
-            bottom: -100,
-            alignItems: 'center',
           }}>
           <View
             style={{
@@ -59,7 +70,7 @@ const SiginUpScreen = () => {
             }}>
             <Text
               style={{
-                color: '#252C36',
+                color: GlobalStyles.colors.fontBlack,
                 fontSize: 23,
                 fontWeight: '600',
                 marginBottom: 30,
@@ -74,28 +85,27 @@ const SiginUpScreen = () => {
                     ? navigation.navigate('VoluntaryRegistrationScreen')
                     : navigation.navigate('LegalPersonRegistrationScreen')
                 }
-                style={{
-                  width: 355,
-                  height: 56,
-                  backgroundColor: '#861DBF',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: 15,
-                  borderRadius: 15,
-                }}>
-                <Text style={{fontSize: 16, color: '#fff'}}>Qeydiyyat</Text>
+                style={GlobalStyles.button.buttonPurple}>
+                <Text
+                  style={{
+                    fontSize: 16,
+                    color: GlobalStyles.colors.PureWhite,
+                    fontWeight: 'bold',
+                  }}>
+                  Qeydiyyat
+                </Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => navigation.navigate('LoginScreen')}
-                style={{
-                  width: 355,
-                  height: 56,
-                  backgroundColor: '#861DBF',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderRadius: 15,
-                }}>
-                <Text style={{fontSize: 16, color: '#fff'}}>Giriş</Text>
+                style={GlobalStyles.button.buttonWhite}>
+                <Text
+                  style={{
+                    fontSize: 16,
+                    color: GlobalStyles.colors.fontBlack,
+                    fontWeight: 'bold',
+                  }}>
+                  Giriş
+                </Text>
               </TouchableOpacity>
             </View>
             <View
@@ -107,15 +117,20 @@ const SiginUpScreen = () => {
               }}>
               <Text
                 style={{
-                  color: '#5F6772',
+                  color: GlobalStyles.colors.shadowBlack,
                   textAlign: 'center',
                   fontSize: 16,
                   fontWeight: '600',
                 }}>
                 Daxil olmaqla və ya qeydiyyatdan keçməklə{' '}
-                <Text style={{color: 'black', fontSize: 16, fontWeight: '600'}}>
+                <Text
+                  style={{
+                    color: GlobalStyles.colors.PureBlack,
+                    fontSize: 16,
+                    fontWeight: '600',
+                  }}>
                   Şərt və Siyasətimizlə
-                </Text>{' '}
+                </Text>
                 razılaşırsınız
               </Text>
             </View>

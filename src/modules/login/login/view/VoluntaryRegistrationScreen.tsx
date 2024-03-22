@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  Image,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -73,137 +74,148 @@ const VoluntaryRegistrationScreen = () => {
   // @ts-ignore
   return (
     <SafeAreaView style={{backgroundColor: '#fff', flex: 1}}>
-      <View
-        style={{
-          paddingTop: 60,
-          paddingLeft: 20,
-          paddingRight: 20,
-        }}>
-        <Text
+      <View style={{flex: 1, alignItems: 'flex-end'}}>
+        <Image
+          style={{width: 300, height: 300, position: 'absolute', zIndex: -1}}
+          source={require('../../../../assets/images/image/balonOne.png')}
+        />
+        <View
           style={{
-            fontSize: 40,
-            fontWeight: 'bold',
-            color: GlobalStyles.colors.CobaltBlue,
-            paddingBottom: 50,
+            paddingTop: 60,
+            paddingLeft: 20,
+            paddingRight: 20,
+            zIndex: 1,
           }}>
-          qeydiyyat
-        </Text>
-        <View>
-          <View style={{marginBottom: 30}}>
-            <Text style={styles.inputText}>Elektron poçt ünvanı</Text>
-            <Controller
-              control={control}
-              render={({field: {onChange, value}}) => (
-                <TextInput
-                  style={styles.input}
-                  value={value}
-                  placeholderTextColor="rgba(0, 0, 0, 0.5)"
-                  placeholder="example@gmail.com"
-                  onChangeText={onChange}
-                />
+          <Text
+            style={{
+              fontSize: 40,
+              fontWeight: 'bold',
+              color: '#412B4D',
+              paddingBottom: 50,
+            }}>
+            qeydiyyat
+          </Text>
+          <View>
+            <View style={{marginBottom: 30}}>
+              <Text style={styles.inputText}>Elektron poçt ünvanı</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                    placeholder="example@gmail.com"
+                    onChangeText={onChange}
+                  />
+                )}
+                name="email"
+                defaultValue=""
+              />
+              {errors.email && (
+                <Text style={styles.error}>{errors.email.message}</Text>
               )}
-              name="email"
-              defaultValue=""
-            />
-            {errors.email && (
-              <Text style={styles.error}>{errors.email.message}</Text>
-            )}
-          </View>
-          <View style={{marginBottom: 30}}>
-            <Text style={styles.inputText}>Şifrəni təyin et</Text>
-            <Controller
-              control={control}
-              render={({field: {onChange, value}}) => (
-                <TextInput
-                  style={styles.input}
-                  value={value}
-                  onChangeText={onChange}
-                  placeholderTextColor="rgba(0, 0, 0, 0.5)"
-                  placeholder="minimum 8 simvol daxil et"
-                  keyboardType="numeric"
-                  secureTextEntry={true}
-                />
+            </View>
+            <View style={{marginBottom: 30}}>
+              <Text style={styles.inputText}>Şifrəni təyin et</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    onChangeText={onChange}
+                    placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                    placeholder="minimum 8 simvol daxil et"
+                    keyboardType="numeric"
+                    secureTextEntry={true}
+                  />
+                )}
+                name="password"
+                defaultValue=""
+              />
+              {errors.password && (
+                <Text style={styles.error}>{errors.password.message}</Text>
               )}
-              name="password"
-              defaultValue=""
-            />
-            {errors.password && (
-              <Text style={styles.error}>{errors.password.message}</Text>
-            )}
-          </View>
-          <View style={{marginBottom: 25}}>
-            <Text style={styles.inputText}>Şifrəni dəqiqləşdir</Text>
-            <Controller
-              control={control}
-              render={({field: {onChange, value}}) => (
-                <TextInput
-                  style={styles.input}
-                  value={value}
-                  onChangeText={onChange}
-                  placeholderTextColor={GlobalStyles.colors.PlaceHolder}
-                  placeholder="minimum 8 simvol daxil et"
-                  keyboardType="numeric"
-                  secureTextEntry={true}
-                />
+            </View>
+            <View style={{marginBottom: 25}}>
+              <Text style={styles.inputText}>Şifrəni dəqiqləşdir</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    onChangeText={onChange}
+                    placeholderTextColor={GlobalStyles.colors.PlaceHolder}
+                    placeholder="minimum 8 simvol daxil et"
+                    keyboardType="numeric"
+                    secureTextEntry={true}
+                  />
+                )}
+                name="confirmPassword"
+                defaultValue=""
+              />
+              {errors.confirmPassword && (
+                <Text style={styles.error}>
+                  {errors.confirmPassword.message}
+                </Text>
               )}
-              name="confirmPassword"
-              defaultValue=""
-            />
-            {errors.confirmPassword && (
-              <Text style={styles.error}>{errors.confirmPassword.message}</Text>
-            )}
-          </View>
-          <View style={{marginBottom: 30}}>
-            <Text style={styles.inputText}>Fəaliyyət göstərdiyiniz mərkəz</Text>
-            <Controller
-              control={control}
-              render={({field: {onChange}}) => (
-                <SelectList
-                  data={centers}
-                  placeholder="Seçin"
-                  setSelected={(value: string) => onChange(value)}
-                  search={false}
-                  boxStyles={styles.input}
-                  inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
-                  dropdownStyles={styles.dropDownBoxCenter}
-                  dropdownTextStyles={{color: GlobalStyles.colors.PureBlack}}
-                />
+            </View>
+            <View style={{marginBottom: 30}}>
+              <Text style={styles.inputText}>
+                Fəaliyyət göstərdiyiniz mərkəz
+              </Text>
+              <Controller
+                control={control}
+                render={({field: {onChange}}) => (
+                  <SelectList
+                    data={centers}
+                    placeholder="Seçin"
+                    setSelected={(value: string) => onChange(value)}
+                    search={false}
+                    boxStyles={styles.input}
+                    inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
+                    dropdownStyles={styles.dropDownBoxCenter}
+                    dropdownTextStyles={{color: GlobalStyles.colors.PureBlack}}
+                  />
+                )}
+                name="center"
+                defaultValue=""
+              />
+              {errors.center && (
+                <Text style={styles.error}>{errors.center.message}</Text>
               )}
-              name="center"
-              defaultValue=""
-            />
-            {errors.center && (
-              <Text style={styles.error}>{errors.center.message}</Text>
-            )}
-          </View>
-          <View style={{marginBottom: 30}}>
-            <Text style={styles.inputText}>DK nömrəsi</Text>
-            <Controller
-              control={control}
-              render={({field: {onChange}}) => (
-                <SelectList
-                  data={dkNumbers}
-                  placeholder="Seçin"
-                  setSelected={(value: string) => onChange(value)}
-                  search={false}
-                  boxStyles={styles.dropDowninput}
-                  inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
-                  dropdownStyles={styles.dropDownBoxDk}
-                  dropdownTextStyles={{color: GlobalStyles.colors.PureBlack}}
-                />
+            </View>
+            <View style={{marginBottom: 30}}>
+              <Text style={styles.inputText}>DK nömrəsi</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange}}) => (
+                  <SelectList
+                    data={dkNumbers}
+                    placeholder="Seçin"
+                    setSelected={(value: string) => onChange(value)}
+                    search={false}
+                    boxStyles={styles.dropDowninput}
+                    inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
+                    dropdownStyles={styles.dropDownBoxDk}
+                    dropdownTextStyles={{color: GlobalStyles.colors.PureBlack}}
+                  />
+                )}
+                name="dkNumber"
+                defaultValue=""
+              />
+              {errors.dkNumber && (
+                <Text style={styles.error}>{errors.dkNumber.message}</Text>
               )}
-              name="dkNumber"
-              defaultValue=""
-            />
-            {errors.dkNumber && (
-              <Text style={styles.error}>{errors.dkNumber.message}</Text>
-            )}
+            </View>
+            <TouchableOpacity
+              style={GlobalStyles.button.buttonPurple}
+              onPress={handleSubmit(onSubmit)}>
+              <Text style={styles.buttonText}>Qeydiyyatı Tamamla</Text>
+            </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={handleSubmit(onSubmit)}>
-            <Text style={styles.buttonText}>Qeydiyyatı Tamamla</Text>
-          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
@@ -250,15 +262,6 @@ const styles = StyleSheet.create({
     zIndex: 5,
     top: 51,
     backgroundColor: '#fff',
-  },
-  button: {
-    width: 355,
-    height: 56,
-    backgroundColor: '#252C36',
-    alignItems: 'center',
-    justifyContent: 'center',
-    // marginBottom: 15,
-    borderRadius: 15,
   },
   buttonText: {fontSize: 16, color: '#fff'},
   inputText: {color: '#000', marginBottom: 5, fontSize: 14},

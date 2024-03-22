@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../../../navigation/KonulluDostNavigator.tsx';
@@ -19,50 +20,71 @@ export const OtpScreen = () => {
   return (
     <SafeAreaView
       style={{backgroundColor: '#fff', height: '100%', paddingTop: 50}}>
-      <View
-        style={{
-          paddingTop: 60,
-          paddingBottom: 40,
-          paddingLeft: 20,
-          paddingRight: 20,
-          marginBottom: 20,
-        }}>
-        <Text
+      <View style={{flex: 1, alignItems: 'flex-end'}}>
+        <Image
           style={{
-            fontSize: 35,
-            fontWeight: 'bold',
-            color: GlobalStyles.colors.CobaltBlue,
-            paddingBottom: 15,
-          }}>
-          zəhmət olmasa emaili yoxla
-        </Text>
-        <View>
-          <Text style={styles.pageText}>
-            Biz kodu bu email adresinə göndərdik helloworld@gmail.com
-          </Text>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <TextInput
-              style={styles.input}
-              placeholderTextColor="rgba(0, 0, 0, 0.5)"
-              value="2"
-            />
-            <TextInput
-              style={styles.input}
-              placeholderTextColor="rgba(0, 0, 0, 0.5)"
-            />
-            <TextInput
-              style={styles.input}
-              placeholderTextColor="rgba(0, 0, 0, 0.5)"
-            />
-            <TextInput
-              style={styles.input}
-              placeholderTextColor="rgba(0, 0, 0, 0.5)"
-            />
-          </View>
+            width: 400,
+            height: 400,
+            position: 'absolute',
+            zIndex: -1,
+            top: '50%',
+          }}
+          source={require('../../../../assets/images/image/ballonthree.png')}
+        />
 
-          <TouchableOpacity onPress={() => navigation.navigate('NewPasswordScreen')}>
-            <Text style={styles.pageText}>Helelik kecid</Text>
-          </TouchableOpacity>
+        <View
+          style={{
+            paddingTop: 60,
+            paddingBottom: 40,
+            paddingLeft: 20,
+            paddingRight: 20,
+            marginBottom: 20,
+          }}>
+          <Text
+            style={{
+              fontSize: 35,
+              fontWeight: 'bold',
+              color: GlobalStyles.colors.darkPlum,
+              paddingBottom: 15,
+            }}>
+            zəhmət olmasa emaili yoxla
+          </Text>
+          <View>
+            <Text style={styles.pageText}>
+              <Text style={{color: GlobalStyles.colors.TransparentBlack}}>
+                Biz kodu bu email adresinə göndərdik
+              </Text>{' '}
+              helloworld@gmail.com
+            </Text>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <TextInput
+                style={styles.input}
+                placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                value="1"
+              />
+              <TextInput
+                style={styles.input}
+                placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                value="2"
+              />
+              <TextInput
+                style={styles.input}
+                placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                value="3"
+              />
+              <TextInput
+                style={styles.input}
+                placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                value="4"
+              />
+            </View>
+
+            <TouchableOpacity
+              onPress={() => navigation.navigate('NewPasswordScreen')}>
+              <Text style={styles.pageText}>Helelik kecid</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </SafeAreaView>
