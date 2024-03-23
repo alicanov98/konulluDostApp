@@ -9,13 +9,16 @@ import {
 } from 'react-native';
 import {Calendar, LocaleConfig} from 'react-native-calendars';
 import ClubCards from '../../../components/cards/ClubCards.tsx';
-// @ts-ignore
+import SettingsBar from '../../../assets/images/icons/settingBar.svg';
 import DavamiyyetIcon from '../../../assets/images/icons/davamiyyet.svg';
-// @ts-ignore
+
 import QiymetlendirmeIcon from '../../../assets/images/icons/qiymetlendirme.svg';
 import {Reservation} from '../types/StatisticTypes.ts';
 import dayjs from 'dayjs';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
 
 LocaleConfig.locales.az = {
   monthNames: [
@@ -141,6 +144,7 @@ const reservations: Reservation[] = [
 ];
 
 const StatisticScreen: React.FC = () => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const [selected, setSelected] = useState('');
   const [isActive, setIsActive] = useState(false);
   const [clubsData, setClubsData] = useState<Reservation[]>([]);
@@ -183,11 +187,12 @@ const StatisticScreen: React.FC = () => {
         <Image source={require('../../../assets/images/icons/logo.png')} />
 
         <TouchableOpacity
-          onPress={() => setIsActive(!isActive)}
+          onPress={() => navigation.navigate('AboutScreen')}
           style={{
             position: 'relative',
-          }}
-        />
+          }}>
+          <SettingsBar />
+        </TouchableOpacity>
       </View>
 
       <Text

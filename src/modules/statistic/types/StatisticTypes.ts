@@ -13,3 +13,5 @@ export interface Reservation {
   text: string;
   degre: number;
 }
+
+

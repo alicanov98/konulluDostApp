@@ -1,6 +1,6 @@
-import {Reservation} from '../modules/statistic/types/StatisticTypes.ts';
+import {Clubs, Reservation} from '../modules/statistic/types/StatisticTypes.ts';
 
-export const db: {clubs: Reservation[]} = {
+export const db: {clubs: Reservation[]; clubHome: Clubs[]} = {
   clubs: [
     {
       id: '1',
@@ -48,6 +48,92 @@ export const db: {clubs: Reservation[]} = {
       topic:
         '"Dream Language School" İnglis dili kursunun rəhbəri Gülnar Baxşəliyeva "Easiest ways to learn English" adlı təlim keçəcək.',
       text: 'Xarici Dil klubunda "Dream Language School" İnglis dili kursunun rəhbəri Gülnar Baxşəliyeva "Easiest ways to learn English" adlı təlim keçəcək.✌️',
+    },
+  ],
+  clubHome: [
+    {
+      id: 1,
+      text: 'Yaradıcılıq',
+      bgColor: '#2858EE',
+      colors: '#2858EE18',
+      image: require('../assets/images/image/club/ferdi.png'),
+    },
+    {
+      id: 2,
+      text: 'Xarici dil',
+      bgColor: '#DDA2E6',
+      colors: '#DBA1E428',
+      image: require('../assets/images/image/club/xariciDil.png'),
+    },
+    {
+      id: 3,
+      text: 'Kitab',
+      bgColor: '#FE5024',
+      colors: '#FE502428',
+      image: require('../assets/images/image/club/kitab.png'),
+    },
+    {
+      id: 4,
+      text: 'Film',
+      bgColor: '#E64646',
+      colors: '#E6464628',
+      image: require('../assets/images/image/club/filim.png'),
+    },
+    {
+      id: 5,
+      text: 'Şahmat',
+      bgColor: '#DA78A7',
+      colors: '#DA78A728',
+      image: require('../assets/images/image/club/sahmat.png'),
+    },
+    {
+      id: 6,
+      text: 'Layihələr',
+      bgColor: '#006554',
+      colors: '#00655428',
+      image: require('../assets/images/image/club/lahieler.png'),
+    },
+    {
+      id: 7,
+      text: 'Fərdi inkişaf',
+      bgColor: '#E69800',
+      colors: '#E6980028',
+      image: require('../assets/images/image/club/ferdiinksad.png'),
+    },
+    {
+      id: 8,
+      text: 'Tarix',
+      bgColor: '#E62900',
+      colors: '#E6290028',
+      image: require('../assets/images/image/club/tarix.png'),
+    },
+    {
+      id: 9,
+      text: 'Natiqlik',
+      bgColor: '#7311D2',
+      colors: '#7311D228',
+      image: require('../assets/images/image/club/natiqlik.png'),
+    },
+    {
+      id: 10,
+      text: 'Oyunlar',
+      bgColor: '#B98A40',
+      colors: '#B98A4028',
+      image: require('../assets/images/image/club/oyunlar.png'),
+    },
+    {
+      id: 11,
+      text: 'Səyahətçilər',
+      bgColor: '#E6AFA2',
+      colors: '#E6AFA228',
+      image: require('../assets/images/image/club/seyahetciler.png'),
+    },
+    {
+      id: 12,
+      text: 'Şeir',
+      bgColor: '#E64646',
+      colors: '#E6464618',
+      image: require('../assets/images/image/club/vector.png'),
     },
   ],
 };

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Image,
   Modal,
@@ -9,50 +9,36 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-// @ts-ignore
+
 import BellIcon from '../../../assets/images/icons/bell-icon.svg';
 import ClubCard from '../../../components/cards/ClubCard.tsx';
 import VolunteerActivityCard from '../../../components/cards/ VolunteerActivityCard.tsx';
 import Notification from '../../../components/notification/Notification.tsx';
 import {MyCarousel} from '../../../components/swiper/Carousel.tsx';
-
-const data = [
-  {
-    id: 1,
-    text: 'Yaradıcılıq',
-    color: '#2858EE',
-    colors: '#2858EE18',
-    image: require('../../../assets/images/image/club/book.png'),
-    margin: 5,
-  },
-  {
-    id: 2,
-    text: 'Xarici dil',
-    color: '#00FF55',
-    colors: '#00FF5518',
-    image: require('../../../assets/images/image/club/lamp.png'),
-    margin: 0,
-  },
-  {
-    id: 3,
-    text: 'Kitab',
-    color: 'rgba(254, 80, 36, 1)',
-    colors: 'rgba(254, 80, 36, 0.18)',
-    image: require('../../../assets/images/image/club/vector.png'),
-    margin: 5,
-  },
-  {
-    id: 4,
-    text: 'Şeir',
-    color: '#E64646',
-    colors: '#E6464618',
-    image: require('../../../assets/images/image/club/messageRigh.png'),
-    margin: 5,
-  },
-];
+import {Clubs} from '../types/HomeTypes.tsx';
+import {db} from '../../../fakeDb/db.ts';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
 
 const HomeScreen = () => {
   const [isActive, setIsActive] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [clubHome, setClubHome] = useState<Clubs[]>([]);
+
+  useEffect(() => {
+    const getClubHome = async () => {
+      setLoading(true);
+      try {
+        setClubHome(db.clubHome);
+      } catch (err) {
+        console.log(err);
+        console.log(loading);
+      }
+    };
+    getClubHome();
+  }, []);
+
   return (
     <SafeAreaView
       style={{
@@ -112,10 +98,7 @@ const HomeScreen = () => {
                 <Text style={{color: '#fff'}}>Close</Text>
               </TouchableOpacity>
             </View>
-            <ScrollView>
-              <Notification />
-              <Notification />
-              <Notification />
+            <ScrollView style={{flex: 1, marginBottom: 40}}>
               <Notification />
               <Notification />
               <Notification />
@@ -182,7 +165,9 @@ const HomeScreen = () => {
         }}>
         Klublar
       </Text>
-      <ClubCard data={data} />
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <ClubCard data={clubHome} />
+      </ScrollView>
     </SafeAreaView>
   );
 };

@@ -1,45 +1,45 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import useTabBarVisibility from '../hooks/useTabBarVisibility.tsx';
 import HomeScreen from '../modules/home/view/HomeScreen.tsx';
 import IntroductionScreen from '../modules/introduction/view/IntroductionScreen.tsx';
 import SiginUpScreen from '../modules/login/login/view/SiginUpScreen.tsx';
 import VoluntaryRegistrationScreen from '../modules/login/login/view/VoluntaryRegistrationScreen.tsx';
 import LegalPersonRegistrationScreen from '../modules/login/login/view/LegalPersonRegistrationScreen.tsx';
-import { LoginScreen } from '../modules/login/login/view/LoginScreen.tsx';
-import { PasswordResetScreen } from '../modules/login/login/view/PasswordResetScreen.tsx';
-import { OtpScreen } from '../modules/login/login/view/OtpScreen.tsx';
-import { NewPasswordScreen } from '../modules/login/login/view/NewPasswordScreen.tsx';
+import {LoginScreen} from '../modules/login/login/view/LoginScreen.tsx';
+import {PasswordResetScreen} from '../modules/login/login/view/PasswordResetScreen.tsx';
+import {OtpScreen} from '../modules/login/login/view/OtpScreen.tsx';
+import {NewPasswordScreen} from '../modules/login/login/view/NewPasswordScreen.tsx';
 import GlobalStyles from '../assets/globalStyles/styles.ts';
-// @ts-ignore
-import HomeIcon from '../assets/images/icons/pentagramIcon.svg';
-// @ts-ignore
-import TodoIcon from '../assets/images/icons/todoIcon.svg';
-// @ts-ignore
-import PenIcon from '../assets/images/icons/penIcon.svg';
+
+import HomeIcon from '../assets/images/icons/homeBottomBar.svg';
+
+import TodoIcon from '../assets/images/icons/statistics.svg';
+
+import PenIcon from '../assets/images/icons/clubBottomBar.svg';
 import AboutScreen from '../modules/about/view/AboutScreen.tsx';
-// @ts-ignore
-import UserIcon from '../assets/images/icons/UserIcon.svg';
+
+import UserIcon from '../assets/images/icons/profilBottomBar.svg';
 import StatisticScreen from '../modules/statistic/view/StatisticScreen.tsx';
 import ClubsScreen from '../modules/clubs/view/ClubsScreen.tsx';
 import DeviceScreen from '../modules/about/view/DeviceScreen.tsx';
 import ProfileScreen from '../modules/profile/view/ProfileScreen.tsx';
-import { RefreshPasswordScreen } from '../modules/about/view/RefreshPasswordScreen.tsx';
+import {RefreshPasswordScreen} from '../modules/about/view/RefreshPasswordScreen.tsx';
 import AboutVolunteerScreen from '../modules/about/view/AboutVolunteerScreen.tsx';
 import AboutAppScreen from '../modules/about/view/AboutAppScreen.tsx';
 import ClubDetailsScreen from '../modules/clubs/view/ClubDetailsScreen.tsx';
-import { Image, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import ResponsibleHomeScreen from '../modules/responsible/screens/ResponsibleHomeScreen.tsx';
 import AttendanceScreen from '../modules/responsible/screens/AttendanceScreen.tsx';
 import RateScreen from '../modules/responsible/screens/RateScreen.tsx';
 import VoluntaryListScreen from '../modules/responsible/screens/VoluntaryListScreen.tsx';
 import ClubEditScreen from '../modules/ResponsiblePersonofClubs/ClubEditScreen.tsx';
-import { NewClubAddScreen } from '../modules/ResponsiblePersonofClubs/NewClubAddScreen.tsx';
+import {NewClubAddScreen} from '../modules/ResponsiblePersonofClubs/NewClubAddScreen.tsx';
 import ParticipantsClubScreen from '../modules/ResponsiblePersonofClubs/ParticipantsClubScreen.tsx';
 import NewsClubScreen from '../modules/ResponsiblePersonofClubs/NewsClubScreen.tsx';
 import NewsScreen from '../modules/ResponsiblePersonofClubs/NewsScreen.tsx';
-import { NewsEditScreen } from '../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx';
+import {NewsEditScreen} from '../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -114,7 +114,7 @@ const ClubsAddNavigator = () => {
           headerShown: true,
           headerLeft: () => (
             <TouchableOpacity
-              style={{ marginLeft: 10, marginTop: 20 }}
+              style={{marginLeft: 10, marginTop: 20}}
               onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
@@ -159,7 +159,7 @@ const AboutNavigator = () => {
           headerShown: true,
           headerLeft: () => (
             <TouchableOpacity
-              style={{ marginLeft: 10, marginTop: 20 }}
+              style={{marginLeft: 10, marginTop: 20}}
               onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
@@ -175,7 +175,7 @@ const AboutNavigator = () => {
           headerShown: true,
           headerLeft: () => (
             <TouchableOpacity
-              style={{ marginLeft: 10, marginTop: 20 }}
+              style={{marginLeft: 10, marginTop: 20}}
               onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/white.png')} />
             </TouchableOpacity>
@@ -191,7 +191,7 @@ const AboutNavigator = () => {
           headerShown: true,
           headerLeft: () => (
             <TouchableOpacity
-              style={{ marginLeft: 10, marginTop: 20 }}
+              style={{marginLeft: 10, marginTop: 20}}
               onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
@@ -207,7 +207,7 @@ const AboutNavigator = () => {
           headerShown: true,
           headerLeft: () => (
             <TouchableOpacity
-              style={{ marginLeft: 10, marginTop: 20 }}
+              style={{marginLeft: 10, marginTop: 20}}
               onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
@@ -223,7 +223,7 @@ const AboutNavigator = () => {
           headerShown: true,
           headerLeft: () => (
             <TouchableOpacity
-              style={{ marginLeft: 10, marginTop: 20 }}
+              style={{marginLeft: 10, marginTop: 20}}
               onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
@@ -239,7 +239,7 @@ const AboutNavigator = () => {
           headerShown: true,
           headerLeft: () => (
             <TouchableOpacity
-              style={{ marginLeft: 10, marginTop: 20 }}
+              style={{marginLeft: 10, marginTop: 20}}
               onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
@@ -267,7 +267,7 @@ const ClubsNavigator = () => {
           headerShown: true,
           headerLeft: () => (
             <TouchableOpacity
-              style={{ marginLeft: 10, marginTop: 20 }}
+              style={{marginLeft: 10, marginTop: 20}}
               onPress={() => navigation.goBack()}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
@@ -283,9 +283,9 @@ const ClubsNavigator = () => {
           headerShown: true,
           headerLeft: () => (
             <TouchableOpacity
-              style={{ marginLeft: 10, marginTop: 20 }}
+              style={{marginLeft: 10, marginTop: 20}}
               onPress={() => navigation.goBack()}>
-              <Image source={require('../assets/images/icons/Back.png')} />
+              {/*<Image source={require('../assets/images/icons/Back.png')} />*/}
             </TouchableOpacity>
           ),
         }}
@@ -334,23 +334,8 @@ const BottomTabNavigator = () => {
         component={HomeNavigator}
         options={{
           title: 'Əsas səhifə',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({ focused }) => (focused ? <HomeIcon /> : <HomeIcon />),
-        }}
-      />
-      <KonulluDostBottomTabNavigator.Screen
-        name={'StatisticScreen'}
-        component={StatisticScreen}
-        options={{
-          title: 'Statistika',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <TodoIcon />
-            ) : (
-              <TodoIcon fill={GlobalStyles.colors.PureWhite} />
-            ),
+          tabBarActiveTintColor: GlobalStyles.colors.bottomIcon,
+          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
@@ -358,20 +343,45 @@ const BottomTabNavigator = () => {
         component={ClubsNavigator}
         options={{
           title: 'Klublar',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({ focused }) => (focused ? <PenIcon /> : <PenIcon />),
+          tabBarActiveTintColor: GlobalStyles.colors.bottomIcon,
+          tabBarIcon: ({focused}) => (focused ? <PenIcon /> : <PenIcon />),
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
-        name={'AboutNavigator'}
-        component={AboutNavigator}
+        name={'StatisticScreens'}
+        component={StatisticScreens}
         options={{
-          title: 'Haqqimizda',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({ focused }) => (focused ? <UserIcon /> : <UserIcon />),
+          title: 'Profil',
+          tabBarActiveTintColor: GlobalStyles.colors.bottomIcon,
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
         }}
       />
     </KonulluDostBottomTabNavigator.Navigator>
+  );
+};
+
+const StatisticScreens = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="StatisticScreen"
+        component={StatisticScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="AboutScreen"
+        component={AboutScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
   );
 };
 
@@ -388,7 +398,7 @@ const ResponsibleBottomTabNavigator = () => {
         options={{
           title: 'Əsas səhifə',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({ focused }) => (focused ? <HomeIcon /> : <HomeIcon />),
+          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
@@ -397,7 +407,7 @@ const ResponsibleBottomTabNavigator = () => {
         options={{
           title: 'Könüllü List',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({ focused }) => (focused ? <UserIcon /> : <UserIcon />),
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
@@ -406,7 +416,7 @@ const ResponsibleBottomTabNavigator = () => {
         options={{
           title: 'Haqqımızda',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({ focused }) => (focused ? <UserIcon /> : <UserIcon />),
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
         }}
       />
     </KonulluDostBottomTabNavigator.Navigator>
@@ -442,7 +452,7 @@ const ResponsiblePersonofClubs = () => {
         options={{
           title: 'Əsas səhifə',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({ focused }) => (focused ? <HomeIcon /> : <HomeIcon />),
+          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
@@ -451,7 +461,7 @@ const ResponsiblePersonofClubs = () => {
         options={{
           title: 'Xəbərlər',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({ focused }) => (focused ? <UserIcon /> : <UserIcon />),
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
@@ -460,7 +470,7 @@ const ResponsiblePersonofClubs = () => {
         options={{
           title: 'Klublar',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({ focused }) => (focused ? <UserIcon /> : <UserIcon />),
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
         }}
       />
     </KonulluDostBottomTabNavigator.Navigator>

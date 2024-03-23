@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 const colors = {
+  bottomIcon: '#861DBF',
   darkPlum: '#412B4D',
   purple: '#861DBF',
   PureWhite: '#ffffff',
