@@ -13,3 +13,11 @@ export interface Reservation {
   text: string;
   degre: number;
 }
+
+export interface Clubs {
+  id: number;
+  text: string;
+  bgColor: string;
+  colors: string;
+  image: string;
+}

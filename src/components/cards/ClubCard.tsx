@@ -1,14 +1,13 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
+import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 
 interface ClubCardProps {
   data: {
     id: number;
-    color: string;
+    bgColor: string;
     colors: string;
     image: string;
     text: string;
-    margin: number;
   }[];
 }
 
@@ -16,24 +15,26 @@ const ClubCard: React.FC<ClubCardProps> = ({data}) => {
   return (
     <View
       style={{
+        height: 102,
         marginTop: 15,
-        flexDirection: 'row',
         gap: 16,
+        paddingHorizontal: 10,
+        flexDirection: 'row',
         justifyContent: 'center',
       }}>
       {data.map(item => (
-        <View
+        <TouchableOpacity
           key={item.id}
           style={{justifyContent: 'center', alignItems: 'center'}}>
           <View
             style={[
               styles.container,
-              {backgroundColor: item.color, position: 'relative'},
+              {backgroundColor: item.bgColor, position: 'relative'},
             ]}>
             <Text
               style={[
                 styles.text,
-                {transform: [{rotate: '-90deg'}], left: 57},
+                {transform: [{rotate: '-90deg'}], left: 52},
               ]}>
               {item.text}
             </Text>
@@ -44,7 +45,7 @@ const ClubCard: React.FC<ClubCardProps> = ({data}) => {
               }}>
               <Image
                 style={{
-                  margin: item.margin,
+                  margin: 5,
                 }}
                 source={item.image}
               />
@@ -60,14 +61,14 @@ const ClubCard: React.FC<ClubCardProps> = ({data}) => {
                 top: 40,
                 width: 83,
                 height: 82,
-                zIndex: -1,
+                zIndex: 1,
               },
             ]}>
             <View style={styles.innerContainer}>
-              <Text style={styles.plus}>+</Text>
+              <Text style={[styles.plus, {color: item.bgColor}]}>+</Text>
             </View>
           </View>
-        </View>
+        </TouchableOpacity>
       ))}
     </View>
   );
@@ -88,17 +89,17 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '300',
     lineHeight: 24,
+    zIndex: 3,
   },
   text: {
     width: 83,
     height: 82,
     fontSize: 10,
     position: 'absolute',
-    top: 15,
+    top: 10,
     zIndex: 0,
-    padding: 0,
-    margin: 0,
     textAlign: 'left',
+    color: '#fff',
   },
 });
 

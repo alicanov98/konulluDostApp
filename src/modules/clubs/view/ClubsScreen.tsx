@@ -72,7 +72,7 @@ const WeeklyCalendar: React.FC = () => {
           <Image source={require('../../../assets/images/icons/logo.png')} />
         </View>
         <View>
-          <ScrollView horizontal={true}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View style={styles.container}>
               {daysOfWeek.map((day, index) => {
                 const currentDate = new Date(startOfWeek);
