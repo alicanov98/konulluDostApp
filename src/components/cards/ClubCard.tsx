@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 
 interface ClubCardProps {
-  data: {
+  clubHome: {
     id: number;
     bgColor: string;
     colors: string;
@@ -11,7 +11,7 @@ interface ClubCardProps {
   }[];
 }
 
-const ClubCard: React.FC<ClubCardProps> = ({data}) => {
+const ClubCard: React.FC<ClubCardProps> = ({clubHome}) => {
   return (
     <View
       style={{
@@ -22,7 +22,7 @@ const ClubCard: React.FC<ClubCardProps> = ({data}) => {
         flexDirection: 'row',
         justifyContent: 'center',
       }}>
-      {data.map(item => (
+      {clubHome.map(item => (
         <TouchableOpacity
           key={item.id}
           style={{justifyContent: 'center', alignItems: 'center'}}>

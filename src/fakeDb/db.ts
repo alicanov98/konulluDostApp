@@ -1,4 +1,5 @@
-import {Clubs, Reservation} from '../modules/statistic/types/StatisticTypes.ts';
+import {Reservation} from '../modules/statistic/types/StatisticTypes.ts';
+import {Clubs} from '../modules/home/types/HomeTypes.tsx';
 
 export const db: {clubs: Reservation[]; clubHome: Clubs[]} = {
   clubs: [

@@ -5,3 +5,4 @@ export interface Clubs {
   colors: string;
   image: string;
 }
+
