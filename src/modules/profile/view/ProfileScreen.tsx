@@ -21,14 +21,10 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 
 const schema = yup.object().shape({
+  name: yup.string().required('Ad boş olmamalıdır').min(3),
+  surname: yup.string().required('Soyad boş olmamalıdır').min(3),
   email: yup.string().required('E-poçt tələb olunur').email('Səhv e-poçt'),
-  password: yup
-    .string()
-    .required('Parol tələb olunur')
-    .min(8, 'Parol ən azı 8 simvoldan ibarət olmalıdır'),
-  confirmPassword: yup
-    .string()
-    .oneOf([yup.ref('password')], 'Şifrələr uyğun gəlmir'),
+  status: yup.string().required('Statusunuzu seçin'),
   center: yup.string().required('Mərkəz seçimi tələb olunur'),
   dkNumber: yup.string().required('DK nömrəsi tələb olunur'),
 });
@@ -48,6 +44,10 @@ const centers = [
     value: 'DOST İnkluziv İnkişaf və Yaradıcılıq Mərkəzi',
   },
 ];
+const volunteerStatus = [
+  {label: 'Məzun', value: 'Məzun'},
+  {label: 'Cari', value: 'Cari'},
+];
 
 const dkNumbers = Array.from({length: 71}, (_, index) => ({
   label: index.toString(),
@@ -65,9 +65,12 @@ const ProfileScreen = () => {
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
+      name: '',
+      surname: '',
       email: '',
-      password: '',
-      confirmPassword: '',
+      center: '',
+      dkNumber: '',
+      status: '',
     },
   });
 
@@ -80,198 +83,213 @@ const ProfileScreen = () => {
   console.log(formData);
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
-      <StatusBar
-        barStyle={'light-content'}
-        backgroundColor={GlobalStyles.colors.TransparentBlack}
-      />
-      <View>
-        <Image
-          source={require('../../login/login/images/SignupPhoto.png')}
-          style={{
-            zIndex: -5,
-            width: '100%',
-            height: '100%',
-            resizeMode: 'contain',
-            top: -200,
-          }}
-        />
-        <View
-          style={{
-            position: 'absolute',
-            backgroundColor: '#fff',
-            width: 626,
-            height: 626,
-            borderRadius: 9999,
-            left: -97,
-            bottom: 60,
-            alignItems: 'center',
-          }}>
+      <View
+        style={{
+          backgroundColor: '#fff',
+          flex: 1,
+          alignItems: 'center',
+        }}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{alignItems: 'center'}}>
+          <View style={{width: '100%'}}>
+            <Image
+              source={require('../../../assets/images/image/profilHerro.png')}
+            />
+          </View>
           <View
             style={{
               width: '100%',
               alignItems: 'center',
-              paddingLeft: 60,
-              paddingRight: 80,
-              marginTop: 0,
+              justifyContent: 'center',
             }}>
+            <Image
+              style={{marginTop: -70}}
+              source={require('../../../assets/images/image/profil.png')}
+            />
+            <Text
+              style={{
+                color: '#424954',
+                fontWeight: '500',
+                fontSize: 18,
+                marginTop: 10,
+              }}>
+              Əlicanov Məlik
+            </Text>
+            <Text
+              style={{
+                color: '#424954',
+                fontWeight: '500',
+                fontSize: 16,
+                marginTop: 10,
+              }}>
+              4DK 32
+            </Text>
+          </View>
+          <View>
+            <View style={{marginBottom: 30}}>
+              <Text style={styles.inputText}>Ad</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                    placeholder="ad"
+                    onChangeText={onChange}
+                  />
+                )}
+                name="name"
+                defaultValue="Məlik"
+              />
+              {errors.name && (
+                <Text style={styles.error}>{errors.name.message}</Text>
+              )}
+            </View>
+            <View style={{marginBottom: 30}}>
+              <Text style={styles.inputText}>Soyad</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    onChangeText={onChange}
+                    placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                    placeholder="Soyad"
+                  />
+                )}
+                name="surname"
+                defaultValue="Əlicanov"
+              />
+              {errors.surname && (
+                <Text style={styles.error}>{errors.surname.message}</Text>
+              )}
+            </View>
+            <View style={{marginBottom: 30}}>
+              <Text style={styles.inputText}>E-poçt</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                    placeholder="E-poçt"
+                    onChangeText={onChange}
+                  />
+                )}
+                name="email"
+                defaultValue="alicanov1998@gmail.com"
+              />
+              {errors.email && (
+                <Text style={styles.error}>{errors.email.message}</Text>
+              )}
+            </View>
+            {/*---------*/}
+            <View style={{marginBottom: 30}}>
+              <Text style={styles.inputText}>
+                Fəaliyyət göstərdiyiniz mərkəz
+              </Text>
+              <Controller
+                control={control}
+                render={({field: {onChange}}) => (
+                  <SelectList
+                    data={centers}
+                    placeholder="Seçin"
+                    setSelected={(value: string) => onChange(value)}
+                    search={false}
+                    boxStyles={styles.input}
+                    inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
+                    dropdownStyles={styles.dropDownBoxCenter}
+                    dropdownTextStyles={{
+                      color: GlobalStyles.colors.PureBlack,
+                    }}
+                  />
+                )}
+                name="center"
+                defaultValue=""
+              />
+              {errors.center && (
+                <Text style={styles.error}>{errors.center.message}</Text>
+              )}
+            </View>
             <View
               style={{
-                width: '100%',
-                alignItems: 'center',
-                justifyContent: 'center',
+                marginBottom: 30,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
               }}>
-              <Image
-                style={{marginTop: 36}}
-                source={require('../../../assets/images/image/personNewImg.png')}
-              />
-              <Text
-                style={{
-                  color: '#424954',
-                  fontWeight: '500',
-                  fontSize: 18,
-                  marginTop: 10,
-                }}>
-                Əlicanov Məlik
-              </Text>
-              <Text
-                style={{
-                  color: '#424954',
-                  fontWeight: '500',
-                  fontSize: 16,
-                  marginTop: 10,
-                }}>
-                4DK 32
-              </Text>
-            </View>
-            <ScrollView style={{marginBottom: 130}}>
               <View>
-                <View style={{marginBottom: 30}}>
-                  <Text style={styles.inputText}>Ad</Text>
-                  <Controller
-                    control={control}
-                    render={({field: {onChange, value}}) => (
-                      <TextInput
-                        style={styles.input}
-                        value={value}
-                        placeholderTextColor="rgba(0, 0, 0, 0.5)"
-                        placeholder="ad"
-                        onChangeText={onChange}
-                      />
-                    )}
-                    name="email"
-                    defaultValue=""
-                  />
-                </View>
-                <View style={{marginBottom: 30}}>
-                  <Text style={styles.inputText}>Soyad</Text>
-                  <Controller
-                    control={control}
-                    render={({field: {onChange, value}}) => (
-                      <TextInput
-                        style={styles.input}
-                        value={value}
-                        onChangeText={onChange}
-                        placeholderTextColor="rgba(0, 0, 0, 0.5)"
-                        placeholder="Soyad"
-                        keyboardType="numeric"
-                        secureTextEntry={true}
-                      />
-                    )}
-                    name="password"
-                    defaultValue=""
-                  />
-                  {errors.password && (
-                    <Text style={styles.error}>{errors.password.message}</Text>
+                <Text style={styles.inputText}>DK nömrəsi</Text>
+                <Controller
+                  control={control}
+                  render={({field: {onChange}}) => (
+                    <SelectList
+                      data={dkNumbers}
+                      placeholder="Seçin"
+                      setSelected={(value: string) => onChange(value)}
+                      search={false}
+                      boxStyles={styles.dropDowninput}
+                      inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
+                      dropdownStyles={styles.dropDownBoxDk}
+                      dropdownTextStyles={{
+                        color: GlobalStyles.colors.PureBlack,
+                      }}
+                    />
                   )}
-                </View>
-                <View style={{marginBottom: 25}}>
-                  <Text style={styles.inputText}>E-poçt</Text>
-                  <Controller
-                    control={control}
-                    render={({field: {onChange, value}}) => (
-                      <TextInput
-                        style={styles.input}
-                        value={value}
-                        placeholderTextColor="rgba(0, 0, 0, 0.5)"
-                        placeholder="E-poçt"
-                        onChangeText={onChange}
-                      />
-                    )}
-                    name="email"
-                    defaultValue=""
-                  />
-                </View>
-                {/*---------*/}
-                <View style={{marginBottom: 30}}>
-                  <Text style={styles.inputText}>
-                    Fəaliyyət göstərdiyiniz mərkəz
-                  </Text>
-                  <Controller
-                    control={control}
-                    render={({field: {onChange}}) => (
-                      <SelectList
-                        data={centers}
-                        placeholder="Seçin"
-                        setSelected={(value: string) => onChange(value)}
-                        search={false}
-                        boxStyles={styles.input}
-                        inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
-                        dropdownStyles={styles.dropDownBoxCenter}
-                        dropdownTextStyles={{
-                          color: GlobalStyles.colors.PureBlack,
-                        }}
-                      />
-                    )}
-                    name="center"
-                    defaultValue=""
-                  />
-                </View>
-                {/*----------*/}
-                <View style={{marginBottom: 30}}>
-                  <Text style={styles.inputText}>DK nömrəsi</Text>
-                  <Controller
-                    control={control}
-                    render={({field: {onChange}}) => (
-                      <SelectList
-                        data={dkNumbers}
-                        placeholder="Seçin"
-                        setSelected={(value: string) => onChange(value)}
-                        search={false}
-                        boxStyles={styles.dropDowninput}
-                        inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
-                        dropdownStyles={styles.dropDownBoxDk}
-                        dropdownTextStyles={{
-                          color: GlobalStyles.colors.PureBlack,
-                        }}
-                      />
-                    )}
-                    name="dkNumber"
-                    defaultValue=""
-                  />
-                  {/*--------------*/}
-                </View>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={handleSubmit(onSubmit)}>
-                  <Text style={styles.buttonText}>
-                    Dəyişiklikləri yadda saxla
-                  </Text>
-                </TouchableOpacity>
+                  name="dkNumber"
+                  defaultValue=""
+                />
+                {errors.dkNumber && (
+                  <Text style={styles.error}>{errors.dkNumber.message}</Text>
+                )}
               </View>
-              <View
-                style={{
-                  width: 340,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginBottom: 30,
-                }}
-              />
-            </ScrollView>
+              {/*--------------*/}
+              <View>
+                <Text style={styles.inputText}>Status</Text>
+                <Controller
+                  control={control}
+                  render={({field: {onChange}}) => (
+                    <SelectList
+                      data={volunteerStatus}
+                      placeholder="Seçin"
+                      setSelected={(value: string) => onChange(value)}
+                      search={false}
+                      boxStyles={styles.dropDowninput}
+                      inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
+                      dropdownStyles={styles.dropDownBoxStatus}
+                      dropdownTextStyles={{
+                        color: GlobalStyles.colors.PureBlack,
+                      }}
+                    />
+                  )}
+                  name="status"
+                  defaultValue=""
+                />
+                {errors.status && (
+                  <Text style={styles.error}>{errors.status.message}</Text>
+                )}
+              </View>
+              {/*--------------*/}
+            </View>
+            <TouchableOpacity
+              style={GlobalStyles.button.buttonPurple}
+              onPress={handleSubmit(onSubmit)}>
+              <Text style={styles.buttonText}>Dəyişiklikləri yadda saxla</Text>
+            </TouchableOpacity>
           </View>
-        </View>
+          <View
+            style={{
+              width: 340,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginBottom: 30,
+            }}
+          />
+        </ScrollView>
       </View>
-
-      {/*  ---------------------*/}
     </SafeAreaView>
   );
 };
@@ -300,31 +318,20 @@ const styles = StyleSheet.create({
   },
   dropDownBoxDk: {
     width: 150,
-    height: 450,
     borderColor: '#D8DADC',
-    position: 'absolute',
-    zIndex: 5,
     backgroundColor: '#fff',
-    right: 70,
-    bottom: 0,
+  },
+  dropDownBoxStatus: {
+    width: 150,
+    height: 90,
+    borderColor: '#D8DADC',
+    backgroundColor: '#fff',
   },
   dropDownBoxCenter: {
     width: 353,
     height: 200,
     borderColor: '#D8DADC',
-    position: 'absolute',
-    zIndex: 5,
-    top: 51,
     backgroundColor: '#fff',
-  },
-  button: {
-    width: 355,
-    height: 56,
-    backgroundColor: '#2858EE',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 15,
-    borderRadius: 15,
   },
   buttonText: {fontSize: 16, color: '#fff'},
   inputText: {

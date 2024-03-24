@@ -51,7 +51,6 @@ const WeeklyCalendar: React.FC = () => {
         new Date(reservation.date).getFullYear() === date.getFullYear(),
     );
   };
-
   return (
     <SafeAreaView
       style={{
@@ -68,9 +67,9 @@ const WeeklyCalendar: React.FC = () => {
           gap: 20,
           marginBottom: 20,
         }}>
-        <View style={{alignItems: 'flex-end'}}>
-          <Image source={require('../../../assets/images/icons/logo.png')} />
-        </View>
+        <Image source={require('../../../assets/images/icons/logo.png')} />
+        {/*<View style={{alignItems: 'flex-end'}}>*/}
+        {/*</View>*/}
         <View>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View style={styles.container}>
@@ -158,7 +157,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F3FBFF',
   },
   selectedDay: {
-    backgroundColor: GlobalStyles.colors.CobaltBlue,
+    backgroundColor: GlobalStyles.colors.purple,
   },
   selectedDayText: {
     color: '#fff',

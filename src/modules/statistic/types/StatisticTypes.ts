@@ -1,5 +1,5 @@
 export interface Reservation {
-  id: number;
+  id: string;
   image: string;
   progresColor: string;
   date: string;
@@ -11,7 +11,7 @@ export interface Reservation {
   center: string;
   topic: string;
   text: string;
-  degre: number;
+  degree: string;
 }
 
 

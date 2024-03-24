@@ -1,9 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../navigation/KonulluDostNavigator.tsx';
 
 interface ClubCardProps {
   clubHome: {
-    id: number;
+    id: string;
     bgColor: string;
     colors: string;
     image: string;
@@ -12,6 +15,8 @@ interface ClubCardProps {
 }
 
 const ClubCard: React.FC<ClubCardProps> = ({clubHome}) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   return (
     <View
       style={{
@@ -25,7 +30,8 @@ const ClubCard: React.FC<ClubCardProps> = ({clubHome}) => {
       {clubHome.map(item => (
         <TouchableOpacity
           key={item.id}
-          style={{justifyContent: 'center', alignItems: 'center'}}>
+          style={{justifyContent: 'center', alignItems: 'center'}}
+          onPress={() => navigation.navigate('ClubAboutScreen', {id: item.id})}>
           <View
             style={[
               styles.container,

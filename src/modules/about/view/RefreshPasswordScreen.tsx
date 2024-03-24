@@ -23,7 +23,7 @@ export const RefreshPasswordScreen = () => {
           style={{
             fontSize: 33,
             fontWeight: 'bold',
-            color: GlobalStyles.colors.CobaltBlue,
+            color: GlobalStyles.colors.PureBlack,
             paddingBottom: 12,
             marginTop: 50,
           }}>
@@ -49,7 +49,7 @@ export const RefreshPasswordScreen = () => {
               placeholder="ən az 8 simvol olmalıdır"
             />
           </View>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={GlobalStyles.button.buttonPurple}>
             <Text style={styles.buttunText}>Şifrəni yenilə</Text>
           </TouchableOpacity>
         </View>

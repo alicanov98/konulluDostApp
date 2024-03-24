@@ -19,6 +19,7 @@ import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
+import {agendaDayNumColor} from 'react-native-calendars/src/style';
 
 LocaleConfig.locales.az = {
   monthNames: [
@@ -187,7 +188,7 @@ const StatisticScreen: React.FC = () => {
         <Image source={require('../../../assets/images/icons/logo.png')} />
 
         <TouchableOpacity
-          onPress={() => navigation.navigate('AboutScreen')}
+          onPress={() => navigation.navigate('AboutNavigator')}
           style={{
             position: 'relative',
           }}>
@@ -213,6 +214,7 @@ const StatisticScreen: React.FC = () => {
           [selected]: {
             selected: true,
             disableTouchEvent: true,
+            selectedColor: '#B755ED',
           },
         }}
       />
@@ -312,7 +314,7 @@ const StatisticScreen: React.FC = () => {
                 size={75}
                 width={5}
                 fill={item.degre}
-                tintColor="#2858EE"
+                tintColor="#B755ED"
                 onAnimationComplete={() => {}}
                 backgroundColor="#fff"
               />

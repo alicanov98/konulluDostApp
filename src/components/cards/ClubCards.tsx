@@ -6,6 +6,7 @@ import * as Progress from 'react-native-progress';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../navigation/KonulluDostNavigator';
+import GlobalStyles from '../../assets/globalStyles/styles.ts';
 const ClubCards: React.FC<IClubCardsProps> = props => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const [pageName, setPageName] = useState<boolean>(false);
@@ -86,7 +87,7 @@ const ClubCards: React.FC<IClubCardsProps> = props => {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Text style={{color: '#2858EE', fontSize: 13, fontWeight: '500'}}>
+            <Text style={{color: '#B755ED', fontSize: 13, fontWeight: '500'}}>
               +3
             </Text>
           </View>
@@ -149,7 +150,7 @@ const ClubCards: React.FC<IClubCardsProps> = props => {
                   width: 134,
                   height: 26,
                   borderRadius: 12,
-                  backgroundColor: '#2858EE',
+                  backgroundColor: GlobalStyles.colors.purple,
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}>

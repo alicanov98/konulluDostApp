@@ -25,6 +25,7 @@ const tabHiddenRoutes = [
   'ProfileScreen',
   'ParticipantsClubScreen',
   'NewClubAddScreen',
+  'ClubAboutScreen'
 ];
 
 const useTabBarVisibility = () => {

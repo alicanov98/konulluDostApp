@@ -40,6 +40,7 @@ import ParticipantsClubScreen from '../modules/ResponsiblePersonofClubs/Particip
 import NewsClubScreen from '../modules/ResponsiblePersonofClubs/NewsClubScreen.tsx';
 import NewsScreen from '../modules/ResponsiblePersonofClubs/NewsScreen.tsx';
 import {NewsEditScreen} from '../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx';
+import ClubAboutScreen from "../modules/clubs/view/ClubAboutScreen.tsx";
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -84,6 +85,7 @@ export type RootStackParamList = {
   NewsClubScreen: undefined;
   NewsNavigator: undefined;
   NewsEditScreen: undefined;
+  ClubAboutScreen: {id: string};
 };
 
 const HomeNavigator = () => {
@@ -96,6 +98,7 @@ const HomeNavigator = () => {
       }}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="NewsScreen" component={NewsScreen} />
+      <Stack.Screen name="ClubAboutScreen" component={ClubAboutScreen} />
     </Stack.Navigator>
   );
 };
@@ -145,6 +148,7 @@ const AboutNavigator = () => {
   useTabBarVisibility();
   const navigation = useNavigation();
   // @ts-ignore
+  // @ts-ignore
   return (
     <Stack.Navigator
       screenOptions={{
@@ -176,7 +180,9 @@ const AboutNavigator = () => {
           headerLeft: () => (
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.goBack()}>
+              onPress={() => {
+                navigation.navigate('AboutScreen');
+              }}>
               <Image source={require('../assets/images/icons/white.png')} />
             </TouchableOpacity>
           ),
@@ -192,7 +198,9 @@ const AboutNavigator = () => {
           headerLeft: () => (
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.goBack()}>
+              onPress={() => {
+                navigation.navigate('AboutScreen');
+              }}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
           ),
@@ -208,7 +216,9 @@ const AboutNavigator = () => {
           headerLeft: () => (
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.goBack()}>
+              onPress={() => {
+                navigation.navigate('AboutScreen');
+              }}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
           ),
@@ -224,7 +234,9 @@ const AboutNavigator = () => {
           headerLeft: () => (
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.goBack()}>
+              onPress={() => {
+                navigation.navigate('AboutScreen');
+              }}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
           ),
@@ -240,7 +252,9 @@ const AboutNavigator = () => {
           headerLeft: () => (
             <TouchableOpacity
               style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.goBack()}>
+              onPress={() => {
+                navigation.navigate('AboutScreen');
+              }}>
               <Image source={require('../assets/images/icons/Back.png')} />
             </TouchableOpacity>
           ),
@@ -265,13 +279,6 @@ const ClubsNavigator = () => {
           headerTransparent: true,
           headerTitle: '',
           headerShown: true,
-          headerLeft: () => (
-            <TouchableOpacity
-              style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.goBack()}>
-              <Image source={require('../assets/images/icons/Back.png')} />
-            </TouchableOpacity>
-          ),
         }}
       />
       <Stack.Screen
@@ -373,8 +380,8 @@ const StatisticScreens = () => {
         }}
       />
       <Stack.Screen
-        name="AboutScreen"
-        component={AboutScreen}
+        name="AboutNavigator"
+        component={AboutNavigator}
         options={{
           headerTransparent: true,
           headerTitle: '',
