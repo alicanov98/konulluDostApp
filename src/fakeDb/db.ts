@@ -1,7 +1,7 @@
 import {Reservation} from '../modules/statistic/types/StatisticTypes.ts';
-import {Clubs} from '../modules/home/types/HomeTypes.tsx';
+import {Clubs, News} from '../modules/home/types/HomeTypes.tsx';
 
-export const db: {clubs: Reservation[]; clubHome: Clubs[]} = {
+export const db: {clubs: Reservation[]; clubHome: Clubs[]; news: News[]} = {
   clubs: [
     {
       id: '1',
@@ -111,8 +111,8 @@ export const db: {clubs: Reservation[]; clubHome: Clubs[]} = {
       image: require('../assets/images/image/club/filim.png'),
       object: {
         image: require('../assets/images/image/club/clubAbout/filimKlubu.jpeg'),
-        name: 'Sağlam həyat klubu',
-        text: 'Klubun əsas məqsədi yaşından asılı olmayaraq "Könüllü DOST" proqramı çərçivəsində fəaliyyət göstərən könüllülərin sağlam inkişafına, o cümlədən asudə vaxtlarının səmərəli keçirilməsinə dəstək göstərməkdir.',
+        name: 'Film klubu',
+        text: 'Gənclərlə film izlədikdən sonra onun üzərində təhlillər aparmaq, obrazları analiz etmək, həmçinin, gənclərin asudə vaxtlarının daha səmərəli təşkili məqsədi daşıyır.',
         imageList: [
           require('../assets/images/image/club/clubAbout/filimKlubu.jpeg'),
           require('../assets/images/image/club/clubAbout/filimKlubu.jpeg'),
@@ -246,6 +246,32 @@ export const db: {clubs: Reservation[]; clubHome: Clubs[]} = {
           require('../assets/images/image/club/clubAbout/seirKlubu.png'),
         ],
       },
+    },
+  ],
+  news: [
+    {
+      id: '1',
+      image: require('../assets/images/image/news/xeberler1.jpeg'),
+      name: '“Könüllü Klubları” layihəsi çərçivəsində növbəti təlim',
+      text: '“Caspian Energy Club”ın baş icraçı direktoru Telman Əliyev 5 saylı Bakı DOST Mərkəzində olub.Könüllülərlə iş şöbəsinin müdiri Solmaz Həsənova qonağı "Könüllü DOST" proqramı ilə tanış edib. Daha sonra Telman Əliyev Agentliyin “Könüllü DOST” proqramının üzvlərinə "Gələcək biznes ideyasının formalaşdırılması" mövzusunda təlim keçib. Təlim “Könüllü Klubları” layihəsinin “Fərdi İnkişaf” klubu çərçivəsində baş tutub. Görüş qarşılıqlı diskussiya şəklində davam edib. Sonda gəncləri maraqlandıran suallar cavablandırılıb. Qeyd edək ki, “Könüllü Klubları” layihəsi 2022-ci ildən etibarən 12 müxtəlif istiqamət üzrə fəaliyyət göstərir. Layihənin əsas məqsədi cəmiyyətin bütün sahələrində gənclərin fəal iştirakına şərait yaratmaq, təcrübi biliklərini artırmaq, yaradıcı və innovativ potensialının üzə çıxarılmasını dəstəkləmək, təhsil və məşğulluq məsələlərinə diqqəti artırmaq, habelə asudə vaxtlarının daha səmərəli təşkilidir.',
+    },
+    {
+      id: '2',
+      image: require('../assets/images/image/news/xeberler2.jpeg'),
+      name: 'Könüllü DOSTlarımız 2 fevralda gəncləri birləşdirdi',
+      text: 'DOST Agentliyinin "Könüllü DOST" proqramının təşəbbüsü, Azərbaycan Könüllü Təşkilatları İttifaqının dəstəyi ilə ittifaqa daxil olan könüllü təşkilatları birgə tədbir keçiriblər. Müxtəlif könüllü təşkilatlarını təmsil edən gənclər 4 saylı Bakı DOST Mərkəzində Könüllü DOSTlarımızla birlikdə vətəndaşlara xidmət göstəriblər. Tədbirdə “Ekokönüllü”, “Könüllü Gömrükçü” dəstəsi, “ASAN Könüllüləri” təşkilatı, “Gənc Könüllüləri” İctimai Birliyi, “AİLƏM Könüllüləri” İctimai Birliyi, “BİR Könüllü” Tələbələrin Əməkdaşlığı İctimai Birliyi, “SOCAR Könüllüləri”, “Bakı Şəhər Halqası Könüllülər” proqramı, “Mədəniyyət Könüllüləri” İctimai birliyi, BDU Könüllüləri, RİİB Könüllüləri iştirak ediblər. Layihənin əsas məqsədi könüllülərin timsalında gənclərin prezident seçkilərində aktiv iştirak etməsinə cəlb edilməsi, o cümlədən könüllülərin birliyinin, həmrəyliyinin göstərilməsidir.',
+    },
+    {
+      id: '3',
+      image: require('../assets/images/image/news/xeberler3.jpeg'),
+      name: 'DOST Agentliyi beynəlxalq müsabiqədə finalçı olub',
+      text: 'DOST Agentliyi Rusiyanın Moskva şəhərində keçirilən “We are Together” adlı beynəlxalq müsabiqədə finalçı olub. 100-dən çox ölkədən təxminən 1300 layihənin təqdim olunduğu tədbirdə DOST Agentliyi “Bərabər imkanlar və sosial ədalət” nominasiyası üzrə təltif olunub. Müsabiqədə iştirak edən Agentliyin İnsan resurslarının idarə edilməsi departamentinin müdiri Leyla Hüseynova və departamentin mütəxəssisi Tənzilə Hüseynova sosial məsuliyyətlilik mövzusunda görülən işlər barədə layihə iştirakçılarına məlumat verib. Xalq Təsərrüfatı Nailiyyətləri Sərgisində keçirilən 3 günlük tədbirdə komandamız sosial məsuliyyət üzrə master klasslara qoşulub, Diana Qurtskaya adına Sosial İnteqrasiya Mərkəzinin iş prinsipi ilə tanış olublar. Layihənin məqsədi könüllü hərakatı vasitəsi ilə humanitar problemlərin həllinə töhfə verən təşkilatlara dəstək olmaqdır.',
+    },
+    {
+      id: '4',
+      image: require('../assets/images/image/news/xeberler4.jpeg'),
+      name: 'Özbəkistanın Könüllülər Assosiasiyanın direktoru "Könüllü Klubları"nda',
+      text: 'Özbəkistan Könüllülər Assosiasiyasının direktoru Şirin Abidova DOST Agentliyində olub. Qonağa əvvəlcə DOST Agentliyi barədə məlumat verilib. DOST konsepsiyasının innovativ üstünlükləri və nailiyyətləri, bu konsepsiyanın dünyanın qabaqcıl təcrübələri sırasına daxil edildiyi və beynəlxalq uğurları diqqətə çatdırılıb. Daha sonra Şirin Abidova Agentliyin "Könüllü DOST" proqramının üzvlərinə “Komanda quruculuğu və komanda daxilində iş” mövzusunda təlim keçib. Təlim "Könüllü Klubları" layihəsinin "Fərdi İnkişaf" klubu çərçivəsində baş tutub. Görüş qarşılıqlı diskussiya şəklində davam edib. Sonda gəncləri maraqlandıran suallar cavablandırılıb. Qeyd edək ki, “Könüllü Klubları” layihəsi 2022-ci ildən etibarən 12 müxtəlif istiqamət üzrə fəaliyyət göstərir. Layihənin əsas məqsədi cəmiyyətin bütün sahələrində gənclərin fəal iştirakına şərait yaratmaq, təcrübi biliklərini artırmaq, yaradıcı və innovativ potensialının üzə çıxarılmasını dəstəkləmək, təhsil və məşğulluq məsələlərinə diqqəti artırmaq, habelə asudə vaxtlarının daha səmərəli təşkilidir.',
     },
   ],
 };

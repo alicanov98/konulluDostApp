@@ -10,19 +10,19 @@ import {
   View,
 } from 'react-native';
 
+// @ts-ignore
 import BellIcon from '../../../assets/images/icons/bell-icon.svg';
 import ClubCard from '../../../components/cards/ClubCard.tsx';
 import VolunteerActivityCard from '../../../components/cards/ VolunteerActivityCard.tsx';
 import Notification from '../../../components/notification/Notification.tsx';
-import {MyCarousel} from '../../../components/swiper/Carousel.tsx';
 import {db} from '../../../fakeDb/db.ts';
 import {Clubs} from '../types/HomeTypes.tsx';
+import MyCarousel from '../../../components/swiper/Carousel.tsx';
 
 const HomeScreen = () => {
   const [isActive, setIsActive] = useState(false);
   const [loading, setLoading] = useState(false);
   const [homeClub, setHomeClub] = useState<Clubs[]>([]);
-
   useEffect(() => {
     const getClubs = async () => {
       setLoading(true);
@@ -34,15 +34,13 @@ const HomeScreen = () => {
       }
     };
     getClubs();
-  }, []);
+  }, [loading]);
 
   return (
     <SafeAreaView
       style={{
         height: '100%',
         backgroundColor: '#fff',
-        paddingLeft: 17,
-        paddingRight: 17,
         paddingTop: 64,
         paddingBottom: 43,
       }}>
@@ -52,6 +50,8 @@ const HomeScreen = () => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
+          paddingLeft: 17,
+          paddingRight: 17,
         }}>
         <Image source={require('../../../assets/images/icons/logo.png')} />
 
@@ -118,19 +118,17 @@ const HomeScreen = () => {
           color: '#424954',
           fontWeight: 'bold',
           marginTop: 14,
+          paddingLeft: 17,
+          paddingRight: 17,
         }}>
         Salam, Əlicanov Məlik!
       </Text>
       <View
         style={{
-          height: 220,
-          marginTop: 36,
           paddingTop: 8,
           paddingBottom: 8,
           flexDirection: 'row',
-          gap: 20,
-          justifyContent: 'center',
-        }}>
+          justifyContent: 'center'}}>
         <MyCarousel />
       </View>
       <Text
@@ -139,6 +137,8 @@ const HomeScreen = () => {
           color: '#424954',
           fontWeight: 'bold',
           marginTop: 14,
+          paddingLeft: 17,
+          paddingRight: 17,
         }}>
         Seçilən könüllülər
       </Text>
@@ -162,6 +162,8 @@ const HomeScreen = () => {
           color: '#424954',
           fontWeight: 'bold',
           marginTop: 14,
+          paddingLeft: 17,
+          paddingRight: 17,
         }}>
         Klublar
       </Text>

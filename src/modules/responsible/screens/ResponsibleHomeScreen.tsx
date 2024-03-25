@@ -14,35 +14,33 @@ import BellIcon from '../../../assets/images/icons/bell-icon.svg';
 import ClubCard from '../../../components/cards/ClubCard.tsx';
 import VolunteerActivityCard from '../../../components/cards/ VolunteerActivityCard.tsx';
 import Notification from '../../../components/notification/Notification.tsx';
-import {MyCarousel} from '../../../components/swiper/Carousel.tsx';
-import {Clubs} from '../../statistic/types/StatisticTypes.ts';
+import MyCarousel from '../../../components/swiper/Carousel.tsx';
+import {} from '../../statistic/types/StatisticTypes.ts';
 import {db} from '../../../fakeDb/db.ts';
+import {Clubs} from '../../home/types/HomeTypes.tsx';
 
-const HomeScreen = () => {
+const ResponsibleHomeScreen = () => {
   const [isActive, setIsActive] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [clubHome, setClubHome] = useState<Clubs[]>([]);
-
+  const [homeClub, setHomeClub] = useState<Clubs[]>([]);
   useEffect(() => {
-    const getClubHome = async () => {
+    const getClubs = async () => {
       setLoading(true);
       try {
-        setClubHome(db.clubHome);
+        setHomeClub(db.clubHome);
       } catch (err) {
         console.log(err);
         console.log(loading);
       }
     };
-    getClubHome();
-  }, []);
+    getClubs();
+  }, [loading]);
 
   return (
     <SafeAreaView
       style={{
         height: '100%',
         backgroundColor: '#fff',
-        paddingLeft: 17,
-        paddingRight: 17,
         paddingTop: 64,
         paddingBottom: 43,
       }}>
@@ -52,6 +50,8 @@ const HomeScreen = () => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
+          paddingLeft: 17,
+          paddingRight: 17,
         }}>
         <Image source={require('../../../assets/images/icons/logo.png')} />
 
@@ -95,7 +95,10 @@ const HomeScreen = () => {
                 <Text style={{color: '#fff'}}>Close</Text>
               </TouchableOpacity>
             </View>
-            <ScrollView style={{flex: 1, marginBottom: 40}}>
+            <ScrollView>
+              <Notification />
+              <Notification />
+              <Notification />
               <Notification />
               <Notification />
               <Notification />
@@ -115,17 +118,16 @@ const HomeScreen = () => {
           color: '#424954',
           fontWeight: 'bold',
           marginTop: 14,
+          paddingLeft: 17,
+          paddingRight: 17,
         }}>
         Salam, Əlicanov Məlik!
       </Text>
       <View
         style={{
-          height: 220,
-          marginTop: 36,
           paddingTop: 8,
           paddingBottom: 8,
           flexDirection: 'row',
-          gap: 20,
           justifyContent: 'center',
         }}>
         <MyCarousel />
@@ -136,6 +138,8 @@ const HomeScreen = () => {
           color: '#424954',
           fontWeight: 'bold',
           marginTop: 14,
+          paddingLeft: 17,
+          paddingRight: 17,
         }}>
         Seçilən könüllülər
       </Text>
@@ -159,14 +163,16 @@ const HomeScreen = () => {
           color: '#424954',
           fontWeight: 'bold',
           marginTop: 14,
+          paddingLeft: 17,
+          paddingRight: 17,
         }}>
         Klublar
       </Text>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-        <ClubCard data={clubHome} />
+        <ClubCard clubHome={homeClub} />
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default HomeScreen;
+export default ResponsibleHomeScreen;

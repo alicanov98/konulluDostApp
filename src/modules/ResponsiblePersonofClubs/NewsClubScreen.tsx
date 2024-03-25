@@ -1,8 +1,24 @@
 import {Image, SafeAreaView, ScrollView, View} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import NewsCard from './component/NewsCard.tsx';
+import {News} from '../home/types/HomeTypes.tsx';
+import {db} from '../../fakeDb/db.ts';
 
 const NewsClubScreen = () => {
+  const [loading, setLoading] = useState(false);
+  const [newsClub, setNewsClub] = useState<News[]>([]);
+  useEffect(() => {
+    const getClubs = async () => {
+      setLoading(true);
+      try {
+        setNewsClub(db.news);
+      } catch (err) {
+        console.log(err);
+        console.log(loading);
+      }
+    };
+    getClubs();
+  }, [loading]);
   return (
     <SafeAreaView
       style={{
@@ -22,16 +38,9 @@ const NewsClubScreen = () => {
       </View>
       <View>
         <ScrollView style={{marginBottom: 68}}>
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
+          {newsClub.map(item => (
+            <NewsCard key={item.id} item={item} />
+          ))}
         </ScrollView>
       </View>
     </SafeAreaView>

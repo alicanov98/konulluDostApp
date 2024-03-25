@@ -42,7 +42,6 @@ const ClubAboutScreen = () => {
     getDetails();
   }, [params?.params?.id]);
 
-  console.log('ss', clubData.object.imageList);
 
   return (
     <SafeAreaView
@@ -78,16 +77,19 @@ const ClubAboutScreen = () => {
             color: '#2E2E2E',
             fontSize: 22,
             fontWeight: 'bold',
-            marginTop: 21,
+            marginVertical: 21,
           }}>
           {clubData?.object.name}
+        </Text>
+        <Text style={{color: '#707070', fontSize: 19, fontWeight: 'bold'}}>
+          Haqqında:
         </Text>
         <Text
           style={{
             color: '#000',
             fontSize: 18,
             fontWeight: 'normal',
-            marginTop: 17,
+            marginTop: 10,
             marginBottom: 17,
           }}>
           {clubData?.object.text}

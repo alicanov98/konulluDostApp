@@ -40,7 +40,7 @@ import ParticipantsClubScreen from '../modules/ResponsiblePersonofClubs/Particip
 import NewsClubScreen from '../modules/ResponsiblePersonofClubs/NewsClubScreen.tsx';
 import NewsScreen from '../modules/ResponsiblePersonofClubs/NewsScreen.tsx';
 import {NewsEditScreen} from '../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx';
-import ClubAboutScreen from "../modules/clubs/view/ClubAboutScreen.tsx";
+import ClubAboutScreen from '../modules/clubs/view/ClubAboutScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -81,7 +81,7 @@ export type RootStackParamList = {
   ClubEditScreen: undefined;
   NewClubAddScreen: undefined;
   ClubsAddNavigator: undefined;
-  NewsScreen: undefined;
+  NewsScreen: {id: string};
   NewsClubScreen: undefined;
   NewsNavigator: undefined;
   NewsEditScreen: undefined;
@@ -391,6 +391,21 @@ const StatisticScreens = () => {
     </Stack.Navigator>
   );
 };
+const ResponsibleHomeNavigator = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen
+        name="ResponsibleHomeScreen"
+        component={ResponsibleHomeScreen}
+      />
+      <Stack.Screen name="NewsScreen" component={NewsScreen} />
+      <Stack.Screen name="ClubAboutScreen" component={ClubAboutScreen} />
+    </Stack.Navigator>
+  );
+};
 
 const ResponsibleBottomTabNavigator = () => {
   return (
@@ -400,8 +415,8 @@ const ResponsibleBottomTabNavigator = () => {
         headerShown: false,
       }}>
       <KonulluDostBottomTabNavigator.Screen
-        name={'ResponsibleHomeScreen'}
-        component={ResponsibleHomeScreen}
+        name={'ResponsibleHomeNavigator'}
+        component={ResponsibleHomeNavigator}
         options={{
           title: 'Əsas səhifə',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
@@ -454,8 +469,8 @@ const ResponsiblePersonofClubs = () => {
         headerShown: false,
       }}>
       <KonulluDostBottomTabNavigator.Screen
-        name={'ResponsibleHomeScreen'}
-        component={ResponsibleHomeScreen}
+        name={'ResponsibleHomeNavigator'}
+        component={ResponsibleHomeNavigator}
         options={{
           title: 'Əsas səhifə',
           tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,

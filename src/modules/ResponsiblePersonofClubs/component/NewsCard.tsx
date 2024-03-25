@@ -4,8 +4,15 @@ import Share from 'react-native-share';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
-
-const NewsCard = () => {
+interface newsCardProps {
+  item: {
+    id: string;
+    name: string;
+    text: string;
+    image: string;
+  };
+}
+const NewsCard: React.FC<newsCardProps> = ({item}) => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -24,8 +31,8 @@ const NewsCard = () => {
       if (Platform.OS === 'android') {
         const shareResponse = await Share.open(shareOptions);
         console.log(JSON.stringify(shareResponse));
-      }else{
-        console.log('PLATFORM IS IOS')
+      } else {
+        console.log('PLATFORM IS IOS');
       }
     } catch (error) {
       // @ts-ignore
@@ -73,7 +80,8 @@ const NewsCard = () => {
   };
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('NewsScreen')}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('NewsScreen', {id: item.id})}>
       <View
         style={{
           flexDirection: 'row',
@@ -88,11 +96,13 @@ const NewsCard = () => {
         }}>
         <Image
           style={{
-            position: 'absolute',
+            width: '100%',
+            height: '100%',
             borderRadius: 10,
+            resizeMode: 'stretch',
           }}
           resizeMode="cover"
-          source={require('../../../assets/images/image/image1News.jpg')}
+          source={item?.image}
         />
         <View
           style={{
@@ -118,7 +128,7 @@ const NewsCard = () => {
                 fontSize: 16,
                 padding: 10,
               }}>
-              Könüllü Klublar
+              Xəbərlər
             </Text>
             <View style={{flexDirection: 'row', gap: 10}}>
               <TouchableOpacity onPress={handleShare}>
@@ -142,7 +152,7 @@ const NewsCard = () => {
               fontSize: 14,
               padding: 10,
             }}>
-            “Fərdi İnkşaf” layihəsi çərçivəsində növbəti təlim
+            {item?.name}
           </Text>
           <Text
             style={{

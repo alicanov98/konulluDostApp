@@ -29,7 +29,7 @@ const ClubCard: React.FC<ClubCardProps> = ({clubHome}) => {
       }}>
       {clubHome.map(item => (
         <TouchableOpacity
-          key={item.id}
+          key={Number(item.id)}
           style={{justifyContent: 'center', alignItems: 'center'}}
           onPress={() => navigation.navigate('ClubAboutScreen', {id: item.id})}>
           <View

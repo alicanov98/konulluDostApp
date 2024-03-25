@@ -2,51 +2,61 @@ import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../navigation/KonulluDostNavigator.tsx';
-
-const NewsSwiperCard = () => {
+import React from 'react';
+interface NewsCardProps {
+  item: {
+    id: string;
+    image: string;
+    name: string;
+    text: string;
+  };
+}
+const NewsSwiperCard: React.FC<NewsCardProps> = ({item}) => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
-
+  console.log(item);
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('NewsScreen')}>
-      <View
-        style={{
-          borderRadius: 30,
-          width: 182,
-          height: 176,
-          marginLeft: 30,
-          marginRight: 30,
-        }}>
-        <View>
-          <Image
+    <>
+      {
+        <TouchableOpacity
+          key={item?.id}
+          onPress={() => navigation.navigate('NewsScreen', {id: item?.id})}>
+          <View
             style={{
-              width: 182,
-              height: 111,
-            }}
-            source={require('../../assets/images/image/image1News.jpg')}
-          />
-        </View>
-        <View>
-          <Text
-            style={{
-              fontSize: 13,
-              color: '#424954',
-              fontWeight: 'bold',
-              marginTop: 12,
+              borderRadius: 30,
             }}>
-            Könüllü Klubları
-          </Text>
-          <Text
-            style={{
-              fontSize: 10,
-              color: '#5A5A5A',
-              fontWeight: 'normal',
-              marginTop: 5,
-            }}>
-            “Könüllü Klubları” layihəsi çərçivəsində növbəti təlim kecirildi
-          </Text>
-        </View>
-      </View>
-    </TouchableOpacity>
+            <View>
+              <Image
+                style={{
+                  width: '100%',
+                  height: 200,
+                }}
+                source={item?.image}
+              />
+            </View>
+            <View>
+              <Text
+                style={{
+                  fontSize: 13,
+                  color: '#424954',
+                  fontWeight: 'bold',
+                  marginTop: 12,
+                }}>
+                {item?.name}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 10,
+                  color: '#5A5A5A',
+                  fontWeight: 'normal',
+                  marginTop: 5,
+                }}>
+                {item?.name}
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+      }
+    </>
   );
 };
 

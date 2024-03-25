@@ -1,14 +1,32 @@
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import React from 'react';
+import {Image, SafeAreaView, Text, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {useRoute} from '@react-navigation/native';
+import {News} from '../home/types/HomeTypes.tsx';
+import {db} from '../../fakeDb/db.ts';
 
 const NewsScreen = () => {
+  const params = useRoute();
+  const [loading, setLoading] = useState(false);
+  const [newsData, setNewsData] = useState<News>({
+    id: '',
+    name: '',
+    image: '',
+    text: '',
+  });
+
+  useEffect(() => {
+    const getDetails = async () => {
+      setLoading(true);
+      const newsData = db.news.find(item => item.id === params?.params?.id);
+      if (newsData) {
+        setNewsData(newsData);
+      }
+      setLoading(false);
+      console.log(loading);
+    };
+    getDetails();
+  }, [params?.params?.id]);
+  console.log(newsData);
   return (
     <SafeAreaView
       style={{
@@ -27,7 +45,7 @@ const NewsScreen = () => {
         </View>
       </View>
       <View>
-        <View style={{width: '100%'}}>
+        <View style={{width: '100%'}} key={newsData?.id}>
           <Image
             style={{
               width: '100%',
@@ -35,7 +53,7 @@ const NewsScreen = () => {
               borderRadius: 5,
               marginBottom: 35,
             }}
-            source={require('../../assets/images/image/image1News.jpg')}
+            source={newsData?.image}
           />
           <View>
             <Text
@@ -45,7 +63,7 @@ const NewsScreen = () => {
                 fontSize: 14,
                 marginBottom: 21,
               }}>
-              “Könüllü Klubları” layihəsi çərçivəsində növbəti təlim
+              {newsData?.name}
             </Text>
             <Text
               style={{
@@ -57,39 +75,26 @@ const NewsScreen = () => {
               Klublar barədə yeniliklər
             </Text>
             <Text style={{color: '#000000', fontWeight: '500', fontSize: 14}}>
-              “Caspian Energy Club”ın baş icraçı direktoru Telman Əliyev 5 saylı
-              Bakı DOST Mərkəzində olub.Könüllülərlə iş şöbəsinin müdiri Solmaz
-              Həsənova qonağı "Könüllü DOST" proqramı ilə tanış edib. Daha sonra
-              Telman Əliyev Agentliyin “Könüllü DOST” proqramının üzvlərinə
-              "Gələcək biznes ideyasının formalaşdırılması" mövzusunda təlim
-              keçib. Təlim “Könüllü Klubları” layihəsinin “Fərdi İnkişaf” klubu
-              çərçivəsində baş tutub. Görüş qarşılıqlı diskussiya şəklində davam
-              edib. Sonda gəncləri maraqlandıran suallar cavablandırılıb. Qeyd
-              edək ki, “Könüllü Klubları” layihəsi 2022-ci ildən etibarən 12
-              müxtəlif istiqamət üzrə fəaliyyət göstərir. Layihənin əsas məqsədi
-              cəmiyyətin habelə asudə vaxtlarının daha səmərəli təşkilidir.
+              {newsData?.text}
             </Text>
           </View>
         </View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Redaktə et</Text>
-        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: '#2858EE',
-    width: 380,
-    height: 56,
-    borderRadius: 12,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 32,
-  },
-  buttonText: {color: '#fff', fontWeight: '500', fontSize: 16},
-});
+// const styles = StyleSheet.create({
+//   button: {
+//     backgroundColor: '#2858EE',
+//     width: 380,
+//     height: 56,
+//     borderRadius: 12,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     marginTop: 32,
+//   },
+//   buttonText: {color: '#fff', fontWeight: '500', fontSize: 16},
+// });
 
 export default NewsScreen;
