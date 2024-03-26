@@ -12,10 +12,9 @@ import {OtpScreen} from '../modules/login/login/view/OtpScreen.tsx';
 import {NewPasswordScreen} from '../modules/login/login/view/NewPasswordScreen.tsx';
 import GlobalStyles from '../assets/globalStyles/styles.ts';
 
+import NewsIcon from '../assets/images/icons/news.svg';
 import HomeIcon from '../assets/images/icons/homeBottomBar.svg';
-
-import TodoIcon from '../assets/images/icons/statistics.svg';
-
+import VoluntaryList from '../assets/images/icons/voluntaryList.svg';
 import PenIcon from '../assets/images/icons/clubBottomBar.svg';
 import AboutScreen from '../modules/about/view/AboutScreen.tsx';
 
@@ -87,10 +86,207 @@ export type RootStackParamList = {
   NewsEditScreen: undefined;
   ClubAboutScreen: {id: string};
 };
+const KonulluDostNavigation = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        navigationBarColor: 'transparent',
+      }}>
+      <Stack.Screen
+        name={'IntroductionNavigator'}
+        component={IntroductionNavigator}
+      />
+      <Stack.Screen
+        name={'BottomTabNavigator'}
+        component={BottomTabNavigator}
+      />
+      <Stack.Screen
+        name={'ResponsibleBottomTabNavigator'}
+        component={ResponsibleBottomTabNavigator}
+      />
+      <Stack.Screen
+        name={'ResponsiblePersonofClubs'}
+        component={ResponsiblePersonofClubs}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const IntroductionNavigator = () => {
+  useTabBarVisibility();
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="IntroductionScreen" component={IntroductionScreen} />
+      <Stack.Screen name="SiginUpScreen" component={SiginUpScreen} />
+      <Stack.Screen
+        name="VoluntaryRegistrationScreen"
+        component={VoluntaryRegistrationScreen}
+      />
+      <Stack.Screen
+        name="LegalPersonRegistrationScreen"
+        component={LegalPersonRegistrationScreen}
+      />
+      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen
+        name="PasswordResetScreen"
+        component={PasswordResetScreen}
+      />
+      <Stack.Screen name="OtpScreen" component={OtpScreen} />
+      <Stack.Screen name="NewPasswordScreen" component={NewPasswordScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const BottomTabNavigator = () => {
+  useTabBarVisibility();
+  return (
+    <KonulluDostBottomTabNavigator.Navigator
+      screenOptions={{
+        tabBarHideOnKeyboard: false,
+        headerShown: false,
+      }}>
+      <KonulluDostBottomTabNavigator.Screen
+        name={'HomeNavigator'}
+        component={HomeNavigator}
+        options={{
+          title: 'Əsas səhifə',
+          tabBarActiveTintColor: GlobalStyles.colors.bottomIcon,
+          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'ClubsNavigator'}
+        component={ClubsNavigator}
+        options={{
+          title: 'Klublar',
+          tabBarActiveTintColor: GlobalStyles.colors.bottomIcon,
+          tabBarIcon: ({focused}) => (focused ? <PenIcon /> : <PenIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'StatisticScreens'}
+        component={StatisticScreens}
+        options={{
+          title: 'Profil',
+          tabBarActiveTintColor: GlobalStyles.colors.bottomIcon,
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+        }}
+      />
+    </KonulluDostBottomTabNavigator.Navigator>
+  );
+};
+
+const ResponsibleBottomTabNavigator = () => {
+  useTabBarVisibility();
+  return (
+    <KonulluDostBottomTabNavigator.Navigator
+      screenOptions={{
+        tabBarHideOnKeyboard: false,
+        headerShown: false,
+      }}>
+      <KonulluDostBottomTabNavigator.Screen
+        name={'ResponsibleHomeNavigator'}
+        component={ResponsibleHomeNavigator}
+        options={{
+          title: 'Əsas səhifə',
+          tabBarActiveTintColor: GlobalStyles.colors.purple,
+          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'CurrentVoluntaryNavigator'}
+        component={CurrentVoluntaryNavigator}
+        options={{
+          title: 'Könüllü List',
+          tabBarActiveTintColor: GlobalStyles.colors.purple,
+          tabBarIcon: ({focused}) =>
+            focused ? <VoluntaryList /> : <VoluntaryList />,
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'NewsNavigation'}
+        component={NewsNavigation}
+        options={{
+          title: 'Xəbərlər',
+          tabBarActiveTintColor: GlobalStyles.colors.purple,
+          tabBarIcon: ({focused}) => (focused ? <NewsIcon /> : <NewsIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'AboutNavigator'}
+        component={AboutNavigator}
+        options={{
+          title: 'Haqqımızda',
+          tabBarActiveTintColor: GlobalStyles.colors.purple,
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+        }}
+      />
+    </KonulluDostBottomTabNavigator.Navigator>
+  );
+};
+
+const ResponsiblePersonofClubs = () => {
+  useTabBarVisibility();
+  return (
+    <KonulluDostBottomTabNavigator.Navigator
+      screenOptions={{
+        tabBarHideOnKeyboard: false,
+        headerShown: false,
+      }}>
+      <KonulluDostBottomTabNavigator.Screen
+        name={'ResponsibleHomeNavigator'}
+        component={ResponsibleHomeNavigator}
+        options={{
+          title: 'Əsas səhifə',
+          tabBarActiveTintColor: GlobalStyles.colors.purple,
+          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'NewsNavigation'}
+        component={NewsNavigation}
+        options={{
+          title: 'Xəbərlər',
+          tabBarActiveTintColor: GlobalStyles.colors.purple,
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'ClubsAddNavigator'}
+        component={ClubsAddNavigator}
+        options={{
+          title: 'Klublar',
+          tabBarActiveTintColor: GlobalStyles.colors.purple,
+          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+        }}
+      />
+    </KonulluDostBottomTabNavigator.Navigator>
+  );
+};
+
+const ResponsibleHomeNavigator = () => {
+  useTabBarVisibility();
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen
+        name="ResponsibleHomeScreen"
+        component={ResponsibleHomeScreen}
+      />
+      <Stack.Screen name="NewsScreen" component={NewsScreen} />
+      <Stack.Screen name="ClubAboutScreen" component={ClubAboutScreen} />
+    </Stack.Navigator>
+  );
+};
 
 const HomeNavigator = () => {
   useTabBarVisibility();
-
   return (
     <Stack.Navigator
       screenOptions={{
@@ -99,6 +295,43 @@ const HomeNavigator = () => {
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="NewsScreen" component={NewsScreen} />
       <Stack.Screen name="ClubAboutScreen" component={ClubAboutScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const ClubsNavigator = () => {
+  useTabBarVisibility();
+  const navigation = useNavigation();
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen
+        name="ClubsScreen"
+        component={ClubsScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: true,
+        }}
+      />
+      <Stack.Screen
+        name="ClubDetailsScreen"
+        component={ClubDetailsScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: true,
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{marginLeft: 10, marginTop: 20}}
+              onPress={() => navigation.goBack()}>
+              {/*<Image source={require('../assets/images/icons/Back.png')} />*/}
+            </TouchableOpacity>
+          ),
+        }}
+      />
     </Stack.Navigator>
   );
 };
@@ -144,11 +377,66 @@ const ClubsAddNavigator = () => {
   );
 };
 
+const StatisticScreens = () => {
+  useTabBarVisibility();
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="StatisticScreen"
+        component={StatisticScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="AboutNavigator"
+        component={AboutNavigator}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const NewsNavigation = () => {
+  useTabBarVisibility();
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        navigationBarColor: 'transparent',
+      }}>
+      <Stack.Screen name={'NewsClubScreen'} component={NewsClubScreen} />
+      <Stack.Screen name={'NewsScreen'} component={NewsScreen} />
+      <Stack.Screen name={'NewsEditScreen'} component={NewsEditScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const CurrentVoluntaryNavigator = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen
+        name="VoluntaryListScreen"
+        component={VoluntaryListScreen}
+      />
+      <Stack.Screen name="RateScreen" component={RateScreen} />
+      <Stack.Screen name="AttendanceScreen" component={AttendanceScreen} />
+    </Stack.Navigator>
+  );
+};
+
 const AboutNavigator = () => {
   useTabBarVisibility();
   const navigation = useNavigation();
-  // @ts-ignore
-  // @ts-ignore
   return (
     <Stack.Navigator
       screenOptions={{
@@ -259,282 +547,6 @@ const AboutNavigator = () => {
             </TouchableOpacity>
           ),
         }}
-      />
-    </Stack.Navigator>
-  );
-};
-
-const ClubsNavigator = () => {
-  useTabBarVisibility();
-  const navigation = useNavigation();
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <Stack.Screen
-        name="ClubsScreen"
-        component={ClubsScreen}
-        options={{
-          headerTransparent: true,
-          headerTitle: '',
-          headerShown: true,
-        }}
-      />
-      <Stack.Screen
-        name="ClubDetailsScreen"
-        component={ClubDetailsScreen}
-        options={{
-          headerTransparent: true,
-          headerTitle: '',
-          headerShown: true,
-          headerLeft: () => (
-            <TouchableOpacity
-              style={{marginLeft: 10, marginTop: 20}}
-              onPress={() => navigation.goBack()}>
-              {/*<Image source={require('../assets/images/icons/Back.png')} />*/}
-            </TouchableOpacity>
-          ),
-        }}
-      />
-    </Stack.Navigator>
-  );
-};
-
-const IntroductionNavigator = () => {
-  // useTabBarVisibility();
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <Stack.Screen name="IntroductionScreen" component={IntroductionScreen} />
-      <Stack.Screen name="SiginUpScreen" component={SiginUpScreen} />
-      <Stack.Screen
-        name="VoluntaryRegistrationScreen"
-        component={VoluntaryRegistrationScreen}
-      />
-      <Stack.Screen
-        name="LegalPersonRegistrationScreen"
-        component={LegalPersonRegistrationScreen}
-      />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen
-        name="PasswordResetScreen"
-        component={PasswordResetScreen}
-      />
-      <Stack.Screen name="OtpScreen" component={OtpScreen} />
-      <Stack.Screen name="NewPasswordScreen" component={NewPasswordScreen} />
-    </Stack.Navigator>
-  );
-};
-
-const BottomTabNavigator = () => {
-  return (
-    <KonulluDostBottomTabNavigator.Navigator
-      screenOptions={{
-        tabBarHideOnKeyboard: false,
-        headerShown: false,
-      }}>
-      <KonulluDostBottomTabNavigator.Screen
-        name={'HomeNavigator'}
-        component={HomeNavigator}
-        options={{
-          title: 'Əsas səhifə',
-          tabBarActiveTintColor: GlobalStyles.colors.bottomIcon,
-          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
-        }}
-      />
-      <KonulluDostBottomTabNavigator.Screen
-        name={'ClubsNavigator'}
-        component={ClubsNavigator}
-        options={{
-          title: 'Klublar',
-          tabBarActiveTintColor: GlobalStyles.colors.bottomIcon,
-          tabBarIcon: ({focused}) => (focused ? <PenIcon /> : <PenIcon />),
-        }}
-      />
-      <KonulluDostBottomTabNavigator.Screen
-        name={'StatisticScreens'}
-        component={StatisticScreens}
-        options={{
-          title: 'Profil',
-          tabBarActiveTintColor: GlobalStyles.colors.bottomIcon,
-          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
-        }}
-      />
-    </KonulluDostBottomTabNavigator.Navigator>
-  );
-};
-
-const StatisticScreens = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="StatisticScreen"
-        component={StatisticScreen}
-        options={{
-          headerTransparent: true,
-          headerTitle: '',
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="AboutNavigator"
-        component={AboutNavigator}
-        options={{
-          headerTransparent: true,
-          headerTitle: '',
-          headerShown: false,
-        }}
-      />
-    </Stack.Navigator>
-  );
-};
-const ResponsibleHomeNavigator = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <Stack.Screen
-        name="ResponsibleHomeScreen"
-        component={ResponsibleHomeScreen}
-      />
-      <Stack.Screen name="NewsScreen" component={NewsScreen} />
-      <Stack.Screen name="ClubAboutScreen" component={ClubAboutScreen} />
-    </Stack.Navigator>
-  );
-};
-
-const ResponsibleBottomTabNavigator = () => {
-  return (
-    <KonulluDostBottomTabNavigator.Navigator
-      screenOptions={{
-        tabBarHideOnKeyboard: false,
-        headerShown: false,
-      }}>
-      <KonulluDostBottomTabNavigator.Screen
-        name={'ResponsibleHomeNavigator'}
-        component={ResponsibleHomeNavigator}
-        options={{
-          title: 'Əsas səhifə',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
-        }}
-      />
-      <KonulluDostBottomTabNavigator.Screen
-        name={'CurrentVoluntaryNavigator'}
-        component={CurrentVoluntaryNavigator}
-        options={{
-          title: 'Könüllü List',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
-        }}
-      />
-      <KonulluDostBottomTabNavigator.Screen
-        name={'AboutNavigator'}
-        component={AboutNavigator}
-        options={{
-          title: 'Haqqımızda',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
-        }}
-      />
-    </KonulluDostBottomTabNavigator.Navigator>
-  );
-};
-
-const CurrentVoluntaryNavigator = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <Stack.Screen
-        name="VoluntaryListScreen"
-        component={VoluntaryListScreen}
-      />
-      <Stack.Screen name="RateScreen" component={RateScreen} />
-      <Stack.Screen name="AttendanceScreen" component={AttendanceScreen} />
-    </Stack.Navigator>
-  );
-};
-
-const ResponsiblePersonofClubs = () => {
-  return (
-    <KonulluDostBottomTabNavigator.Navigator
-      screenOptions={{
-        tabBarHideOnKeyboard: false,
-        headerShown: false,
-      }}>
-      <KonulluDostBottomTabNavigator.Screen
-        name={'ResponsibleHomeNavigator'}
-        component={ResponsibleHomeNavigator}
-        options={{
-          title: 'Əsas səhifə',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({focused}) => (focused ? <HomeIcon /> : <HomeIcon />),
-        }}
-      />
-      <KonulluDostBottomTabNavigator.Screen
-        name={'NewsNavigation'}
-        component={NewsNavigation}
-        options={{
-          title: 'Xəbərlər',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
-        }}
-      />
-      <KonulluDostBottomTabNavigator.Screen
-        name={'ClubsAddNavigator'}
-        component={ClubsAddNavigator}
-        options={{
-          title: 'Klublar',
-          tabBarActiveTintColor: GlobalStyles.colors.CobaltBlue,
-          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
-        }}
-      />
-    </KonulluDostBottomTabNavigator.Navigator>
-  );
-};
-
-const NewsNavigation = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-        navigationBarColor: 'transparent',
-      }}>
-      <Stack.Screen name={'NewsClubScreen'} component={NewsClubScreen} />
-      <Stack.Screen name={'NewsScreen'} component={NewsScreen} />
-      <Stack.Screen name={'NewsEditScreen'} component={NewsEditScreen} />
-    </Stack.Navigator>
-  );
-};
-
-const KonulluDostNavigation = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-        navigationBarColor: 'transparent',
-      }}>
-      <Stack.Screen
-        name={'IntroductionNavigator'}
-        component={IntroductionNavigator}
-      />
-      <Stack.Screen
-        name={'BottomTabNavigator'}
-        component={BottomTabNavigator}
-      />
-      <Stack.Screen
-        name={'ResponsibleBottomTabNavigator'}
-        component={ResponsibleBottomTabNavigator}
-      />
-      <Stack.Screen
-        name={'ResponsiblePersonofClubs'}
-        component={ResponsiblePersonofClubs}
       />
     </Stack.Navigator>
   );

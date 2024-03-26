@@ -63,10 +63,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderRadius: 5,
-    borderColor: '#2858EE',
+    borderColor: '#861DBF',
   },
   activeTab: {
-    backgroundColor: GlobalStyles.colors.CobaltBlue,
+    backgroundColor: GlobalStyles.colors.purple,
     borderRadius: 5,
     color: '#fff',
   },

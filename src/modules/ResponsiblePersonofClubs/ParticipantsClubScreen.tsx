@@ -105,6 +105,7 @@ const ParticipantsClubScreen = () => {
     center: '',
     topic: '',
     text: '',
+    degree: '',
   });
   console.log(loading);
   useEffect(() => {
@@ -135,7 +136,7 @@ const ParticipantsClubScreen = () => {
       <View style={{paddingHorizontal: 15, marginBottom: 15}}>
         <Text
           style={{
-            color: '#2858EE',
+            color: '#861DBF',
             fontSize: 22,
             fontWeight: 'bold',
             marginTop: 21,
@@ -153,10 +154,10 @@ const ParticipantsClubScreen = () => {
           {clubData?.topic}
         </Text>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Text style={{color: '#2858EE', fontSize: 12, fontWeight: '500'}}>
+          <Text style={{color: '#861DBF', fontSize: 12, fontWeight: '500'}}>
             {clubData?.datee}
           </Text>
-          <Text style={{color: '#2858EE', fontSize: 12, fontWeight: '500'}}>
+          <Text style={{color: '#861DBF', fontSize: 12, fontWeight: '500'}}>
             {clubData?.center}
           </Text>
         </View>

@@ -1,5 +1,6 @@
 import {
   Image,
+  KeyboardAvoidingView,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -15,6 +16,7 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import {SelectList} from 'react-native-dropdown-select-list';
 import {centers, clubs, hour} from '../../utils/utils.ts';
+import KeyboardAvoidingScrollView from "../../components/KeyboardAwoidingScrollView.tsx";
 
 const schema = yup.object().shape({
   name: yup.string().required('Başlıq tələb olunur'),
@@ -67,12 +69,12 @@ export const NewClubAddScreen = () => {
         <Image source={require('../../assets/images/icons/logo.png')} />
       </View>
       <View style={{backgroundColor: '#fff', flex: 1}}>
-        <ScrollView>
+        <KeyboardAvoidingScrollView>
           <View
             style={{
               marginBottom: 25,
               backgroundColor: '#EAEAEA',
-              width: 380,
+              width: 370,
               height: 193,
               borderWidth: 1,
               borderRadius: 10,
@@ -196,12 +198,12 @@ export const NewClubAddScreen = () => {
               control={control}
               render={({field: {onChange, value}}) => (
                 <TextInput
+                  multiline={true}
                   style={styles.TextInput}
                   value={value}
                   onChangeText={onChange}
                   placeholderTextColor={GlobalStyles.colors.PlaceHolder}
                   placeholder="Klub Haqqında"
-                  secureTextEntry={true}
                 />
               )}
               name="about"
@@ -216,7 +218,7 @@ export const NewClubAddScreen = () => {
             onPress={handleSubmit(onSubmit)}>
             <Text style={styles.buttonText}>Prosesi tamamla</Text>
           </TouchableOpacity>
-        </ScrollView>
+        </KeyboardAvoidingScrollView>
       </View>
     </SafeAreaView>
   );
@@ -256,7 +258,7 @@ const styles = StyleSheet.create({
   button: {
     width: 355,
     height: 56,
-    backgroundColor: '#2858EE',
+    backgroundColor: '#861DBF',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 15,

@@ -77,7 +77,7 @@ const ClubEditScreen: React.FC = () => {
           <Image source={require('../../assets/images/icons/logo.png')} />
         </View>
         <View>
-          <ScrollView horizontal={true}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View style={styles.container}>
               {daysOfWeek.map((day, index) => {
                 const currentDate = new Date(startOfWeek);
@@ -126,7 +126,7 @@ const ClubEditScreen: React.FC = () => {
       <TouchableOpacity
         onPress={() => navigation.navigate('NewClubAddScreen')}
         style={{
-          backgroundColor: '#2858EE',
+          backgroundColor: '#861DBF',
           width: 380,
           height: 56,
           borderRadius: 12,
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F3FBFF',
   },
   selectedDay: {
-    backgroundColor: GlobalStyles.colors.CobaltBlue,
+    backgroundColor: GlobalStyles.colors.purple,
   },
   selectedDayText: {
     color: '#fff',

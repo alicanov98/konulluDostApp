@@ -26,7 +26,6 @@ const NewsScreen = () => {
     };
     getDetails();
   }, [params?.params?.id]);
-  console.log(newsData);
   return (
     <SafeAreaView
       style={{

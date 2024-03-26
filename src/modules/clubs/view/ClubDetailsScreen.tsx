@@ -11,7 +11,6 @@ import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 import {useRoute} from '@react-navigation/native';
 import {Reservation} from '../../statistic/types/StatisticTypes.ts';
 import {db} from '../../../fakeDb/db.ts';
-import LinearGradient from 'react-native-linear-gradient';
 
 const ClubDetailsScreen = () => {
   const params: any = useRoute();
@@ -29,6 +28,7 @@ const ClubDetailsScreen = () => {
     center: '',
     topic: '',
     text: '',
+    degree: '',
   });
 
   console.log(loading);

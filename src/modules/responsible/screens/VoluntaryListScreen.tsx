@@ -16,7 +16,6 @@ import CurrentVoluntaryCard from '../component/voluntaryCards/CurrentVoluntaryCa
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
-import RateScreen from './RateScreen.tsx';
 
 const data = [
   {
@@ -103,9 +102,8 @@ const data = [
 
 const VoluntaryListScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
-
   const [isActive, setIsActive] = React.useState(true);
-  console.log(isActive);
+
   return (
     <SafeAreaView
       style={{
@@ -186,7 +184,7 @@ const styles = StyleSheet.create({
     height: 28,
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: '#2858EE',
+    borderColor: '#861DBF',
     backgroundColor: '#fff',
     flexDirection: 'row',
     alignItems: 'center',

@@ -21,7 +21,7 @@ const AttendanceVoluntaryCard: React.FC<CurrentVoluntaryProps> = ({data}) => {
     } else if (data.centerNumber === 4) {
       setBgColor('#C8C117');
     } else {
-      setColor('#2858EE');
+      setColor('#861DBF');
       setBgColor('#F6F5F5');
     }
   }, [data.centerNumber]);
