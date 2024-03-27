@@ -7,95 +7,28 @@ import {
   View,
 } from 'react-native';
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-import RateVoluntaryCard from '../component/voluntaryCards/RateVoluntaryCard.tsx';
 import AttendanceVoluntaryCard from '../component/voluntaryCards/AttendanceVoluntaryCard.tsx';
-
-const data = [
-  {
-    id: 1,
-    name: 'Məlik',
-    surname: 'Əlicanov',
-    centerNumber: 4,
-    dkNumber: 32,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 2,
-    name: 'Ərəbov',
-    surname: 'Mirsadiq',
-    centerNumber: 3,
-    dkNumber: 32,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 3,
-    name: 'Röya',
-    surname: 'Abzərova ',
-    centerNumber: 6,
-    dkNumber: 30,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 4,
-    name: 'Əli',
-    surname: 'Vahabzadə ',
-    centerNumber: 6,
-    dkNumber: 28,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 5,
-    name: 'Səriyyə',
-    surname: 'Vəliyeva',
-    centerNumber: 4,
-    dkNumber: 34,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 6,
-    name: 'Gülgəz',
-    surname: 'Əliyeva ',
-    centerNumber: 4,
-    dkNumber: 34,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 7,
-    name: 'Hikmət',
-    surname: 'Məmmədov',
-    centerNumber: 4,
-    dkNumber: 33,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 8,
-    name: 'Nicat ',
-    surname: 'Melikov ',
-    centerNumber: 6,
-    dkNumber: 28,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 9,
-    name: 'Günay',
-    surname: 'Abasova',
-    centerNumber: 5,
-    dkNumber: 7,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 10,
-    name: 'Qurban',
-    surname: 'Rəcəbov',
-    centerNumber: 1,
-    dkNumber: 57,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-];
+import {voluntaryTypes} from '../type/VoluntaryListType.ts';
+import {db} from '../../../fakeDb/db.ts';
 
 const AttendanceScreen = () => {
+  const [loading, setLoading] = useState(false);
+  const [voluntary, setVoluntarys] = useState<voluntaryTypes[]>([]);
+
+  useEffect(() => {
+    const getVoluntary = async () => {
+      setLoading(true);
+      try {
+        setVoluntarys(db.voluntarys);
+      } catch (err) {
+        console.log(err);
+        console.log(loading);
+      }
+    };
+    getVoluntary();
+  }, [loading]);
   return (
     <SafeAreaView
       style={{
@@ -120,7 +53,7 @@ const AttendanceScreen = () => {
         </View>
       </View>
       <ScrollView style={styles.scrollView}>
-        {data.map(item => (
+        {voluntary.map(item => (
           <AttendanceVoluntaryCard key={item.id} data={item} />
         ))}
       </ScrollView>

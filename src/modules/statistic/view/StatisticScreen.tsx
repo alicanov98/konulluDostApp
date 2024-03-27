@@ -19,7 +19,7 @@ import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
-import {agendaDayNumColor} from 'react-native-calendars/src/style';
+import {date} from 'yup';
 
 LocaleConfig.locales.az = {
   monthNames: [
@@ -66,7 +66,7 @@ LocaleConfig.defaultLocale = 'az';
 
 const reservations: Reservation[] = [
   {
-    id: 0,
+    id: '0',
     date: new Date(2024, 2, 3),
     name: 'Yaradıcılıq Klubu',
     bgColor: '#DBF3FF',
@@ -74,10 +74,10 @@ const reservations: Reservation[] = [
     nameColor: '#757575',
     center: '4 saylı Bakı DOST Mərkəzi',
     topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
-    degre: 32,
+    degre: '32',
   },
   {
-    id: 1,
+    id: '1',
     date: new Date(2024, 2, 4),
     name: 'Fərdi İnkişaf Klubu',
     bgColor: '#9EFFBE',
@@ -85,10 +85,10 @@ const reservations: Reservation[] = [
     nameColor: '#757575',
     center: '4 saylı Bakı DOST Mərkəzi',
     topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
-    degre: 42,
+    degre: '42',
   },
   {
-    id: 2,
+    id: '2',
     date: new Date(2024, 2, 5),
     name: 'Xarici dil',
     bgColor: '#FC714E',
@@ -96,10 +96,10 @@ const reservations: Reservation[] = [
     nameColor: '#fff',
     center: '5 saylı Bakı DOST Mərkəzi',
     topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
-    degre: 52,
+    degre: '52',
   },
   {
-    id: 3,
+    id: '3',
     date: new Date(2024, 2, 6),
     name: 'Yaradıcılıq Klubu',
     bgColor: '#DBF3FF',
@@ -107,10 +107,10 @@ const reservations: Reservation[] = [
     nameColor: '#757575',
     center: '4 saylı Bakı DOST Mərkəzi',
     topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
-    degre: 62,
+    degre: '62',
   },
   {
-    id: 4,
+    id: '4',
     date: new Date(2024, 2, 7),
     name: 'Fərdi İnkişaf Klubu',
     bgColor: '#9EFFBE',
@@ -118,10 +118,10 @@ const reservations: Reservation[] = [
     nameColor: '#757575',
     center: '4 saylı Bakı DOST Mərkəzi',
     topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
-    degre: 72,
+    degre: '72',
   },
   {
-    id: 5,
+    id: '5',
     date: new Date(2024, 2, 8),
     name: 'Xarici dil',
     bgColor: '#FC714E',
@@ -129,10 +129,10 @@ const reservations: Reservation[] = [
     nameColor: '#fff',
     center: '5 saylı Bakı DOST Mərkəzi',
     topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
-    degre: 82,
+    degre: '82',
   },
   {
-    id: 6,
+    id: '6',
     date: new Date(2024, 2, 9),
     name: 'Yaradıcılıq Klubu',
     bgColor: '#DBF3FF',
@@ -140,20 +140,20 @@ const reservations: Reservation[] = [
     nameColor: '#757575',
     center: '4 saylı Bakı DOST Mərkəzi',
     topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
-    degre: 92,
+    degre: '92',
   },
 ];
 
 const StatisticScreen: React.FC = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const [selected, setSelected] = useState('');
-  const [isActive, setIsActive] = useState(false);
+  // const [isActive, setIsActive] = useState(false);
   const [clubsData, setClubsData] = useState<Reservation[]>([]);
-
+  const today = dayjs().format('YYYY-MM-DD');
+  const [todays, setTodays] = useState<Date>();
   useEffect(() => {
     const getReservationsForDate = (dateString: string) => {
       const selectedDate = new Date(dateString);
-      console.log(selectedDate);
       const filteredReservations = reservations.filter(item => {
         const reservationDate = new Date(item.date);
         return (
@@ -166,7 +166,6 @@ const StatisticScreen: React.FC = () => {
     };
     getReservationsForDate(selected ? selected : dayjs().format('YYYY-MM-DD'));
   }, [selected]);
-
   // @ts-ignore
   return (
     <SafeAreaView
@@ -281,91 +280,115 @@ const StatisticScreen: React.FC = () => {
           <Text style={{fontSize: 9, color: '#000'}}>3/5</Text>
         </View>
       </View>
-      {clubsData.map(item => (
-        <View
-          style={{
-            flexDirection: 'row',
-            gap: 35,
-            marginTop: 38,
-            justifyContent: 'center',
-          }}>
-          <ClubCards
-            key={item.id}
-            item={item}
-            style={{width: 217, height: 150, marginTop: 0}}
-          />
+      {clubsData && clubsData.length > 0 ? (
+        clubsData.map(item => (
           <View
             style={{
-              width: 127,
-              height: 150,
-              backgroundColor: '#F0EFEF',
-              borderRadius: 10,
-              padding: 8,
-              alignItems: 'center',
+              flexDirection: 'row',
+              gap: 35,
+              marginTop: 38,
               justifyContent: 'center',
             }}>
+            <ClubCards
+              key={item.id}
+              item={item}
+              style={{width: 217, height: 150, marginTop: 0}}
+            />
             <View
               style={{
-                transform: 'rotate(90deg)',
+                width: 127,
+                height: 150,
+                backgroundColor: '#F0EFEF',
+                borderRadius: 10,
+                padding: 8,
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
-              <AnimatedCircularProgress
-                size={75}
-                width={5}
-                fill={item.degre}
-                tintColor="#B755ED"
-                onAnimationComplete={() => {}}
-                backgroundColor="#fff"
-              />
+              <View
+                style={{
+                  transform: 'rotate(90deg)',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                <AnimatedCircularProgress
+                  size={75}
+                  width={5}
+                  fill={Number(item.degre)}
+                  tintColor="#B755ED"
+                  onAnimationComplete={() => {}}
+                  backgroundColor="#fff"
+                />
+              </View>
+              <View
+                style={{
+                  position: 'absolute',
+                  top: 35,
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}>
+                <Text
+                  style={{
+                    color: '#000',
+                    fontSize: 10,
+                  }}>
+                  Aktivlik
+                </Text>
+                <Text
+                  style={{
+                    color: '#000',
+                    fontSize: 10,
+                  }}>
+                  {item.degre}%
+                </Text>
+              </View>
+              {Number(item.degre) < 50 ? (
+                <Text
+                  style={{
+                    color: '#000',
+                    fontSize: 8,
+                    paddingTop: 12,
+                    textAlign: 'center',
+                  }}>
+                  Bu gün aktivliyin biraz zəifdir. Ancaq ruhdan düşmək lazım
+                  deyil!
+                </Text>
+              ) : (
+                <Text
+                  style={{
+                    color: '#000',
+                    fontSize: 8,
+                    paddingTop: 12,
+                    textAlign: 'center',
+                  }}>
+                  Bu gün aktivliyin yaxşıdır.Dahada aktiv ola bilərsən!
+                </Text>
+              )}
             </View>
-            <View
-              style={{
-                position: 'absolute',
-                top: 35,
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}>
-              <Text
-                style={{
-                  color: '#000',
-                  fontSize: 10,
-                }}>
-                Aktivlik
-              </Text>
-              <Text
-                style={{
-                  color: '#000',
-                  fontSize: 10,
-                }}>
-                {item.degre}%
-              </Text>
-            </View>
-            {item.degre < 50 ? (
-              <Text
-                style={{
-                  color: '#000',
-                  fontSize: 8,
-                  paddingTop: 12,
-                  textAlign: 'center',
-                }}>
-                Bu gün aktivliyin biraz zəifdir. Ancaq ruhdan düşmək lazım
-                deyil!
-              </Text>
-            ) : (
-              <Text
-                style={{
-                  color: '#000',
-                  fontSize: 8,
-                  paddingTop: 12,
-                  textAlign: 'center',
-                }}>
-                Bu gün aktivliyin yaxşıdır.Dahada aktiv ola bilərsən!
-              </Text>
-            )}
           </View>
+        ))
+      ) : (
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 10,
+          }}>
+          <Image
+            style={{width: 100, height: 100}}
+            source={
+              today === selected
+                ? require('../../../assets/images/icons/smiley.png')
+                : require('../../../assets/images/icons/sadEmoji.png')
+            }
+          />
+          <Text style={{fontSize: 16}}>
+            {selected === today
+              ? 'Fəaliətinizdə Uğurlar!'
+              : 'İştrak etməmisiz!'}
+          </Text>
         </View>
-      ))}
+      )}
     </SafeAreaView>
   );
 };

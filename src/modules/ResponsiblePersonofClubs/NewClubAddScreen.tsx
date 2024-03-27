@@ -1,8 +1,6 @@
 import {
   Image,
-  KeyboardAvoidingView,
   SafeAreaView,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -16,7 +14,7 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import {SelectList} from 'react-native-dropdown-select-list';
 import {centers, clubs, hour} from '../../utils/utils.ts';
-import KeyboardAvoidingScrollView from "../../components/KeyboardAwoidingScrollView.tsx";
+import KeyboardAvoidingScrollView from '../../components/KeyboardAwoidingScrollView.tsx';
 
 const schema = yup.object().shape({
   name: yup.string().required('Başlıq tələb olunur'),

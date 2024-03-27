@@ -3,12 +3,12 @@ import React from 'react';
 
 interface RateVoluntaryProps {
   data: {
-    id: number;
+    id: string;
     name: string;
     surname: string;
-    dkNumber: number;
-    centerNumber: number;
-    image: any;
+    dkNumber: string;
+    centerNumber: string;
+    image: string;
   };
 }
 

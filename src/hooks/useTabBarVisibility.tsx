@@ -33,6 +33,7 @@ const tabHiddenRoutes = [
   'NewPasswordScreen',
   'RefreshPasswordScreen',
   'AboutNavigator',
+  'VoluntarysClubListScreen',
 ];
 
 const useTabBarVisibility = () => {

@@ -13,7 +13,6 @@ interface NewsCardProps {
 }
 const NewsSwiperCard: React.FC<NewsCardProps> = ({item}) => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
-  console.log(item);
   return (
     <>
       {

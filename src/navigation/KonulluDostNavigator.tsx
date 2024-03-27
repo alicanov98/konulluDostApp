@@ -40,6 +40,8 @@ import NewsClubScreen from '../modules/ResponsiblePersonofClubs/NewsClubScreen.t
 import NewsScreen from '../modules/ResponsiblePersonofClubs/NewsScreen.tsx';
 import {NewsEditScreen} from '../modules/ResponsiblePersonofClubs/NewsEditScreen.tsx';
 import ClubAboutScreen from '../modules/clubs/view/ClubAboutScreen.tsx';
+import VoluntarysClubListScreen from '../modules/responsible/screens/VoluntarysClubListScreen.tsx';
+import StatisticProfilScreen from '../modules/statistic/view/StatisticProfilScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -85,6 +87,8 @@ export type RootStackParamList = {
   NewsNavigator: undefined;
   NewsEditScreen: undefined;
   ClubAboutScreen: {id: string};
+  VoluntarysClubListScreen: undefined;
+  StatisticProfilScreen: {id: string};
 };
 const KonulluDostNavigation = () => {
   return (
@@ -252,7 +256,7 @@ const ResponsiblePersonofClubs = () => {
         options={{
           title: 'Xəbərlər',
           tabBarActiveTintColor: GlobalStyles.colors.purple,
-          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+          tabBarIcon: ({focused}) => (focused ? <NewsIcon /> : <NewsIcon />),
         }}
       />
       <KonulluDostBottomTabNavigator.Screen
@@ -261,13 +265,39 @@ const ResponsiblePersonofClubs = () => {
         options={{
           title: 'Klublar',
           tabBarActiveTintColor: GlobalStyles.colors.purple,
-          tabBarIcon: ({focused}) => (focused ? <UserIcon /> : <UserIcon />),
+          tabBarIcon: ({focused}) => (focused ? <PenIcon /> : <PenIcon />),
+        }}
+      />
+      <KonulluDostBottomTabNavigator.Screen
+        name={'VoluntarysClubScreen'}
+        component={VoluntarysClubScreen}
+        options={{
+          title: 'Könüllü list',
+          tabBarActiveTintColor: GlobalStyles.colors.purple,
+          tabBarIcon: ({focused}) =>
+            focused ? <VoluntaryList /> : <VoluntaryList />,
         }}
       />
     </KonulluDostBottomTabNavigator.Navigator>
   );
 };
-
+const VoluntarysClubScreen = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen
+        name="VoluntarysClubListScreen"
+        component={VoluntarysClubListScreen}
+      />
+      <Stack.Screen
+        name="StatisticProfilScreen"
+        component={StatisticProfilScreen}
+      />
+    </Stack.Navigator>
+  );
+};
 const ResponsibleHomeNavigator = () => {
   useTabBarVisibility();
   return (
@@ -419,6 +449,7 @@ const NewsNavigation = () => {
 };
 
 const CurrentVoluntaryNavigator = () => {
+  useTabBarVisibility();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -430,6 +461,14 @@ const CurrentVoluntaryNavigator = () => {
       />
       <Stack.Screen name="RateScreen" component={RateScreen} />
       <Stack.Screen name="AttendanceScreen" component={AttendanceScreen} />
+      <Stack.Screen
+        name="VoluntarysClubListScreen"
+        component={VoluntarysClubListScreen}
+      />
+      <Stack.Screen
+        name="StatisticProfilScreen"
+        component={StatisticProfilScreen}
+      />
     </Stack.Navigator>
   );
 };

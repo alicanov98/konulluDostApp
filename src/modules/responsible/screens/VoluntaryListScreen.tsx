@@ -9,100 +9,34 @@ import {
   View,
 } from 'react-native';
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {TabResponsible} from './TabResponsible.tsx';
 import GraduateVoluntaryCard from '../component/voluntaryCards/GraduateVoluntaryCard.tsx';
 import CurrentVoluntaryCard from '../component/voluntaryCards/CurrentVoluntaryCard.tsx';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
-
-const data = [
-  {
-    id: 1,
-    name: 'Məlik',
-    surname: 'Əlicanov',
-    centerNumber: 4,
-    dkNumber: 32,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 2,
-    name: 'Ərəbov',
-    surname: 'Mirsadiq',
-    centerNumber: 3,
-    dkNumber: 32,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 3,
-    name: 'Röya',
-    surname: 'Abzərova ',
-    centerNumber: 6,
-    dkNumber: 30,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 4,
-    name: 'Əli',
-    surname: 'Vahabzadə ',
-    centerNumber: 6,
-    dkNumber: 28,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 5,
-    name: 'Səriyyə',
-    surname: 'Vəliyeva',
-    centerNumber: 4,
-    dkNumber: 34,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 6,
-    name: 'Gülgəz',
-    surname: 'Əliyeva ',
-    centerNumber: 4,
-    dkNumber: 34,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 7,
-    name: 'Hikmət',
-    surname: 'Məmmədov',
-    centerNumber: 4,
-    dkNumber: 33,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 8,
-    name: 'Nicat ',
-    surname: 'Melikov ',
-    centerNumber: 6,
-    dkNumber: 28,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 9,
-    name: 'Günay',
-    surname: 'Abasova',
-    centerNumber: 5,
-    dkNumber: 7,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-  {
-    id: 10,
-    name: 'Qurban',
-    surname: 'Rəcəbov',
-    centerNumber: 1,
-    dkNumber: 57,
-    image: require('../../../assets/images/image/person2.png'),
-  },
-];
+import {voluntaryTypes} from '../type/VoluntaryListType.ts';
+import {db} from '../../../fakeDb/db.ts';
 
 const VoluntaryListScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const [isActive, setIsActive] = React.useState(true);
+  const [loading, setLoading] = useState(false);
+  const [voluntary, setVoluntarys] = useState<voluntaryTypes[]>([]);
+
+  useEffect(() => {
+    const getVoluntary = async () => {
+      setLoading(true);
+      try {
+        setVoluntarys(db.voluntarys);
+      } catch (err) {
+        console.log(err);
+        console.log(loading);
+      }
+    };
+    getVoluntary();
+  }, [loading]);
 
   return (
     <SafeAreaView
@@ -119,16 +53,29 @@ const VoluntaryListScreen = () => {
         }}>
         <View>
           <Image source={require('../../../assets/images/icons/logo.png')} />
-          <View style={{position: 'relative', marginTop: 24}}>
-            <TextInput
-              style={styles.input}
-              placeholderTextColor="rgba(0, 0, 0, 0.5)"
-              placeholder="ad,soyad"
-            />
-            <Image
-              style={{position: 'absolute', top: 12.5, left: 12}}
-              source={require('../../../assets/images/icons/search.png')}
-            />
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: 5,
+            }}>
+            <View style={{position: 'relative', marginTop: 24}}>
+              <TextInput
+                style={styles.input}
+                placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                placeholder="ad,soyad"
+              />
+              <Image
+                style={{position: 'absolute', top: 12.5, left: 12}}
+                source={require('../../../assets/images/icons/search.png')}
+              />
+            </View>
+
+            <TouchableOpacity
+              style={[styles.dropDowninput, {borderColor: '#861DBF'}]}
+              onPress={() => navigation.navigate('VoluntarysClubListScreen')}>
+              <Text style={styles.inputText}>Klublar</Text>
+            </TouchableOpacity>
           </View>
           <TabResponsible setIsActive={setIsActive} />
           {isActive && (
@@ -155,9 +102,13 @@ const VoluntaryListScreen = () => {
       </View>
       <ScrollView style={styles.scrollView}>
         {!isActive &&
-          data.map(item => <GraduateVoluntaryCard key={item.id} data={item} />)}
+          voluntary.map(item => (
+            <GraduateVoluntaryCard key={item.id} data={item} />
+          ))}
         {isActive &&
-          data.map(item => <CurrentVoluntaryCard key={item.id} data={item} />)}
+          voluntary.map(item => (
+            <CurrentVoluntaryCard key={item.id} data={item} />
+          ))}
       </ScrollView>
     </SafeAreaView>
   );
@@ -165,7 +116,7 @@ const VoluntaryListScreen = () => {
 
 const styles = StyleSheet.create({
   input: {
-    width: 380,
+    width: 230,
     height: 42,
     fontSize: 16,
     borderWidth: 1,
@@ -175,6 +126,27 @@ const styles = StyleSheet.create({
     borderColor: '#F6F6F6',
     backgroundColor: '#F6F6F6',
     alignItems: 'center',
+  },
+  dropDowninput: {
+    width: 150,
+    height: 42,
+    fontSize: 16,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 10,
+    borderColor: '#861DBF',
+    alignItems: 'center',
+    position: 'relative',
+    marginTop: 24,
+  },
+  dropDownBoxDk: {
+    width: 150,
+    height: 165,
+    position: 'absolute',
+    borderColor: '#861DBF',
+    zIndex: 5,
+    backgroundColor: '#fff',
+    top: 57,
   },
   scrollView: {
     paddingTop: 25,
@@ -191,6 +163,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 5,
   },
+  inputText: {color: '#000', marginBottom: 5, fontSize: 14},
   buttonRateText: {
     fontSize: 8,
     color: '#5A5A5A',

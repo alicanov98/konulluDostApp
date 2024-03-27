@@ -3,12 +3,13 @@ import React from 'react';
 
 interface CurrentVoluntaryProps {
   data: {
-    id: number;
+    id: string;
     name: string;
     surname: string;
-    dkNumber: number;
-    centerNumber: number;
-    image: any;
+    dkNumber: string;
+    centerNumber: string;
+    image: string;
+    club: string;
   };
 }
 

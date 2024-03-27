@@ -1,18 +1,24 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../../../navigation/KonulluDostNavigator.tsx';
 
-interface GraduateVoluntaryProps {
+interface IGraduateVoluntaryProps {
   data: {
-    id: number;
+    id: string;
     name: string;
     surname: string;
-    dkNumber: number;
-    centerNumber: number;
-    image: any;
+    dkNumber: string;
+    centerNumber: string;
+    image: string;
+    club: string;
   };
 }
 
-const GraduateVoluntaryCard: React.FC<GraduateVoluntaryProps> = ({data}) => {
+const GraduateVoluntaryCard: React.FC<IGraduateVoluntaryProps> = ({data}) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   return (
     <View style={styles.buttonContainer}>
       <View style={{flexDirection: 'row', gap: 9, alignItems: 'center'}}>
@@ -26,7 +32,11 @@ const GraduateVoluntaryCard: React.FC<GraduateVoluntaryProps> = ({data}) => {
           </Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+          navigation.navigate('StatisticProfilScreen', {id: data.id})
+        }>
         <Text style={styles.buttonText}>Profilə bax</Text>
       </TouchableOpacity>
     </View>

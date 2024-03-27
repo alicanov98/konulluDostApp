@@ -3,12 +3,12 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 interface CurrentVoluntaryProps {
   data: {
-    id: number;
+    id: string;
     name: string;
     surname: string;
-    dkNumber: number;
-    centerNumber: number;
-    image: any;
+    dkNumber: string;
+    centerNumber: string;
+    image: string;
   };
 }
 
@@ -16,9 +16,9 @@ const AttendanceVoluntaryCard: React.FC<CurrentVoluntaryProps> = ({data}) => {
   const [bgColor, setBgColor] = useState('#F6F5F5');
   const [color, setColor] = useState('#CCCCCC');
   useEffect(() => {
-    if (data.centerNumber > 4) {
+    if (data.centerNumber > '4') {
       setBgColor('#FF0000');
-    } else if (data.centerNumber === 4) {
+    } else if (data.centerNumber === '4') {
       setBgColor('#C8C117');
     } else {
       setColor('#861DBF');
@@ -51,7 +51,7 @@ const AttendanceVoluntaryCard: React.FC<CurrentVoluntaryProps> = ({data}) => {
               <Text style={(styles.buttonText, {color: color})}>
                 Davamiyyət
               </Text>
-              {data.centerNumber < 4 ? (
+              {data.centerNumber < '4' ? (
                 <Image
                   source={require('../../../../assets/images/icons/up.png')}
                 />

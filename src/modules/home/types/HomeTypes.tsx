@@ -1,4 +1,4 @@
-export interface Clubs {
+export interface ClubsHome {
   id: string;
   text: string;
   bgColor: string;

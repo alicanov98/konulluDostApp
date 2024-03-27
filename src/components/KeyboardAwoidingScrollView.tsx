@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, ReactNode} from 'react';
 import {
   KeyboardAvoidingView,
   ScrollView,
@@ -6,9 +6,15 @@ import {
   Keyboard,
 } from 'react-native';
 
-const KeyboardAvoidingScrollView = ({children}) => {
-  const [keyboardVisible, setKeyboardVisible] = useState(false);
+interface IKeyboardAvoidingScrollView {
+  children: ReactNode;
+}
 
+const KeyboardAvoidingScrollView: React.FC<
+  IKeyboardAvoidingScrollView
+> = props => {
+  const [keyboardVisible, setKeyboardVisible] = useState(false);
+  console.log(keyboardVisible);
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
@@ -37,7 +43,7 @@ const KeyboardAvoidingScrollView = ({children}) => {
         keyboardShouldPersistTaps="always"
         showsVerticalScrollIndicator={false}
         style={{flex: 1}}>
-        {children}
+        {props.children}
       </ScrollView>
     </KeyboardAvoidingView>
   );

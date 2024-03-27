@@ -1,21 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, SafeAreaView, ScrollView, Text, View} from 'react-native';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 import {useRoute} from '@react-navigation/native';
-import {Clubs} from '../../home/types/HomeTypes.tsx';
+import {ClubsHome} from '../../home/types/HomeTypes.tsx';
 import {db} from '../../../fakeDb/db.ts';
 
 const ClubAboutScreen = () => {
   const params = useRoute();
   const [loading, setLoading] = useState(false);
-  const [clubData, setClubData] = useState<Clubs>({
+  const [clubData, setClubData] = useState<ClubsHome>({
     id: '',
     bgColor: '',
     colors: '',
@@ -41,7 +34,6 @@ const ClubAboutScreen = () => {
     };
     getDetails();
   }, [params?.params?.id]);
-
 
   return (
     <SafeAreaView

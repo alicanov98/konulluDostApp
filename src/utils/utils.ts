@@ -25,7 +25,7 @@ const dayNames: string[] = [
   'Şənbə',
 ];
 
-export const formatDate = (date: string, withHours?: boolean) => {
+export const formatDate = (date: Date, withHours?: boolean) => {
   const month = dayjs(date).get('month');
   const day = dayjs(date).get('date');
   const year = dayjs(date).get('year');
@@ -52,6 +52,7 @@ export const centers = [
   },
 ];
 export const clubs = [
+  {label: 'Klub seçin', value: 'Klub seçin'},
   {label: 'Yaradıcılıq klubu', value: 'Yaradıcılıq klubu'},
   {label: 'Xarici dil klubu', value: 'Xarici dil klubu'},
   {label: 'Kitab klubu', value: 'Kitab klubu'},
