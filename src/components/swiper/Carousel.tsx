@@ -27,6 +27,7 @@ function MyCarousel() {
       <Carousel
         blur-parallax
         loop
+        autoPlay={true}
         mode="parallax"
         width={width}
         height={240}

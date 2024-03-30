@@ -14,7 +14,7 @@ interface CurrentVoluntaryProps {
 
 const AttendanceVoluntaryCard: React.FC<CurrentVoluntaryProps> = ({data}) => {
   const [bgColor, setBgColor] = useState('#F6F5F5');
-  const [color, setColor] = useState('#CCCCCC');
+  const [color, setColor] = useState('#fff');
   useEffect(() => {
     if (data.centerNumber > '4') {
       setBgColor('#FF0000');
@@ -27,65 +27,50 @@ const AttendanceVoluntaryCard: React.FC<CurrentVoluntaryProps> = ({data}) => {
   }, [data.centerNumber]);
 
   return (
-    <View style={styles.buttonContainer}>
-      <View style={{flexDirection: 'row', gap: 21, alignItems: 'center'}}>
+    <View style={styles.buttonContainer} key={data.id}>
+      <View style={{flexDirection: 'row', gap: 9, alignItems: 'center'}}>
         <Image style={styles.imageCardPerson} source={data.image} />
-        <View style={{flex: 1, gap: 15}}>
-          <View style={{gap: 3}}>
-            <Text style={styles.name}>
-              {data.name} {data.surname}
-            </Text>
-            <Text style={styles.dkNumber}>
-              {data.centerNumber}DK-{data.dkNumber}
-            </Text>
-          </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              gap: 7,
-              alignItems: 'center',
-              justifyContent: 'flex-end',
-            }}>
-            <TouchableOpacity
-              style={[styles.button, {backgroundColor: bgColor}]}>
-              <Text style={(styles.buttonText, {color: color})}>
-                Davamiyyət
-              </Text>
-              {data.centerNumber < '4' ? (
-                <Image
-                  source={require('../../../../assets/images/icons/up.png')}
-                />
-              ) : (
-                <Image
-                  source={require('../../../../assets/images/icons/up_ff.png')}
-                />
-              )}
-            </TouchableOpacity>
-          </View>
+        <View style={{gap: 8}}>
+          <Text style={styles.name}>
+            {data.name} {data.surname}
+          </Text>
+          <Text style={styles.dkNumber}>
+            {data.centerNumber}DK-{data.dkNumber}
+          </Text>
         </View>
       </View>
+      <TouchableOpacity
+        style={[styles.button, {backgroundColor: bgColor, flexDirection:'row',alignItems:'center',gap:10}]}>
+        <Text style={(styles.buttonText, {color: color})}>Davamiyyət</Text>
+        {data.centerNumber < '4' ? (
+          <Image source={require('../../../../assets/images/icons/up.png')} />
+        ) : (
+          <Image
+            source={require('../../../../assets/images/icons/up_ff.png')}
+          />
+        )}
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: 87,
+    height: 53,
     marginBottom: 30,
   },
   imageCardPerson: {
     borderRadius: 9999,
-    height: 83,
-    width: 87,
+    height: 44,
+    width: 44,
     resizeMode: 'cover',
   },
   name: {
     color: '#282F3E',
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: 'normal',
   },
   dkNumber: {
@@ -94,16 +79,16 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
   },
   buttonText: {
-    fontSize: 12,
-    fontWeight: '400',
+    fontSize: 14,
+    color: '#fff',
+    fontWeight: '500',
   },
   button: {
-    paddingVertical: 8.65,
-    paddingHorizontal: 10,
+    width: 120,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
     borderRadius: 4,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 14,
+    backgroundColor: '#861DBF',
   },
 });
 

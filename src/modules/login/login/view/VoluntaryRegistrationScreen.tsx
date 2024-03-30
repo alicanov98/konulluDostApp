@@ -25,6 +25,7 @@ const schema = yup.object().shape({
     .oneOf([yup.ref('password')], 'Şifrələr uyğun gəlmir'),
   center: yup.string().required('Mərkəz seçimi tələb olunur'),
   dkNumber: yup.string().required('DK nömrəsi tələb olunur'),
+  status: yup.string().required('Statusunuzu seçin'),
 });
 
 const centers = [
@@ -41,6 +42,10 @@ const centers = [
     label: 'DOST İnkluziv İnkişaf və Yaradıcılıq Mərkəzi',
     value: 'DOST İnkluziv İnkişaf və Yaradıcılıq Mərkəzi',
   },
+];
+const volunteerStatus = [
+  {label: 'Məzun', value: 'Məzun'},
+  {label: 'Cari', value: 'Cari'},
 ];
 
 const dkNumbers = Array.from({length: 71}, (_, index) => ({
@@ -60,6 +65,7 @@ const VoluntaryRegistrationScreen = () => {
       email: '',
       password: '',
       confirmPassword: '',
+      status: '',
     },
   });
 
@@ -187,28 +193,62 @@ const VoluntaryRegistrationScreen = () => {
                 <Text style={styles.error}>{errors.center.message}</Text>
               )}
             </View>
-            <View style={{marginBottom: 30}}>
-              <Text style={styles.inputText}>DK nömrəsi</Text>
-              <Controller
-                control={control}
-                render={({field: {onChange}}) => (
-                  <SelectList
-                    data={dkNumbers}
-                    placeholder="Seçin"
-                    setSelected={(value: string) => onChange(value)}
-                    search={false}
-                    boxStyles={styles.dropDowninput}
-                    inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
-                    dropdownStyles={styles.dropDownBoxDk}
-                    dropdownTextStyles={{color: GlobalStyles.colors.PureBlack}}
-                  />
+            <View
+              style={{
+                marginBottom: 30,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
+              <View>
+                <Text style={styles.inputText}>DK nömrəsi</Text>
+                <Controller
+                  control={control}
+                  render={({field: {onChange}}) => (
+                    <SelectList
+                      data={dkNumbers}
+                      placeholder="Seçin"
+                      setSelected={(value: string) => onChange(value)}
+                      search={false}
+                      boxStyles={styles.dropDowninput}
+                      inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
+                      dropdownStyles={styles.dropDownBoxDk}
+                      dropdownTextStyles={{
+                        color: GlobalStyles.colors.PureBlack,
+                      }}
+                    />
+                  )}
+                  name="dkNumber"
+                  defaultValue=""
+                />
+                {errors.dkNumber && (
+                  <Text style={styles.error}>{errors.dkNumber.message}</Text>
                 )}
-                name="dkNumber"
-                defaultValue=""
-              />
-              {errors.dkNumber && (
-                <Text style={styles.error}>{errors.dkNumber.message}</Text>
-              )}
+              </View>
+              <View>
+                <Text style={styles.inputText}>Status</Text>
+                <Controller
+                  control={control}
+                  render={({field: {onChange}}) => (
+                    <SelectList
+                      data={volunteerStatus}
+                      placeholder="Seçin"
+                      setSelected={(value: string) => onChange(value)}
+                      search={false}
+                      boxStyles={styles.dropDowninput}
+                      inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
+                      dropdownStyles={styles.dropDownBoxStatus}
+                      dropdownTextStyles={{
+                        color: GlobalStyles.colors.PureBlack,
+                      }}
+                    />
+                  )}
+                  name="status"
+                  defaultValue=""
+                />
+                {errors.status && (
+                  <Text style={styles.error}>{errors.status.message}</Text>
+                )}
+              </View>
             </View>
             <TouchableOpacity
               style={GlobalStyles.button.buttonPurple}
@@ -246,13 +286,8 @@ const styles = StyleSheet.create({
   },
   dropDownBoxDk: {
     width: 150,
-    height: 450,
     borderColor: '#D8DADC',
-    position: 'absolute',
-    zIndex: 5,
     backgroundColor: '#fff',
-    right: 70,
-    bottom: 0,
   },
   dropDownBoxCenter: {
     width: 353,
@@ -261,6 +296,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 5,
     top: 51,
+    backgroundColor: '#fff',
+  },
+  dropDownBoxStatus: {
+    width: 150,
+    height: 90,
+    borderColor: '#D8DADC',
     backgroundColor: '#fff',
   },
   buttonText: {fontSize: 16, color: '#fff'},

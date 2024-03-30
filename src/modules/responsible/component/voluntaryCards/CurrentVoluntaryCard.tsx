@@ -1,5 +1,8 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../../../navigation/KonulluDostNavigator.tsx';
 
 interface CurrentVoluntaryProps {
   data: {
@@ -14,6 +17,8 @@ interface CurrentVoluntaryProps {
 }
 
 const CurrentVoluntaryCard: React.FC<CurrentVoluntaryProps> = ({data}) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   return (
     <View style={styles.buttonContainer} key={data.id}>
       <View style={{flexDirection: 'row', gap: 9, alignItems: 'center'}}>
@@ -27,7 +32,11 @@ const CurrentVoluntaryCard: React.FC<CurrentVoluntaryProps> = ({data}) => {
           </Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+          navigation.navigate('StatisticProfilScreen', {id: data.id})
+        }>
         <Text style={styles.buttonText}>Profilə bax</Text>
       </TouchableOpacity>
     </View>
