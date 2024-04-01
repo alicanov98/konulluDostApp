@@ -10,13 +10,13 @@ import {
 } from 'react-native';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 import ClubCards from '../../../components/cards/ClubCards.tsx';
-import {Reservation} from '../../statistic/types/StatisticTypes.ts';
+import {Clubs} from '../../statistic/types/StatisticTypes.ts';
 import {db} from '../../../fakeDb/db.ts';
 
 const WeeklyCalendar: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [loading, setLoading] = useState(false);
-  const [reservations, setReservations] = useState<Reservation[]>([]);
+  const [reservations, setReservations] = useState<Clubs[]>([]);
 
   useEffect(() => {
     const getClubs = async () => {
@@ -25,10 +25,11 @@ const WeeklyCalendar: React.FC = () => {
         setReservations(db.clubs);
       } catch (err) {
         console.log(err);
+        console.log(loading);
       }
     };
     getClubs();
-  }, []);
+  }, [loading]);
 
   const daysOfWeek: string[] = ['B', 'B.e', 'Ç.a', 'Ç', 'C.a', 'C', 'Ş'];
 
@@ -43,14 +44,26 @@ const WeeklyCalendar: React.FC = () => {
     setSelectedDate(date);
   };
 
-  const getReservationsForDate = (date: Date): Reservation[] => {
+  const getReservationsForDate = (date: Date): Clubs[] => {
     return reservations.filter(
-      reservation =>
-        new Date(reservation.date).getDate() === date.getDate() &&
-        new Date(reservation.date).getMonth() === date.getMonth() &&
-        new Date(reservation.date).getFullYear() === date.getFullYear(),
+      clubs =>
+        new Date(clubs.date).getDate() === date.getDate() &&
+        new Date(clubs.date).getMonth() === date.getMonth() &&
+        new Date(clubs.date).getFullYear() === date.getFullYear(),
     );
   };
+
+  const formattedTime = new Date().toLocaleTimeString('az', {
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+  const formattedDate = new Date().toLocaleDateString('az', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    weekday: 'long',
+  });
+
   return (
     <SafeAreaView
       style={{
@@ -70,6 +83,9 @@ const WeeklyCalendar: React.FC = () => {
         <Image source={require('../../../assets/images/icons/logo.png')} />
         {/*<View style={{alignItems: 'flex-end'}}>*/}
         {/*</View>*/}
+        <Text style={{fontSize: 14, color: '#808080'}}>
+          {formattedDate} , saat: {formattedTime}
+        </Text>
         <View>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View style={styles.container}>

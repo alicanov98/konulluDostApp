@@ -57,7 +57,7 @@ const ClubCards: React.FC<IClubCardsProps> = props => {
             fontWeight: 'normal',
             marginTop: 6,
           }}>
-          {formatDate(props.item.date, false)}
+          {formatDate(props.item.date, true)}
         </Text>
         <View style={{flexDirection: 'row', marginTop: 13}}>
           {/* Images */}

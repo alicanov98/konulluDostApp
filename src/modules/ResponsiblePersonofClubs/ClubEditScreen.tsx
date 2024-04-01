@@ -56,6 +56,16 @@ const ClubEditScreen: React.FC = () => {
         new Date(reservation.date).getFullYear() === date.getFullYear(),
     );
   };
+  const formattedTime = new Date().toLocaleTimeString('az', {
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+  const formattedDate = new Date().toLocaleDateString('az', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    weekday: 'long',
+  });
 
   return (
     <SafeAreaView
@@ -73,8 +83,11 @@ const ClubEditScreen: React.FC = () => {
           gap: 20,
           marginBottom: 20,
         }}>
-        <View style={{alignItems: 'flex-end'}}>
+        <View style={{alignItems: 'flex-end', gap: 10}}>
           <Image source={require('../../assets/images/icons/logo.png')} />
+          <Text style={{fontSize: 14, color: '#808080'}}>
+            {formattedDate} , saat: {formattedTime}
+          </Text>
         </View>
         <View>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>

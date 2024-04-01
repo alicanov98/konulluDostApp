@@ -1,6 +1,6 @@
 export interface Reservation {
   id: string;
-  date: Date;
+  date: Date | string;
   name: string;
   bgColor: string;
   color: string;
@@ -13,7 +13,7 @@ export interface Clubs {
   id: string;
   image: string;
   progresColor: string;
-  date: string;
+  date: Date | string;
   name: string;
   datee: string;
   bgColor: string;
