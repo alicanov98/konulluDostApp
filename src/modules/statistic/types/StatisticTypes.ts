@@ -1,6 +1,8 @@
 export interface Reservation {
   id: string;
   date: Date | string;
+  image: string;
+  progresColor: string;
   name: string;
   bgColor: string;
   color: string;

@@ -1,11 +1,21 @@
 import React, {useEffect, useState} from 'react';
-import {Image, SafeAreaView, ScrollView, Text, View} from 'react-native';
+import {
+  Image,
+  Modal,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 import {useRoute} from '@react-navigation/native';
 import {ClubsHome} from '../../home/types/HomeTypes.tsx';
 import {db} from '../../../fakeDb/db.ts';
 
 const ClubAboutScreen = () => {
+  const [isActive, setIsActive] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
   const params = useRoute();
   const [loading, setLoading] = useState(false);
   const [clubData, setClubData] = useState<ClubsHome>({
@@ -112,15 +122,45 @@ const ClubAboutScreen = () => {
         </View>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={{gap: 28, flexDirection: 'row', flex: 1, marginTop: 23}}>
-            {clubData?.object?.imageList?.map(item => (
-              <Image
-                source={item}
+            <Modal visible={isActive} transparent={true}>
+              <View
                 style={{
-                  borderRadius: 2,
-                  width: 60,
-                  height: 60,
-                }}
-              />
+                  width: 420,
+                  height: 870,
+                  backgroundColor: 'rgba(89, 89, 89, 0.5)',
+                  position: 'absolute',
+                  alignItems: 'center',
+                  zIndex: 10,
+                }}>
+                <TouchableOpacity onPress={() => setIsActive(!isActive)}>
+                  <Text style={{color: '#fff', fontSize: 20}}>X</Text>
+                </TouchableOpacity>
+                <Image
+                  source={selectedImage}
+                  style={{
+                    borderRadius: 2,
+                    width: '100%',
+                    height: 500,
+                  }}
+                />
+              </View>
+            </Modal>
+            {clubData?.object?.imageList?.map((item, index) => (
+              <TouchableOpacity
+                key={index}
+                onPress={() => {
+                  setSelectedImage(item);
+                  setIsActive(!isActive);
+                }}>
+                <Image
+                  source={item}
+                  style={{
+                    borderRadius: 2,
+                    width: 60,
+                    height: 60,
+                  }}
+                />
+              </TouchableOpacity>
             ))}
           </View>
         </ScrollView>

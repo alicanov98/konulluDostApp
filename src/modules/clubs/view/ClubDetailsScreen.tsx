@@ -13,6 +13,8 @@ import {Reservation} from '../../statistic/types/StatisticTypes.ts';
 import {db} from '../../../fakeDb/db.ts';
 
 const ClubDetailsScreen = () => {
+  const [isActive, setIsActive] = useState(false);
+  console.log(isActive);
   const params: any = useRoute();
   const [loading, setLoading] = useState(false);
   const [clubData, setClubData] = useState<Reservation>({
@@ -21,14 +23,12 @@ const ClubDetailsScreen = () => {
     progresColor: '',
     date: '',
     name: '',
-    datee: '',
     bgColor: '',
     color: '',
     nameColor: '',
     center: '',
     topic: '',
-    text: '',
-    degree: '',
+    degre: '',
   });
 
   console.log(loading);
@@ -91,7 +91,7 @@ const ClubDetailsScreen = () => {
             marginTop: 17,
             marginBottom: 17,
           }}>
-          {clubData?.text}
+          {clubData?.topic}
         </Text>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <Text
@@ -100,7 +100,7 @@ const ClubDetailsScreen = () => {
               fontSize: 12,
               fontWeight: '500',
             }}>
-            {clubData?.datee}
+            {clubData?.date}
           </Text>
           <Text
             style={{
@@ -121,70 +121,26 @@ const ClubDetailsScreen = () => {
         </View>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={{gap: 28, flexDirection: 'row', flex: 1, marginTop: 23}}>
-            <Image
-              source={clubData?.image}
-              style={{
-                borderRadius: 2,
-                width: 60,
-                height: 60,
-              }}
-            />
-            <Image
-              source={clubData?.image}
-              style={{
-                borderRadius: 2,
-                width: 60,
-                height: 60,
-              }}
-            />
-            <Image
-              source={clubData?.image}
-              style={{
-                borderRadius: 2,
-                width: 60,
-                height: 60,
-              }}
-            />
-            <Image
-              source={clubData?.image}
-              style={{
-                borderRadius: 2,
-                width: 60,
-                height: 60,
-              }}
-            />
-            <Image
-              source={clubData?.image}
-              style={{
-                borderRadius: 2,
-                width: 60,
-                height: 60,
-              }}
-            />
-            <Image
-              source={clubData?.image}
-              style={{
-                borderRadius: 2,
-                width: 60,
-                height: 60,
-              }}
-            />
-            <Image
-              source={clubData?.image}
-              style={{
-                borderRadius: 2,
-                width: 60,
-                height: 60,
-              }}
-            />
-            <Image
-              source={clubData?.image}
-              style={{
-                borderRadius: 2,
-                width: 60,
-                height: 60,
-              }}
-            />
+            <TouchableOpacity onPress={()=>setIsActive(!isActive)}>
+              <Image
+                source={clubData?.image}
+                style={{
+                  borderRadius: 2,
+                  width: 60,
+                  height: 60,
+                }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>setIsActive(!isActive)}>
+              <Image
+                source={clubData?.image}
+                style={{
+                  borderRadius: 2,
+                  width: 60,
+                  height: 60,
+                }}
+              />
+            </TouchableOpacity>
           </View>
         </ScrollView>
         <TouchableOpacity
