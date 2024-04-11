@@ -139,8 +139,8 @@ const ClubAboutScreen = () => {
                   source={selectedImage}
                   style={{
                     borderRadius: 2,
-                    width: '100%',
-                    height: 500,
+                    width: 300,
+                    height: 200,
                   }}
                 />
               </View>
