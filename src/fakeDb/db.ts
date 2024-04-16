@@ -12,9 +12,13 @@ export const db: {
     {
       id: '1',
       image: require('../assets/images/image/club/yaradiciliq2.jpg'),
-      date: '2024-04-07T11:00:00.000Z',
+      imageList: [
+        require('../assets/images/image/club/clubAbout/xariciDilKlubu.jpg'),
+        require('../assets/images/image/club/clubAbout/xariciDilKlubu.jpg'),
+      ],
+      date: '2024-04-17T11:00:00.000Z',
       name: 'Natiqlik Klubu',
-      datee: 'B.e, 7 aprel, 2024, 15:00',
+      datee: 'B.e, 17 aprel, 2024, 15:00',
       bgColor: '#DBF3FF',
       progresColor: '#C2E3E8',
       color: '#5A5A5A',
@@ -30,9 +34,13 @@ export const db: {
     {
       id: '2',
       image: require('../assets/images/image/club/yaradiciliq3.jpeg'),
-      date: '2024-04-08T08:00:00.000Z',
+      imageList: [
+        require('../assets/images/image/club/clubAbout/xariciDilKlubu.jpg'),
+        require('../assets/images/image/club/clubAbout/xariciDilKlubu.jpg'),
+      ],
+      date: '2024-04-18T08:00:00.000Z',
       name: 'Yaradıcılıq',
-      datee: 'Ç.a, 8 aprel, 2024, 12:00',
+      datee: 'Ç.a, 18 aprel, 2024, 12:00',
       bgColor: '#9EFFBE',
       progresColor: '#00FF55',
       color: '#000',
@@ -46,9 +54,13 @@ export const db: {
     {
       id: '3',
       image: require('../assets/images/image/club/yaradiciliq.jpeg'),
-      date: '2024-04-09T07:00:00.000Z',
+      imageList: [
+        require('../assets/images/image/club/clubAbout/xariciDilKlubu.jpg'),
+        require('../assets/images/image/club/clubAbout/xariciDilKlubu.jpg'),
+      ],
+      date: '2024-04-19T07:00:00.000Z',
       name: 'Xarici dil',
-      datee: 'C, 9 aprel, 2024, 11:00',
+      datee: 'C, 19 aprel, 2024, 11:00',
       bgColor: '#FC714E',
       progresColor: '#D25600',
       color: '#fff',

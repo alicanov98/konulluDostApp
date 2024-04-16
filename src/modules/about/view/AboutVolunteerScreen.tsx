@@ -1,4 +1,4 @@
-import {SafeAreaView, Text, View} from 'react-native';
+import { SafeAreaView, StatusBar, Text, View } from "react-native";
 
 import React from 'react';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
@@ -15,6 +15,10 @@ const AboutVolunteerScreen = () => {
         paddingBottom: 43,
         backgroundColor: GlobalStyles.colors.PureWhite,
       }}>
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={'rgba(0, 0, 0, .2)'}
+      />
       <View
         style={{
           width: '100%',

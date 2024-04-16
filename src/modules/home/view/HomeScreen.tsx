@@ -44,7 +44,10 @@ const HomeScreen = () => {
         paddingTop: 64,
         paddingBottom: 43,
       }}>
-      <StatusBar />
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={'rgba(0, 0, 0, .2)'}
+      />
       <View
         style={{
           flexDirection: 'row',

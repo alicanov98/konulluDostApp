@@ -5,13 +5,17 @@ import {
   StyleSheet,
   SafeAreaView,
   TextInput,
-  TouchableOpacity,
-} from 'react-native';
+  TouchableOpacity, StatusBar
+} from "react-native";
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 
 export const RefreshPasswordScreen = () => {
   return (
     <SafeAreaView style={{backgroundColor: '#fff', height: '100%'}}>
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={'rgba(0, 0, 0, .2)'}
+      />
       <View
         style={{
           paddingTop: 60,

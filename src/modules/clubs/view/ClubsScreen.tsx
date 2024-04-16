@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {
   Image,
   SafeAreaView,
-  ScrollView,
+  ScrollView, StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
-} from 'react-native';
+  View
+} from "react-native";
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 import ClubCards from '../../../components/cards/ClubCards.tsx';
 import {Clubs} from '../../statistic/types/StatisticTypes.ts';
@@ -73,6 +73,10 @@ const WeeklyCalendar: React.FC = () => {
         paddingTop: 64,
         paddingBottom: 43,
       }}>
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={'rgba(0, 0, 0, 0)'}
+      />
       <View
         style={{
           width: '100%',

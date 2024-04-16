@@ -4,6 +4,7 @@ import {
   Modal,
   SafeAreaView,
   ScrollView,
+  StatusBar,
   Text,
   TouchableOpacity,
   View,
@@ -49,6 +50,10 @@ const ClubAboutScreen = () => {
     <SafeAreaView
       key={params?.params?.id}
       style={{flex: 1, backgroundColor: GlobalStyles.colors.PureWhite}}>
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={'rgba(0, 0, 0, 0)'}
+      />
       <Image
         source={require('../../../assets/images/image/linergradients.png')}
         style={{
@@ -123,27 +128,39 @@ const ClubAboutScreen = () => {
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={{gap: 28, flexDirection: 'row', flex: 1, marginTop: 23}}>
             <Modal visible={isActive} transparent={true}>
-              <View
+              <SafeAreaView
                 style={{
-                  width: 420,
-                  height: 870,
-                  backgroundColor: 'rgba(89, 89, 89, 0.5)',
+                  width: 412,
+                  height: 855,
+                  backgroundColor: 'rgba(9,9,9,0.9)',
                   position: 'absolute',
                   alignItems: 'center',
+                  justifyContent: 'center',
                   zIndex: 10,
                 }}>
-                <TouchableOpacity onPress={() => setIsActive(!isActive)}>
-                  <Text style={{color: '#fff', fontSize: 20}}>X</Text>
-                </TouchableOpacity>
+                <StatusBar
+                  barStyle={'light-content'}
+                  backgroundColor={'rgba(9, 9, 9, 0.9)'}
+                />
+                <TouchableOpacity
+                  onPress={() => setIsActive(!isActive)}
+                  style={{
+                    zIndex: 11,
+                    width: 420,
+                    height: 870,
+                    position: 'absolute',
+                  }}
+                />
                 <Image
                   source={selectedImage}
                   style={{
                     borderRadius: 2,
-                    width: 300,
+                    width: 413,
                     height: 200,
+                    zIndex: 12,
                   }}
                 />
-              </View>
+              </SafeAreaView>
             </Modal>
             {clubData?.object?.imageList?.map((item, index) => (
               <TouchableOpacity

@@ -1,33 +1,38 @@
 import React, {useEffect, useState} from 'react';
 import {
   Image,
+  Modal,
   SafeAreaView,
   ScrollView,
+  StatusBar,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 import {useRoute} from '@react-navigation/native';
-import {Reservation} from '../../statistic/types/StatisticTypes.ts';
+import {Clubs} from '../../statistic/types/StatisticTypes.ts';
 import {db} from '../../../fakeDb/db.ts';
 
 const ClubDetailsScreen = () => {
   const [isActive, setIsActive] = useState(false);
-  console.log(isActive);
+  const [selectedImage, setSelectedImage] = useState(null);
   const params: any = useRoute();
   const [loading, setLoading] = useState(false);
-  const [clubData, setClubData] = useState<Reservation>({
+  const [clubData, setClubData] = useState<Clubs>({
     id: '',
     image: '',
+    imageList: [],
     progresColor: '',
     date: '',
     name: '',
+    datee: '',
     bgColor: '',
     color: '',
     nameColor: '',
     center: '',
     topic: '',
+    text: '',
     degre: '',
   });
 
@@ -49,6 +54,10 @@ const ClubDetailsScreen = () => {
     <SafeAreaView
       key={params.id}
       style={{flex: 1, backgroundColor: GlobalStyles.colors.PureWhite}}>
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={'rgba(0, 0, 0, 0)'}
+      />
       <Image
         source={require('../../../assets/images/image/linergradients.png')}
         style={{
@@ -121,26 +130,58 @@ const ClubDetailsScreen = () => {
         </View>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={{gap: 28, flexDirection: 'row', flex: 1, marginTop: 23}}>
-            <TouchableOpacity onPress={()=>setIsActive(!isActive)}>
-              <Image
-                source={clubData?.image}
+            <Modal visible={isActive} transparent={true}>
+              <SafeAreaView
                 style={{
-                  borderRadius: 2,
-                  width: 60,
-                  height: 60,
-                }}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={()=>setIsActive(!isActive)}>
-              <Image
-                source={clubData?.image}
-                style={{
-                  borderRadius: 2,
-                  width: 60,
-                  height: 60,
-                }}
-              />
-            </TouchableOpacity>
+                  width: 412,
+                  height: 855,
+                  backgroundColor: 'rgba(9,9,9,0.9)',
+                  position: 'absolute',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 10,
+                }}>
+                <StatusBar
+                  barStyle={'light-content'}
+                  backgroundColor={'rgba(9, 9, 9, 0.9)'}
+                />
+                <TouchableOpacity
+                  onPress={() => setIsActive(!isActive)}
+                  style={{
+                    zIndex: 11,
+                    width: 420,
+                    height: 870,
+                    position: 'absolute',
+                  }}
+                />
+                <Image
+                  source={selectedImage}
+                  style={{
+                    borderRadius: 2,
+                    width: 413,
+                    height: 200,
+                    zIndex: 12,
+                  }}
+                />
+              </SafeAreaView>
+            </Modal>
+            {clubData?.imageList.map((item, index) => (
+              <TouchableOpacity
+                key={index}
+                onPress={() => {
+                  setSelectedImage(item);
+                  setIsActive(!isActive);
+                }}>
+                <Image
+                  source={item}
+                  style={{
+                    borderRadius: 2,
+                    width: 60,
+                    height: 60,
+                  }}
+                />
+              </TouchableOpacity>
+            ))}
           </View>
         </ScrollView>
         <TouchableOpacity
