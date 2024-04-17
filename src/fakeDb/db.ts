@@ -305,14 +305,14 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
           nameColor: '#757575',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
-          degre: '74',
+          degre: '20',
         },
         {
           id: '1',
@@ -323,22 +323,22 @@ export const db: {
           nameColor: '#757575',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
-          degre: '88',
+          degre: '21',
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
-          degre: '63',
+          degre: '22',
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -346,11 +346,11 @@ export const db: {
           center: '4 saylı Bakı DOST Mərkəzi',
           topic:
             'Gənclərlə film izlədikdən sonra onun üzərində təhlillər aparırlar.',
-          degre: '35',
+          degre: '23',
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -358,29 +358,29 @@ export const db: {
           center: '4 saylı Bakı DOST Mərkəzi',
           topic:
             'Təlim və yarışlarla gənclər bilik və bacarıqlarını formalaşdırırlar.',
-          degre: '90',
+          degre: '24',
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: 'Gənclərdə natiqlik mədəniyyətini inkişaf etdirmək.',
-          degre: '82',
+          degre: '25',
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
           nameColor: '#fff',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: 'Könüllü DOSTların mütaliəyə olan marağının artırılmasıdır.',
-          degre: '92',
+          degre: '26',
         },
       ],
     },
@@ -396,14 +396,14 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
           nameColor: '#757575',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
-          degre: '74',
+          degre: '27',
         },
         {
           id: '1',
@@ -414,22 +414,22 @@ export const db: {
           nameColor: '#757575',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
-          degre: '88',
+          degre: '28',
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
-          degre: '63',
+          degre: '29',
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -437,11 +437,11 @@ export const db: {
           center: '4 saylı Bakı DOST Mərkəzi',
           topic:
             'Gənclərlə film izlədikdən sonra onun üzərində təhlillər aparırlar.',
-          degre: '35',
+          degre: '30',
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -449,29 +449,29 @@ export const db: {
           center: '4 saylı Bakı DOST Mərkəzi',
           topic:
             'Təlim və yarışlarla gənclər bilik və bacarıqlarını formalaşdırırlar.',
-          degre: '90',
+          degre: '31',
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: 'Gənclərdə natiqlik mədəniyyətini inkişaf etdirmək.',
-          degre: '82',
+          degre: '32',
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
           nameColor: '#fff',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: 'Könüllü DOSTların mütaliəyə olan marağının artırılmasıdır.',
-          degre: '92',
+          degre: '33',
         },
       ],
     },
@@ -487,7 +487,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -509,7 +509,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -520,7 +520,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -532,7 +532,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -544,7 +544,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -555,7 +555,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -578,14 +578,14 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
           nameColor: '#757575',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
-          degre: '74',
+          degre: '25',
         },
         {
           id: '1',
@@ -596,22 +596,22 @@ export const db: {
           nameColor: '#757575',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
-          degre: '88',
+          degre: '36',
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
-          degre: '63',
+          degre: '23',
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -623,7 +623,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -631,29 +631,29 @@ export const db: {
           center: '4 saylı Bakı DOST Mərkəzi',
           topic:
             'Təlim və yarışlarla gənclər bilik və bacarıqlarını formalaşdırırlar.',
-          degre: '90',
+          degre: '20',
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: 'Gənclərdə natiqlik mədəniyyətini inkişaf etdirmək.',
-          degre: '82',
+          degre: '22',
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
           nameColor: '#fff',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: 'Könüllü DOSTların mütaliəyə olan marağının artırılmasıdır.',
-          degre: '92',
+          degre: '52',
         },
       ],
     },
@@ -669,7 +669,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -687,11 +687,11 @@ export const db: {
           nameColor: '#757575',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
-          degre: '88',
+          degre: '80',
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -702,7 +702,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -714,7 +714,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -726,7 +726,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -737,7 +737,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -760,7 +760,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -782,18 +782,18 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
-          degre: '63',
+          degre: '33',
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -805,7 +805,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -813,29 +813,29 @@ export const db: {
           center: '4 saylı Bakı DOST Mərkəzi',
           topic:
             'Təlim və yarışlarla gənclər bilik və bacarıqlarını formalaşdırırlar.',
-          degre: '90',
+          degre: '40',
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: 'Gənclərdə natiqlik mədəniyyətini inkişaf etdirmək.',
-          degre: '82',
+          degre: '32',
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
           nameColor: '#fff',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: 'Könüllü DOSTların mütaliəyə olan marağının artırılmasıdır.',
-          degre: '92',
+          degre: '22',
         },
       ],
     },
@@ -851,7 +851,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -873,7 +873,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -884,7 +884,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -892,11 +892,11 @@ export const db: {
           center: '4 saylı Bakı DOST Mərkəzi',
           topic:
             'Gənclərlə film izlədikdən sonra onun üzərində təhlillər aparırlar.',
-          degre: '35',
+          degre: '95',
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -904,29 +904,29 @@ export const db: {
           center: '4 saylı Bakı DOST Mərkəzi',
           topic:
             'Təlim və yarışlarla gənclər bilik və bacarıqlarını formalaşdırırlar.',
-          degre: '90',
+          degre: '40',
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: 'Gənclərdə natiqlik mədəniyyətini inkişaf etdirmək.',
-          degre: '82',
+          degre: '32',
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
           nameColor: '#fff',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: 'Könüllü DOSTların mütaliəyə olan marağının artırılmasıdır.',
-          degre: '92',
+          degre: '22',
         },
       ],
     },
@@ -942,14 +942,14 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
           nameColor: '#757575',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: ' Ləman Hacıyeva ilə "Collaborative Art Creation"',
-          degre: '74',
+          degre: '20',
         },
         {
           id: '1',
@@ -960,22 +960,22 @@ export const db: {
           nameColor: '#757575',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: ' "Universitet illərini dəyərləndirən yol axtarışı"',
-          degre: '88',
+          degre: '22',
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: '"Easiest ways to learn English" adlı təlim keçəcək.',
-          degre: '63',
+          degre: '23',
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -983,11 +983,11 @@ export const db: {
           center: '4 saylı Bakı DOST Mərkəzi',
           topic:
             'Gənclərlə film izlədikdən sonra onun üzərində təhlillər aparırlar.',
-          degre: '35',
+          degre: '25',
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -995,29 +995,29 @@ export const db: {
           center: '4 saylı Bakı DOST Mərkəzi',
           topic:
             'Təlim və yarışlarla gənclər bilik və bacarıqlarını formalaşdırırlar.',
-          degre: '90',
+          degre: '20',
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
           nameColor: '#fff',
           center: '5 saylı Bakı DOST Mərkəzi',
           topic: 'Gənclərdə natiqlik mədəniyyətini inkişaf etdirmək.',
-          degre: '82',
+          degre: '62',
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
           nameColor: '#fff',
           center: '4 saylı Bakı DOST Mərkəzi',
           topic: 'Könüllü DOSTların mütaliəyə olan marağının artırılmasıdır.',
-          degre: '92',
+          degre: '12',
         },
       ],
     },
@@ -1033,7 +1033,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1055,7 +1055,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1066,7 +1066,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1078,7 +1078,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -1090,7 +1090,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -1101,7 +1101,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -1124,7 +1124,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1146,7 +1146,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1157,7 +1157,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1169,7 +1169,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -1181,7 +1181,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -1192,7 +1192,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -1215,7 +1215,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1237,7 +1237,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1248,7 +1248,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1260,7 +1260,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -1272,7 +1272,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -1283,7 +1283,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -1306,7 +1306,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1328,7 +1328,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1339,7 +1339,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1351,7 +1351,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -1363,7 +1363,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -1374,7 +1374,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -1397,7 +1397,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1419,7 +1419,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1430,7 +1430,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1442,7 +1442,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -1454,7 +1454,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -1465,7 +1465,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -1488,7 +1488,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1510,7 +1510,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1521,7 +1521,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1533,7 +1533,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -1545,7 +1545,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -1556,7 +1556,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -1579,7 +1579,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1601,7 +1601,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1612,7 +1612,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1624,7 +1624,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -1636,7 +1636,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -1647,7 +1647,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -1670,7 +1670,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1692,7 +1692,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1703,7 +1703,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1715,7 +1715,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -1727,7 +1727,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -1738,7 +1738,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -1761,7 +1761,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1783,7 +1783,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1794,7 +1794,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1806,7 +1806,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -1818,7 +1818,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -1829,7 +1829,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -1852,7 +1852,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1874,7 +1874,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1885,7 +1885,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1897,7 +1897,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -1909,7 +1909,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -1920,7 +1920,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -1943,7 +1943,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -1965,7 +1965,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -1976,7 +1976,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -1988,7 +1988,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2000,7 +2000,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2011,7 +2011,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2034,7 +2034,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2056,7 +2056,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2067,7 +2067,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2079,7 +2079,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2091,7 +2091,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2102,7 +2102,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2125,7 +2125,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2147,7 +2147,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2158,7 +2158,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2170,7 +2170,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2182,7 +2182,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2193,7 +2193,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2216,7 +2216,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2238,7 +2238,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2249,7 +2249,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2261,7 +2261,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2273,7 +2273,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2284,7 +2284,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2307,7 +2307,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2329,7 +2329,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2340,7 +2340,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2352,7 +2352,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2364,7 +2364,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2375,7 +2375,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2398,7 +2398,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2420,7 +2420,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2431,7 +2431,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2443,7 +2443,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2455,7 +2455,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2466,7 +2466,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2489,7 +2489,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2511,7 +2511,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2522,7 +2522,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2534,7 +2534,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2546,7 +2546,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2557,7 +2557,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2580,7 +2580,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2602,7 +2602,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2613,7 +2613,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2625,7 +2625,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2637,7 +2637,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2648,7 +2648,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2671,7 +2671,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2693,7 +2693,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2704,7 +2704,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2716,7 +2716,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2728,7 +2728,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2739,7 +2739,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2762,7 +2762,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2784,7 +2784,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2795,7 +2795,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2807,7 +2807,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2819,7 +2819,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2830,7 +2830,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2853,7 +2853,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2875,7 +2875,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2886,7 +2886,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2898,7 +2898,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -2910,7 +2910,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -2921,7 +2921,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -2944,7 +2944,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -2966,7 +2966,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -2977,7 +2977,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -2989,7 +2989,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3001,7 +3001,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3012,7 +3012,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3035,7 +3035,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3057,7 +3057,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3068,7 +3068,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3080,7 +3080,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3092,7 +3092,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3103,7 +3103,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3126,7 +3126,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3148,7 +3148,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3159,7 +3159,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3171,7 +3171,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3183,7 +3183,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3194,7 +3194,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3217,7 +3217,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3239,7 +3239,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3250,7 +3250,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3262,7 +3262,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3274,7 +3274,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3285,7 +3285,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3308,7 +3308,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3330,7 +3330,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3341,7 +3341,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3353,7 +3353,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3365,7 +3365,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3376,7 +3376,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3399,7 +3399,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3421,7 +3421,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3432,7 +3432,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3444,7 +3444,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3456,7 +3456,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3467,7 +3467,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3490,7 +3490,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3512,7 +3512,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3523,7 +3523,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3535,7 +3535,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3547,7 +3547,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3558,7 +3558,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3581,7 +3581,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3603,7 +3603,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3614,7 +3614,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3626,7 +3626,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3638,7 +3638,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3649,7 +3649,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3672,7 +3672,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3694,7 +3694,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3705,7 +3705,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3717,7 +3717,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3729,7 +3729,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3740,7 +3740,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3763,7 +3763,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3785,7 +3785,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3796,7 +3796,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3808,7 +3808,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3820,7 +3820,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3831,7 +3831,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3854,7 +3854,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3876,7 +3876,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3887,7 +3887,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3899,7 +3899,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -3911,7 +3911,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -3922,7 +3922,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -3945,7 +3945,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -3967,7 +3967,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -3978,7 +3978,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -3990,7 +3990,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4002,7 +4002,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4013,7 +4013,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4036,7 +4036,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4058,7 +4058,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4069,7 +4069,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4081,7 +4081,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4093,7 +4093,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4104,7 +4104,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4127,7 +4127,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4149,7 +4149,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4160,7 +4160,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4172,7 +4172,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4184,7 +4184,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4195,7 +4195,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4218,7 +4218,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4240,7 +4240,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4251,7 +4251,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4263,7 +4263,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4275,7 +4275,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4286,7 +4286,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4309,7 +4309,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4331,7 +4331,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4342,7 +4342,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4354,7 +4354,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4366,7 +4366,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4377,7 +4377,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4400,7 +4400,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4422,7 +4422,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4433,7 +4433,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4445,7 +4445,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4457,7 +4457,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4468,7 +4468,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4491,7 +4491,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4513,7 +4513,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4524,7 +4524,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4536,7 +4536,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4548,7 +4548,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4559,7 +4559,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4582,7 +4582,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4604,7 +4604,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4615,7 +4615,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4627,7 +4627,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4639,7 +4639,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4650,7 +4650,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4673,7 +4673,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4695,7 +4695,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4706,7 +4706,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4718,7 +4718,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4730,7 +4730,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4741,7 +4741,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4764,7 +4764,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4786,7 +4786,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4797,7 +4797,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4809,7 +4809,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4821,7 +4821,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4832,7 +4832,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4855,7 +4855,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4877,7 +4877,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4888,7 +4888,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4900,7 +4900,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -4912,7 +4912,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -4923,7 +4923,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -4946,7 +4946,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -4968,7 +4968,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -4979,7 +4979,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -4991,7 +4991,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -5003,7 +5003,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -5014,7 +5014,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -5037,7 +5037,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -5059,7 +5059,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -5070,7 +5070,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -5082,7 +5082,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -5094,7 +5094,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -5105,7 +5105,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -5128,7 +5128,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -5150,7 +5150,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -5161,7 +5161,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -5173,7 +5173,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -5185,7 +5185,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -5196,7 +5196,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -5219,7 +5219,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -5241,7 +5241,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -5252,7 +5252,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -5264,7 +5264,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -5276,7 +5276,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -5287,7 +5287,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -5310,7 +5310,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -5332,7 +5332,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -5343,7 +5343,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -5355,7 +5355,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -5367,7 +5367,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -5378,7 +5378,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -5401,7 +5401,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -5423,7 +5423,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -5434,7 +5434,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -5446,7 +5446,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -5458,7 +5458,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -5469,7 +5469,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -5492,7 +5492,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -5514,7 +5514,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -5525,7 +5525,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -5537,7 +5537,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -5549,7 +5549,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -5560,7 +5560,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -5583,7 +5583,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -5605,7 +5605,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -5616,7 +5616,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -5628,7 +5628,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -5640,7 +5640,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -5651,7 +5651,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -5674,7 +5674,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -5696,7 +5696,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -5707,7 +5707,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -5719,7 +5719,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -5731,7 +5731,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -5742,7 +5742,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',
@@ -5765,7 +5765,7 @@ export const db: {
       clubs: [
         {
           id: '0',
-          date: new Date(2024, 2, 1),
+          date: new Date(2024, 3, 1),
           name: 'Yaradıcılıq Klubu',
           bgColor: '#DBF3FF',
           color: '#5A5A5A',
@@ -5787,7 +5787,7 @@ export const db: {
         },
         {
           id: '2',
-          date: new Date(2024, 2, 5),
+          date: new Date(2024, 3, 5),
           name: 'Xarici dil',
           bgColor: '#FC714E',
           color: '#fff',
@@ -5798,7 +5798,7 @@ export const db: {
         },
         {
           id: '3',
-          date: new Date(2024, 2, 6),
+          date: new Date(2024, 3, 6),
           name: 'Filim Klubu',
           bgColor: '#E04040',
           color: '#fff',
@@ -5810,7 +5810,7 @@ export const db: {
         },
         {
           id: '4',
-          date: new Date(2024, 2, 7),
+          date: new Date(2024, 3, 8),
           name: 'İntellektual oyunlar klubu',
           bgColor: '#B98A40',
           color: '#fff',
@@ -5822,7 +5822,7 @@ export const db: {
         },
         {
           id: '5',
-          date: new Date(2024, 2, 8),
+          date: new Date(2024, 3, 9),
           name: 'Natiqlik klubu',
           bgColor: '#7311D2',
           color: '#fff',
@@ -5833,7 +5833,7 @@ export const db: {
         },
         {
           id: '6',
-          date: new Date(2024, 2, 11),
+          date: new Date(2024, 3, 11),
           name: 'Kitab klubu',
           bgColor: '#FE5024',
           color: '#fff',

@@ -8,6 +8,6 @@ export interface voluntaryTypes {
   dkNumber: string;
   image: string;
   club: string;
-  clubs: Array<Reservation>;
+  clubs: Reservation[];
   position: string;
 }

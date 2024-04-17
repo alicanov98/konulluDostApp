@@ -25,7 +25,7 @@ const SiginUpScreen = () => {
     <SafeAreaView style={{flex: 1}}>
       <StatusBar
         barStyle={'light-content'}
-        backgroundColor={GlobalStyles.colors.TransparentBlack}
+        backgroundColor={'rgba(0, 0, 0, 0)'}
       />
       <View style={{position: 'relative'}}>
         <Image

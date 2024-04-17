@@ -1,6 +1,10 @@
 import {Image, Text, View} from 'react-native';
-
-const VolunteerActivityCard = () => {
+interface Props {
+  name: string;
+  center: string;
+  activity: string;
+}
+const VolunteerActivityCard: React.FC<Props> = ({name, center, activity}) => {
   return (
     <View
       style={{
@@ -33,7 +37,7 @@ const VolunteerActivityCard = () => {
             fontWeight: 'bold',
             marginTop: 14,
           }}>
-          Mirmehdiyev.C
+          {name}
         </Text>
         <Text
           style={{
@@ -42,7 +46,7 @@ const VolunteerActivityCard = () => {
             fontWeight: 'bold',
             marginTop: 1,
           }}>
-          4DK-32
+          {center}
         </Text>
         <Text
           style={{
@@ -52,7 +56,7 @@ const VolunteerActivityCard = () => {
             marginTop: 5,
             textAlign: 'center',
           }}>
-          Həftənin könüllüsü
+          {activity}
         </Text>
       </View>
     </View>

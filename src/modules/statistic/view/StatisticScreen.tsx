@@ -78,7 +78,7 @@ const reservations: Reservation[] = [
   },
   {
     id: '1',
-    date: new Date(2024, 2, 4),
+    date: new Date(2024, 3, 11),
     name: 'Fərdi İnkişaf Klubu',
     bgColor: '#9EFFBE',
     color: '#000',
@@ -89,7 +89,7 @@ const reservations: Reservation[] = [
   },
   {
     id: '2',
-    date: new Date(2024, 2, 5),
+    date: new Date(2024, 3, 5),
     name: 'Xarici dil',
     bgColor: '#FC714E',
     color: '#fff',
@@ -100,7 +100,7 @@ const reservations: Reservation[] = [
   },
   {
     id: '3',
-    date: new Date(2024, 2, 6),
+    date: new Date(2024, 3, 15),
     name: 'Yaradıcılıq Klubu',
     bgColor: '#DBF3FF',
     color: '#5A5A5A',
@@ -111,7 +111,7 @@ const reservations: Reservation[] = [
   },
   {
     id: '4',
-    date: new Date(2024, 2, 7),
+    date: new Date(2024, 3, 17),
     name: 'Fərdi İnkişaf Klubu',
     bgColor: '#9EFFBE',
     color: '#000',
@@ -122,7 +122,7 @@ const reservations: Reservation[] = [
   },
   {
     id: '5',
-    date: new Date(2024, 2, 8),
+    date: new Date(2024, 3, 8),
     name: 'Xarici dil',
     bgColor: '#FC714E',
     color: '#fff',
@@ -133,7 +133,7 @@ const reservations: Reservation[] = [
   },
   {
     id: '6',
-    date: new Date(2024, 2, 9),
+    date: new Date(2024, 3, 9),
     name: 'Yaradıcılıq Klubu',
     bgColor: '#DBF3FF',
     color: '#5A5A5A',

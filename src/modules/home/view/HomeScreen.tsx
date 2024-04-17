@@ -16,13 +16,36 @@ import ClubCard from '../../../components/cards/ClubCard.tsx';
 import VolunteerActivityCard from '../../../components/cards/ VolunteerActivityCard.tsx';
 import Notification from '../../../components/notification/Notification.tsx';
 import {db} from '../../../fakeDb/db.ts';
-import {Clubs} from '../types/HomeTypes.tsx';
+import {ClubsHome} from '../types/HomeTypes.tsx';
 import MyCarousel from '../../../components/swiper/Carousel.tsx';
+import {voluntaryTypes} from '../../responsible/type/VoluntaryListType.ts';
 
 const HomeScreen = () => {
   const [isActive, setIsActive] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [homeClub, setHomeClub] = useState<Clubs[]>([]);
+  const [homeClub, setHomeClub] = useState<ClubsHome[]>([]);
+  const [topFourVoluntarys, setTopFourVoluntarys] = useState<voluntaryTypes[]>(
+    [],
+  );
+  const [voluntarys, setVoluntarys] = useState<voluntaryTypes[]>([]);
+  useEffect(() => {
+    const getClubs = async () => {
+      setLoading(true);
+      try {
+        setVoluntarys(db.voluntarys);
+      } catch (err) {
+        console.log(err);
+        console.log(loading);
+      }
+    };
+    getClubs();
+    const sortedVoluntarys = voluntarys.sort(
+      (a, b) => b.clubs[6].degre - a.clubs[6].degre,
+    );
+    const topFour = sortedVoluntarys.slice(0, 4);
+    setTopFourVoluntarys(topFour);
+  }, [loading, voluntarys]);
+
   useEffect(() => {
     const getClubs = async () => {
       setLoading(true);
@@ -131,7 +154,8 @@ const HomeScreen = () => {
           paddingTop: 8,
           paddingBottom: 8,
           flexDirection: 'row',
-          justifyContent: 'center'}}>
+          justifyContent: 'center',
+        }}>
         <MyCarousel />
       </View>
       <Text
@@ -154,10 +178,24 @@ const HomeScreen = () => {
           gap: 16,
           justifyContent: 'center',
         }}>
-        <VolunteerActivityCard />
-        <VolunteerActivityCard />
-        <VolunteerActivityCard />
-        <VolunteerActivityCard />
+        {topFourVoluntarys.map((voluntary, index) => (
+          <VolunteerActivityCard
+            key={voluntary.id}
+            activity={
+              index === 0
+                ? 'İlin   könüllüsü'
+                : index === 1
+                ? 'Ayın könüllüsü'
+                : index === 2
+                ? 'Həftənin könüllüsü'
+                : index === 3
+                ? 'Günün könüllüsü'
+                : ''
+            }
+            name={`${voluntary.name} ${voluntary.surname}`}
+            center={`${voluntary.centerNumber}DK-${voluntary.dkNumber}`}
+          />
+        ))}
       </View>
       <Text
         style={{
