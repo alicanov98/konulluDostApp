@@ -1,4 +1,7 @@
+import {SafeAreaView, Text, View} from 'react-native';
+import React from 'react';
 
+import {QueueDeviceAbout} from '../../../components/cards/QueueDeviceAbout.tsx';
 
 const DeviceScreen = () => {
   return (
@@ -10,7 +13,13 @@ const DeviceScreen = () => {
           alignItems: 'center',
         }}>
         <View style={{marginTop: 120}}>
-          <Text style={{color: '#212121', fontSize: 32, fontWeight: '500',marginBottom:10}}>
+          <Text
+            style={{
+              color: '#212121',
+              fontSize: 32,
+              fontWeight: '500',
+              marginBottom: 10,
+            }}>
             VƏTƏNDAŞLARIN QƏBULU
           </Text>
           <QueueDeviceAbout
@@ -57,21 +66,5 @@ const DeviceScreen = () => {
     </SafeAreaView>
   );
 };
-
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import React from 'react';
-import GlobalStyles from '../../../assets/globalStyles/styles.ts';
-
-import {QueueDeviceAbout} from '../../../components/cards/QueueDeviceAbout.tsx';
-import {SelectList} from 'react-native-dropdown-select-list';
 
 export default DeviceScreen;
