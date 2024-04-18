@@ -1,228 +1,77 @@
-import {
-  Image,
-  SafeAreaView,
-  ScrollView, StatusBar,
-  Text,
-  TouchableOpacity,
-  View
-} from "react-native";
 
-import React from 'react';
-import GlobalStyles from '../../../assets/globalStyles/styles.ts';
 
 const DeviceScreen = () => {
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        paddingLeft: 17,
-        paddingRight: 17,
-        paddingTop: 89,
-        backgroundColor: GlobalStyles.colors.PureWhite,
-      }}>
-      <StatusBar
-        barStyle={'light-content'}
-        backgroundColor={'rgba(0, 0, 0, .2)'}
-      />
+    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
       <View
         style={{
-          width: '100%',
+          backgroundColor: '#fff',
+          flex: 1,
+          alignItems: 'center',
         }}>
-        <Text style={{color: '#212121', fontSize: 32, fontWeight: 'bold'}}>
-          Aparat haqqında
-        </Text>
-        <Text
-          style={{
-            color: '#909090',
-            fontSize: 16,
-            fontWeight: '500',
-            marginTop: 8,
-          }}>
-          Aparat haqqında bütün məlumatlar.
-        </Text>
-        <Text
-          style={{
-            color: '#212121',
-            fontSize: 16,
-            fontWeight: 'bold',
-            marginTop: 25,
-          }}>
-          Aparat haqqında nələri bilməliyəm?
-        </Text>
-        <Text
-          style={{
-            color: '#909090',
-            fontSize: 14,
-            fontWeight: 'normal',
-            marginTop: 22,
-          }}>
-          DOST Agentliyinin könüllülük siyasəti könüllü fəaliyyətinə yeni
-          yanaşmanın nümayiş etdirilməsinə və Agentliyin bu fəaliyyətin effektiv
-          təşkili sahəsində qabaqcıl qurumlardan birinə çevrilməsinə
-          yönəlmişdir. DOST Agentliyi tərəfindən təşkil olunan könüllülük
-          proqramının əsas missiyaları aşağıdakılardır:
-        </Text>
-        <View
-          style={{
-            width: '100%',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <View
-            style={{
-              width: 370,
-              height: 1,
-              backgroundColor: '#DCE2EF',
-              marginTop: 14,
-            }}
+        <View style={{marginTop: 120}}>
+          <Text style={{color: '#212121', fontSize: 32, fontWeight: '500',marginBottom:10}}>
+            VƏTƏNDAŞLARIN QƏBULU
+          </Text>
+          <QueueDeviceAbout
+            color={'#8a8686'}
+            title={'Tibbi-Sosial Ekspert Komissiyası'}
+            logo={'T'}
+          />
+          <QueueDeviceAbout
+            color={'#0e57ff'}
+            title={'Funksional yardimçı xidmətlər (Bank və Özünəxidmət)'}
+            logo={'Y'}
+          />
+          <QueueDeviceAbout color={'#282828'} title={'Məşğulluq'} logo={'Q'} />
+          <QueueDeviceAbout
+            color={'#5e5959'}
+            title={
+              'Sosial müavinətlər və Azərbaycan Respublikası Prezidentinin təqaüdləri'
+            }
+            logo={'M'}
+          />
+          <QueueDeviceAbout
+            color={'#031652'}
+            title={'Sosial xidmətlər'}
+            logo={'X'}
+          />
+          <QueueDeviceAbout
+            color={'#756d21'}
+            title={'Sosial sğorta'}
+            logo={'S'}
+          />
+          <QueueDeviceAbout
+            color={'#131212'}
+            title={'Xüsusi Şərtlər'}
+            logo={'H'}
+          />
+          <QueueDeviceAbout color={'#e3a21f'} title={'Əlillik'} logo={'E'} />
+          <QueueDeviceAbout
+            color={'#da2828'}
+            title={'Əmək pensiyaları'}
+            logo={'P'}
           />
         </View>
-        <TouchableOpacity
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              color: '#212121',
-              fontWeight: 'bold',
-              fontSize: 16,
-              marginTop: 17,
-            }}>
-            Necə işləyir?
-          </Text>
-          <Image
-            source={require('../../../assets/images/icons/leftIcon.png')}
-          />
-        </TouchableOpacity>
-        <ScrollView>
-          <Text
-            style={{
-              color: '#909090',
-              fontSize: 14,
-              fontWeight: 'normal',
-              marginTop: 7,
-            }}>
-            Maecenas malesuada tellus eu posuere vehicula. Nam nec dapibus nisi,
-            quis efficitur ante:
-          </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginTop: 25,
-              gap: 17,
-              alignItems: 'center',
-            }}>
-            <View
-              style={{
-                width: 6,
-                height: 6,
-                backgroundColor: '#767676',
-                borderRadius: 9999,
-                borderWidth: 1,
-                borderColor: '#767676',
-              }}
-            />
-            <Text
-              style={{
-                color: '#909090',
-                fontSize: 14,
-                fontWeight: 'normal',
-                marginTop: 7,
-              }}>
-              Tell your friends about Gastos Provider Club and register them on
-              the app.
-            </Text>
-          </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginTop: 25,
-              gap: 17,
-              alignItems: 'center',
-            }}>
-            <View
-              style={{
-                width: 6,
-                height: 6,
-                backgroundColor: '#767676',
-                borderRadius: 9999,
-                borderWidth: 1,
-                borderColor: '#767676',
-              }}
-            />
-            <Text
-              style={{
-                color: '#909090',
-                fontSize: 14,
-                fontWeight: 'normal',
-                marginTop: 7,
-              }}>
-              Tell your friends about Gastos Provider Club and register them on
-              the app.
-            </Text>
-          </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginTop: 25,
-              gap: 17,
-              alignItems: 'center',
-            }}>
-            <View
-              style={{
-                width: 6,
-                height: 6,
-                backgroundColor: '#767676',
-                borderRadius: 9999,
-                borderWidth: 1,
-                borderColor: '#767676',
-              }}
-            />
-            <Text
-              style={{
-                color: '#909090',
-                fontSize: 14,
-                fontWeight: 'normal',
-                marginTop: 7,
-              }}>
-              Tell your friends about Gastos Provider Club and register them on
-              the app.
-            </Text>
-          </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginTop: 25,
-              gap: 17,
-              alignItems: 'center',
-            }}>
-            <View
-              style={{
-                width: 6,
-                height: 6,
-                backgroundColor: '#767676',
-                borderRadius: 9999,
-                borderWidth: 1,
-                borderColor: '#767676',
-              }}
-            />
-            <Text
-              style={{
-                color: '#909090',
-                fontSize: 14,
-                fontWeight: 'normal',
-                marginTop: 7,
-              }}>
-              Tell your friends about Gastos Provider Club and register them on
-              the app.
-            </Text>
-          </View>
-        </ScrollView>
       </View>
     </SafeAreaView>
   );
 };
+
+import {
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import React from 'react';
+import GlobalStyles from '../../../assets/globalStyles/styles.ts';
+
+import {QueueDeviceAbout} from '../../../components/cards/QueueDeviceAbout.tsx';
+import {SelectList} from 'react-native-dropdown-select-list';
 
 export default DeviceScreen;
