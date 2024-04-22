@@ -17,7 +17,7 @@ import VolunteerActivityCard from '../../../components/cards/ VolunteerActivityC
 import Notification from '../../../components/notification/Notification.tsx';
 import {db} from '../../../fakeDb/db.ts';
 import {ClubsHome} from '../types/HomeTypes.tsx';
-import MyCarousel from '../../../components/swiper/Carousel.tsx';
+import MyCarousel from '../../../components/swiper/MyCarousel.tsx';
 import {voluntaryTypes} from '../../responsible/type/VoluntaryListType.ts';
 
 const HomeScreen = () => {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const $axios = axios.create({
-  baseURL: '',
+  baseURL: 'https://konullu.dost.gov.az',
 });
 
 $axios.interceptors.request.use(

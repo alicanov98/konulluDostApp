@@ -42,6 +42,7 @@ import {NewsEditScreen} from '../modules/ResponsiblePersonofClubs/NewsEditScreen
 import ClubAboutScreen from '../modules/clubs/view/ClubAboutScreen.tsx';
 import VoluntarysClubListScreen from '../modules/responsible/screens/VoluntarysClubListScreen.tsx';
 import StatisticProfilScreen from '../modules/statistic/view/StatisticProfilScreen.tsx';
+import ProfilScreenEdit from "../modules/profile/view/ProfilScreenEdit.tsx";
 
 const Stack = createNativeStackNavigator();
 const KonulluDostBottomTabNavigator = createBottomTabNavigator();
@@ -89,6 +90,8 @@ export type RootStackParamList = {
   ClubAboutScreen: {id: string};
   VoluntarysClubListScreen: undefined;
   StatisticProfilScreen: {id: string};
+  ProfilScreenEdit: undefined;
+  ProfilNavigator:undefined
 };
 const KonulluDostNavigation = () => {
   return (
@@ -473,6 +476,33 @@ const CurrentVoluntaryNavigator = () => {
   );
 };
 
+
+const ProfilNavigator = () => {
+  useTabBarVisibility();
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="ProfilScreenEdit"
+        component={ProfilScreenEdit}
+        options={{
+          headerTransparent: true,
+          headerTitle: '',
+          headerShown: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const AboutNavigator = () => {
   useTabBarVisibility();
   const navigation = useNavigation();
@@ -498,8 +528,8 @@ const AboutNavigator = () => {
         }}
       />
       <Stack.Screen
-        name="ProfileScreen"
-        component={ProfileScreen}
+        name="ProfilNavigator"
+        component={ProfilNavigator}
         options={{
           headerTransparent: true,
           headerTitle: '',

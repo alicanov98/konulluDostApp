@@ -379,7 +379,7 @@ const StatisticScreen: React.FC = () => {
             source={
               today === selected
                 ? require('../../../assets/images/icons/smiley.png')
-                : require('../../../assets/images/icons/sadEmoji.png')
+                : 'İştrak etməmisiz!'
             }
           />
           <Text style={{fontSize: 16}}>

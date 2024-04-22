@@ -14,7 +14,7 @@ import BellIcon from '../../../assets/images/icons/bell-icon.svg';
 import ClubCard from '../../../components/cards/ClubCard.tsx';
 import VolunteerActivityCard from '../../../components/cards/ VolunteerActivityCard.tsx';
 import Notification from '../../../components/notification/Notification.tsx';
-import MyCarousel from '../../../components/swiper/Carousel.tsx';
+import MyCarousel from '../../../components/swiper/MyCarousel.tsx';
 import {} from '../../statistic/types/StatisticTypes.ts';
 import {db} from '../../../fakeDb/db.ts';
 import {Clubs} from '../../home/types/HomeTypes.tsx';
@@ -153,7 +153,7 @@ const ResponsibleHomeScreen = () => {
           flexDirection: 'row',
           justifyContent: 'center',
         }}>
-        <MyCarousel />
+        {/*<MyCarousel />*/}
       </View>
       <Text
         style={{

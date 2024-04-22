@@ -19,9 +19,6 @@ import * as yup from 'yup';
 
 import {yupResolver} from '@hookform/resolvers/yup';
 import GlobalStyles from '../../../assets/globalStyles/styles.ts';
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../../../navigation/KonulluDostNavigator.tsx';
 
 const schema = yup.object().shape({
   name: yup.string().required('Ad boş olmamalıdır').min(3),
@@ -59,7 +56,6 @@ const dkNumbers = Array.from({length: 71}, (_, index) => ({
 
 const ProfileScreen = () => {
   const insets = useSafeAreaInsets();
-  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   const {
     control,
@@ -111,59 +107,159 @@ const ProfileScreen = () => {
               style={{marginTop: -70}}
               source={require('../../../assets/images/image/profil.png')}
             />
-            <Text
-              style={{
-                color: '#424954',
-                fontWeight: '500',
-                fontSize: 16,
-                marginTop: 10,
-              }}>
-              Könüllünün şəxsi məlumatları!
-            </Text>
           </View>
           <View>
             <View style={{marginBottom: 30}}>
               <Text style={styles.inputText}>Ad</Text>
-              <Text style={styles.inputText}>Məlik</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                    placeholder="ad"
+                    onChangeText={onChange}
+                  />
+                )}
+                name="name"
+                defaultValue="Məlik"
+              />
+              {errors.name && (
+                <Text style={styles.error}>{errors.name.message}</Text>
+              )}
             </View>
             <View style={{marginBottom: 30}}>
               <Text style={styles.inputText}>Soyad</Text>
-              <Text style={styles.inputText}>Əlicanov</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    onChangeText={onChange}
+                    placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                    placeholder="Soyad"
+                  />
+                )}
+                name="surname"
+                defaultValue="Əlicanov"
+              />
+              {errors.surname && (
+                <Text style={styles.error}>{errors.surname.message}</Text>
+              )}
             </View>
             <View style={{marginBottom: 30}}>
               <Text style={styles.inputText}>E-poçt</Text>
-              <Text style={styles.inputText}>alicanov@gamil.com</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange, value}}) => (
+                  <TextInput
+                    style={styles.input}
+                    value={value}
+                    placeholderTextColor="rgba(0, 0, 0, 0.5)"
+                    placeholder="E-poçt"
+                    onChangeText={onChange}
+                  />
+                )}
+                name="email"
+                defaultValue="alicanov1998@gmail.com"
+              />
+              {errors.email && (
+                <Text style={styles.error}>{errors.email.message}</Text>
+              )}
             </View>
             {/*---------*/}
             <View style={{marginBottom: 30}}>
               <Text style={styles.inputText}>
                 Fəaliyyət göstərdiyiniz mərkəz
               </Text>
-              <Text style={styles.inputText}>4 saylı Bakı DOST Mərkəzi</Text>
+              <Controller
+                control={control}
+                render={({field: {onChange}}) => (
+                  <SelectList
+                    data={centers}
+                    placeholder="Seçin"
+                    setSelected={(value: string) => onChange(value)}
+                    search={false}
+                    boxStyles={styles.input}
+                    inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
+                    dropdownStyles={styles.dropDownBoxCenter}
+                    dropdownTextStyles={{
+                      color: GlobalStyles.colors.PureBlack,
+                    }}
+                  />
+                )}
+                name="center"
+                defaultValue=""
+              />
+              {errors.center && (
+                <Text style={styles.error}>{errors.center.message}</Text>
+              )}
             </View>
             <View
               style={{
                 marginBottom: 30,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
               }}>
-              <View
-                style={{
-                  marginBottom: 30,
-                }}>
+              <View>
                 <Text style={styles.inputText}>DK nömrəsi</Text>
-                <Text style={styles.inputText}>4DK-32 </Text>
+                <Controller
+                  control={control}
+                  render={({field: {onChange}}) => (
+                    <SelectList
+                      data={dkNumbers}
+                      placeholder="Seçin"
+                      setSelected={(value: string) => onChange(value)}
+                      search={false}
+                      boxStyles={styles.dropDowninput}
+                      inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
+                      dropdownStyles={styles.dropDownBoxDk}
+                      dropdownTextStyles={{
+                        color: GlobalStyles.colors.PureBlack,
+                      }}
+                    />
+                  )}
+                  name="dkNumber"
+                  defaultValue=""
+                />
+                {errors.dkNumber && (
+                  <Text style={styles.error}>{errors.dkNumber.message}</Text>
+                )}
               </View>
               {/*--------------*/}
               <View>
                 <Text style={styles.inputText}>Status</Text>
-                <Text style={styles.inputText}>Məzun</Text>
+                <Controller
+                  control={control}
+                  render={({field: {onChange}}) => (
+                    <SelectList
+                      data={volunteerStatus}
+                      placeholder="Seçin"
+                      setSelected={(value: string) => onChange(value)}
+                      search={false}
+                      boxStyles={styles.dropDowninput}
+                      inputStyles={{color: GlobalStyles.colors.PlaceHolder}}
+                      dropdownStyles={styles.dropDownBoxStatus}
+                      dropdownTextStyles={{
+                        color: GlobalStyles.colors.PureBlack,
+                      }}
+                    />
+                  )}
+                  name="status"
+                  defaultValue=""
+                />
+                {errors.status && (
+                  <Text style={styles.error}>{errors.status.message}</Text>
+                )}
               </View>
               {/*--------------*/}
             </View>
             <TouchableOpacity
-              onPress={() => navigation.navigate('ProfilScreenEdit')}
               style={GlobalStyles.button.buttonPurple}
-             >
-              <Text style={styles.buttonText}>Məlumatları dəyiş</Text>
+              onPress={handleSubmit(onSubmit)}>
+              <Text style={styles.buttonText}>Dəyişiklikləri yadda saxla</Text>
             </TouchableOpacity>
           </View>
           <View

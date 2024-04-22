@@ -3,6 +3,8 @@ let $api: {(message: string, params?: {[key: string]: any}): string};
 $api = (service: string, params?: {[key: string]: any}): string => {
   const services: {[service: string]: any} = {
     //   CLUBS endpoints
+    all_activities: '/fealiyyet-api.php',
+    all_projects: '/layiheler',
   };
 
   if (typeof services[service] === 'string') {

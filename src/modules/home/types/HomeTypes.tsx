@@ -18,3 +18,10 @@ export interface News {
   name: string;
   text: string;
 }
+
+export interface IActivities {
+  id: string;
+  sekil: string;
+  bas: string;
+  metn: string;
+}

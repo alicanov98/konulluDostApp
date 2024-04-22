@@ -2,7 +2,12 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import KonulluDostNavigator from './src/navigation/KonulluDostNavigator';
 
+if (__DEV__) {
+  require('./ReactotronConfig');
+}
+
 const App = () => {
+
   return (
     <NavigationContainer>
       <KonulluDostNavigator />

@@ -67,7 +67,7 @@ const AboutScreen = () => {
           gap: 30,
         }}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('ProfileScreen')}
+          onPress={() => navigation.navigate('ProfilNavigator')}
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
